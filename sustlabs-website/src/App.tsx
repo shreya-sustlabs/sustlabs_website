@@ -4,6 +4,7 @@ import './App.css'
 import { Header } from './components/layout/Header'
 import { HomePage } from './components/page/HomePage'
 import { MonitoringPage } from './components/page/MonitoringPage'
+import { SmartDbPage } from './components/page/SmartDbPage'
 import { MONITORING_PRODUCTS } from './utils/constants'
 
 const DEFAULT_MONITORING_PATH = MONITORING_PRODUCTS[0].path
@@ -43,6 +44,7 @@ function App() {
       <Header />
       <Routes>
         <Route element={<HomePage />} path="/" />
+        <Route element={<SmartDbPage />} path="/smart-db" />
         <Route element={<MonitoringRoute />} path="/monitoring/:slug" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Routes>

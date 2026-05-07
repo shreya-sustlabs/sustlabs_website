@@ -96,6 +96,7 @@ export type MonitoringPageData = {
 export type MonitoringIntroSectionData = {
   accent: string
   descriptions: readonly string[]
+  eyebrow?: string
   titleAccent: string
   titleLead: string
 }
@@ -141,6 +142,7 @@ export type ProductUseCaseCardProps = NumberedCardProps
 
 export type ProductUseCaseSection = ProductSectionHeadingProps & {
   cards: readonly ProductUseCaseCardProps[]
+  description?: string
 }
 
 export type ProductDetailItem = BasicCardProps
@@ -159,4 +161,84 @@ export type ProductCtaSection = {
   items: readonly string[]
   titleAccent: string
   titleLead: string
+}
+
+export type SmartDbTone = 'teal' | 'violet' | 'amber' | 'coral' | 'blue'
+
+export type SmartDbEyebrowCard = BasicCardProps & {
+  eyebrow: string
+}
+
+export type SmartDbTextStackItem = BasicCardProps
+
+export type SmartDbTextStackSectionData = ProductSectionHeadingProps & {
+  cards: readonly SmartDbTextStackItem[]
+}
+
+export type SmartDbSafetyItem = NumberedCardProps
+
+export type SmartDbSafetySectionData = {
+  cards: readonly SmartDbSafetyItem[]
+  description: string
+  eyebrow: string
+  titleAccent: string
+  titleLead: string
+}
+
+export type SmartDbEnergyCard = {
+  eyebrow: string
+  title: string
+  tone: SmartDbTone
+}
+
+export type SmartDbEnergySectionData = ProductSectionHeadingProps & {
+  cards: readonly SmartDbEnergyCard[]
+}
+
+export type SmartDbVariantCard = BasicCardProps & {
+  eyebrow: string
+  note?: string
+}
+
+export type SmartDbVariantsSectionData = ProductSectionHeadingProps & {
+  cards: readonly SmartDbVariantCard[]
+}
+
+export type SmartDbComparisonSectionData = ProductSectionHeadingProps & {
+  columns: readonly string[]
+  rows: readonly (readonly string[])[]
+}
+
+export type SmartDbProductCard = {
+  action: ProductHeroAction
+  description: string
+  eyebrow: string
+  features: readonly string[]
+  title: string
+  tone: 'teal' | 'violet' | 'coral'
+}
+
+export type SmartDbProductsSectionData = ProductSectionHeadingProps & {
+  cards: readonly SmartDbProductCard[]
+  description: string
+}
+
+export type SmartDbLayerSectionData = ProductSectionHeadingProps & {
+  cards: readonly SmartDbEyebrowCard[]
+  description: string
+}
+
+export type SmartDbPageData = {
+  comparisonSection: SmartDbComparisonSectionData
+  derSection: ProductUseCaseSection
+  energySection: SmartDbEnergySectionData
+  heroSection: MonitoringHeroSectionProps
+  introSection: MonitoringIntroSectionData
+  layerSection: SmartDbLayerSectionData
+  productsSection: SmartDbProductsSectionData
+  projectSection: SmartDbTextStackSectionData
+  promiseSection: ProductFeatureSection
+  safetySection: SmartDbSafetySectionData
+  stackSection: SmartDbTextStackSectionData
+  variantsSection: SmartDbVariantsSectionData
 }

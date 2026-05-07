@@ -17,6 +17,9 @@ function ProductUseCaseSectionComponent({ section }: ProductUseCaseSectionProps)
         titleAccent={section.titleAccent}
         titleLead={section.titleLead}
       />
+      {section.description ? (
+        <p className="product-use-case-section__description">{section.description}</p>
+      ) : null}
 
       <div className="product-use-case-grid" aria-label={section.eyebrow}>
         {section.cards.map((card) => (
