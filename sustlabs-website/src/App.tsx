@@ -1,34 +1,51 @@
+import { useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import './App.css'
 import { Header } from './components/layout/Header'
-import { EnterpriseSection } from './components/sections/EnterpriseSection'
-import { HeroSection } from './components/sections/HeroSection'
-import { IntelligenceSection } from './components/sections/IntelligenceSection'
-import { InfrastructureSection } from './components/sections/InfrastructureSection'
-import { SignalLayerSection } from './components/sections/SignalLayerSection'
-import { VisibilitySection } from './components/sections/VisibilitySection'
-import { SetupSection } from './components/sections/SetupSection'
-import { LayersSection } from './components/sections/LayersSection'
-import { SmartDbSection } from './components/sections/SmartDbSection'
-import { OraSection } from './components/sections/OraSection'
-import { SovereigntySection } from './components/sections/SovereigntySection'
-import { ImpactSection } from './components/sections/ImpactSection'
+import { HomePage } from './components/page/HomePage'
+import { MonitoringPage } from './components/page/MonitoringPage'
+import { MONITORING_PRODUCTS } from './utils/constants'
+
+const DEFAULT_MONITORING_PATH = MONITORING_PRODUCTS[0].path
+
+function ScrollToTop() {
+  const { hash, pathname } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      window.requestAnimationFrame(() => {
+        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' })
+      })
+      return
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [hash, pathname])
+
+  return null
+}
+
+function MonitoringRoute() {
+  const { slug } = useParams()
+  const monitoringProduct = MONITORING_PRODUCTS.find((product) => product.path.endsWith(`/${slug}`))
+
+  if (!monitoringProduct) {
+    return <Navigate replace to={DEFAULT_MONITORING_PATH} />
+  }
+
+  return <MonitoringPage data={monitoringProduct} />
+}
 
 function App() {
   return (
     <div className="app-shell">
+      <ScrollToTop />
       <Header />
-      <HeroSection />
-      <IntelligenceSection />
-      <SignalLayerSection />
-      <VisibilitySection />
-      <SetupSection />
-      <LayersSection />
-      <SmartDbSection />
-      <OraSection />
-      <EnterpriseSection />
-      <InfrastructureSection />
-      <SovereigntySection />
-      <ImpactSection />
+      <Routes>
+        <Route element={<HomePage />} path="/" />
+        <Route element={<MonitoringRoute />} path="/monitoring/:slug" />
+        <Route element={<Navigate replace to="/" />} path="*" />
+      </Routes>
     </div>
   )
 }

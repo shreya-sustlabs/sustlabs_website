@@ -7,6 +7,369 @@ export const NAV_LINKS = [
   'Support',
 ] as const
 
+export const MONITORING_PRODUCTS = [
+  {
+    accent: '#1F9E8C',
+    ctaSection: {
+      accent: '#4caf53',
+      eyebrow: 'PROOF & CTA',
+      titleLead: 'Your electricity,',
+      titleAccent: 'finally visible.',
+      description: 'Live load, bill estimate, and appliance patterns in one simple view.',
+      items: [
+        'Live Load',
+        'Bill Forecast',
+        'Appliance View',
+        'Daily Timeline',
+        'Insight Summary',
+        'OTA Updates',
+      ],
+    },
+    description:
+      'o3 is the entry point into SustLabs electricity intelligence. It gives homeowners real-time visibility into power usage, appliance behaviour, and energy patterns without installing sensors on every appliance.',
+    detailSection: {
+      visualColor: '#c96d00',
+      items: [
+        {
+          title: 'Live Power Tracking',
+          description: "See your home's current power demand in real time.",
+        },
+        {
+          title: 'Monthly Cost Forecast',
+          description: 'Estimate where your bill is heading before it arrives.',
+        },
+        {
+          title: 'Appliance-Level Analytics',
+          description: 'Understand appliance usage patterns without appliance-level sensors.',
+        },
+        {
+          title: 'Energy Timeline',
+          description: 'See daily, monthly, and yearly views where enabled.',
+        },
+        {
+          title: 'OTA Intelligence',
+          description:
+            'Receive improved appliance models, new fault libraries, and regional intelligence updates over time.',
+        },
+      ],
+      body: 'The subscription PRD specifically identifies continuous rollout of new appliance signatures, improved fault detection models, and regional wiring pattern intelligence.',
+    },
+    eyebrow: 'O3 MONITORING',
+    featureSection: {
+      accent: '#f5a51d',
+      eyebrow: 'WHAT IT DOES',
+      titleLead: 'Real-time energy',
+      titleAccent: 'visibility for everyday homes',
+      cards: [
+        {
+          eyebrow: 'Live Usage',
+          title: 'Know your load in real time',
+          description: 'See how much electricity your home is using at any moment.',
+        },
+        {
+          eyebrow: 'Appliance Insights',
+          title: 'Understand major usage patterns',
+          description: 'Identify which appliances contribute most to your energy consumption.',
+        },
+        {
+          eyebrow: 'Bill Clarity',
+          title: 'Track cost before the bill arrives',
+          description: 'Follow your usage through the month instead of waiting for a surprise.',
+        },
+      ],
+    },
+    heroAccent: 'As it happens.',
+    heroDescription:
+      "o3 turns your home's electrical activity into live insights, helping you understand usage, track costs, and identify the appliances that matter most.",
+    heroKicker: 'o3 monitoring',
+    heroLead: 'See what your home is using.',
+    heroActions: [
+      {
+        label: 'Get started',
+        href: '#contact',
+        variant: 'primary',
+      },
+      {
+        label: 'See features',
+        href: '#features',
+        variant: 'secondary',
+      },
+    ],
+    navLabel: 'o3 - Energy Visibility',
+    path: '/monitoring/o3-energy-visibility',
+    title: 'o3 makes electricity visible',
+    useCaseSection: {
+      accent: '#ad5849',
+      eyebrow: 'IDEAL USE',
+      titleLead: 'Built for homes',
+      titleAccent: 'that want clarity',
+      cards: [
+        {
+          number: '01.',
+          title: 'Bill Awareness',
+          description: 'For users who want to know whether they are on track for a higher bill.',
+        },
+        {
+          number: '02.',
+          title: 'Appliance Discovery',
+          description: 'For homes that want to understand which appliances drive consumption.',
+        },
+        {
+          number: '03.',
+          title: 'Energy Habits',
+          description: 'For residents who want simple nudges to reduce waste.',
+        },
+        {
+          number: '04.',
+          title: 'Smart Home Entry Point',
+          description:
+            'For developers who want to offer a clean, understandable smart-energy experience.',
+        },
+      ],
+    },
+  },
+  {
+    accent: '#4caf53',
+    badge: 'SAFETY AI',
+    ctaSection: {
+      accent: '#4caf53',
+      eyebrow: 'PROOF & CTA',
+      titleLead: 'Your safety,',
+      titleAccent: 'finally visible.',
+      description: 'Fault signals, risk context, and guidance in one simple view.',
+      items: [
+        'Risk Signals',
+        'Fault Forecast',
+        'Load Stress',
+        'Safety Timeline',
+        'Alert Summary',
+        'OTA Updates',
+      ],
+    },
+    description:
+      'o4 watches electrical signatures for unstable behaviour, abnormal load patterns, and early warning signs that need attention before they become expensive or unsafe.',
+    detailSection: {
+      visualColor: '#4caf53',
+      items: [
+        {
+          title: 'Electrical Risk Tracking',
+          description: 'See abnormal electrical behaviour as patterns become clear.',
+        },
+        {
+          title: 'Fault Pattern Forecast',
+          description: 'Estimate which recurring signals need attention before they escalate.',
+        },
+        {
+          title: 'Load Stress Analytics',
+          description: 'Understand overload and unstable usage patterns across the home.',
+        },
+        {
+          title: 'Safety Timeline',
+          description: 'Review daily, monthly, and yearly safety events where enabled.',
+        },
+        {
+          title: 'OTA Safety Intelligence',
+          description:
+            'Receive improved fault models, new anomaly libraries, and regional safety updates over time.',
+        },
+      ],
+      body: 'The safety layer can improve over time through new fault signatures, better detection confidence, and regional wiring pattern intelligence.',
+    },
+    eyebrow: 'O4 MONITORING',
+    featureSection: {
+      accent: '#4caf53',
+      eyebrow: 'WHAT IT DOES',
+      titleLead: 'Electrical safety',
+      titleAccent: 'intelligence for active homes',
+      cards: [
+        {
+          eyebrow: 'Anomaly Alerts',
+          title: 'Find abnormal electrical behaviour',
+          description: 'Translate unstable signatures into clear safety signals.',
+        },
+        {
+          eyebrow: 'Risk Patterns',
+          title: 'Watch repeated stress events',
+          description: 'Spot overload, voltage, and appliance patterns that deserve attention.',
+        },
+        {
+          eyebrow: 'Guidance',
+          title: 'Know what needs action',
+          description: 'Give residents practical next steps before a fault becomes costly.',
+        },
+      ],
+    },
+    heroAccent: 'Before it escalates.',
+    heroDescription:
+      'o4 adds electrical safety intelligence to the monitoring layer, translating hidden anomalies into clear alerts and practical next steps.',
+    heroKicker: 'o4 monitoring',
+    heroLead: 'Spot electrical risk.',
+    heroActions: [
+      {
+        label: 'Get started',
+        href: '#contact',
+        variant: 'primary',
+      },
+      {
+        label: 'See features',
+        href: '#features',
+        variant: 'secondary',
+      },
+    ],
+    navLabel: 'o4 - Electrical Safety Intelligence',
+    path: '/monitoring/o4-electrical-safety',
+    title: 'o4 makes safety intelligent',
+    useCaseSection: {
+      accent: '#ad5849',
+      eyebrow: 'IDEAL USE',
+      titleLead: 'Built for homes',
+      titleAccent: 'that want safer power',
+      cards: [
+        {
+          number: '01.',
+          title: 'Risk Awareness',
+          description: 'For residents who want early warnings from hidden electrical patterns.',
+        },
+        {
+          number: '02.',
+          title: 'Preventive Care',
+          description: 'For homeowners who prefer planned action over emergency repairs.',
+        },
+        {
+          number: '03.',
+          title: 'Load Safety',
+          description: 'For homes with high-demand appliances and changing daily loads.',
+        },
+        {
+          number: '04.',
+          title: 'Service Support',
+          description: 'For teams that need clearer context before sending technicians.',
+        },
+      ],
+    },
+  },
+  {
+    accent: '#24a595',
+    badge: 'SMART DB',
+    ctaSection: {
+      accent: '#4caf53',
+      eyebrow: 'PROOF & CTA',
+      titleLead: 'Your circuits,',
+      titleAccent: 'finally visible.',
+      description: 'Circuit status, load priority, and automation readiness in one simple view.',
+      items: [
+        'Circuit Load',
+        'Backup Priority',
+        'Appliance Zones',
+        'Control Timeline',
+        'Action Summary',
+        'OTA Updates',
+      ],
+    },
+    description:
+      'o5 extends monitoring into the distribution board, bringing circuit-level visibility, autonomous control, backup orchestration, and edge decisions into one connected system.',
+    detailSection: {
+      visualColor: '#24a595',
+      items: [
+        {
+          title: 'Circuit Power Tracking',
+          description: "See your home's circuit-level demand in real time.",
+        },
+        {
+          title: 'Backup Cost Awareness',
+          description: 'Estimate how load priority affects runtime and comfort.',
+        },
+        {
+          title: 'Circuit-Level Analytics',
+          description: 'Understand zone usage patterns directly from the distribution board.',
+        },
+        {
+          title: 'Control Timeline',
+          description: 'See daily, monthly, and yearly control events where enabled.',
+        },
+        {
+          title: 'OTA Control Intelligence',
+          description:
+            'Receive improved control models, new circuit logic, and regional infrastructure updates over time.',
+        },
+      ],
+      body: 'The Smart DB layer can improve through new circuit signatures, better control policies, and regional infrastructure pattern intelligence.',
+    },
+    eyebrow: 'O5 MONITORING',
+    featureSection: {
+      accent: '#24a595',
+      eyebrow: 'WHAT IT DOES',
+      titleLead: 'Circuit-level visibility',
+      titleAccent: 'for autonomous control',
+      cards: [
+        {
+          eyebrow: 'Circuit Status',
+          title: 'See each electrical zone clearly',
+          description: 'Track load, status, and circuit health from the distribution board.',
+        },
+        {
+          eyebrow: 'Automation',
+          title: 'Prioritize important loads',
+          description: 'Coordinate backup, isolation, and control decisions close to the panel.',
+        },
+        {
+          eyebrow: 'Edge Decisions',
+          title: 'Act without waiting on the cloud',
+          description: 'Keep critical control logic local for faster electrical response.',
+        },
+      ],
+    },
+    heroAccent: 'Automatically.',
+    heroDescription:
+      'o5 and Smart DB move from observation to control, letting homes prioritize loads, isolate risks, and coordinate energy decisions close to the panel.',
+    heroKicker: 'o5 monitoring',
+    heroLead: 'Control the electrical backbone.',
+    heroActions: [
+      {
+        label: 'Get started',
+        href: '#contact',
+        variant: 'primary',
+      },
+      {
+        label: 'See features',
+        href: '#features',
+        variant: 'secondary',
+      },
+    ],
+    navLabel: 'o5 - Smart DB / Autonomous Control',
+    path: '/monitoring/o5-smart-db',
+    title: 'o5 makes the DB autonomous',
+    useCaseSection: {
+      accent: '#ad5849',
+      eyebrow: 'IDEAL USE',
+      titleLead: 'Built for homes',
+      titleAccent: 'that want intelligent control',
+      cards: [
+        {
+          number: '01.',
+          title: 'Smart DB Upgrades',
+          description: 'For homes adding intelligence to the electrical backbone.',
+        },
+        {
+          number: '02.',
+          title: 'Backup Planning',
+          description: 'For residents who want smarter prioritization during outages.',
+        },
+        {
+          number: '03.',
+          title: 'Circuit Control',
+          description: 'For projects that need visibility and action at circuit level.',
+        },
+        {
+          number: '04.',
+          title: 'Future DER',
+          description: 'For solar, battery, EV, and inverter-ready home infrastructure.',
+        },
+      ],
+    },
+  },
+] as const
+
 export const HERO_CONTENT = {
   eyebrow: 'OHM OS BY SUSTLABS',
   titleLead: 'Understand your electricity',

@@ -1,0 +1,30 @@
+import { memo } from 'react'
+import type { ProductCtaSection as ProductCtaSectionData } from '../../types'
+
+type ProductCtaSectionProps = {
+  section: ProductCtaSectionData
+}
+
+function ProductCtaSectionComponent({ section }: ProductCtaSectionProps) {
+  return (
+    <section className="product-cta-section">
+      <div className="product-cta-section__inner">
+        <p className="product-cta-section__eyebrow">{section.eyebrow}</p>
+        <h2>
+          {section.titleLead} <span style={{ color: section.accent }}>{section.titleAccent}</span>
+        </h2>
+        <p>{section.description}</p>
+
+        <ul className="product-cta-section__list" aria-label={section.eyebrow}>
+          {section.items.map((item) => (
+            <li key={item} style={{ color: section.accent }}>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
+export const ProductCtaSection = memo(ProductCtaSectionComponent)
