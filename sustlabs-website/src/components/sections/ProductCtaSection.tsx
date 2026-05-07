@@ -6,12 +6,15 @@ type ProductCtaSectionProps = {
 }
 
 function ProductCtaSectionComponent({ section }: ProductCtaSectionProps) {
+  const leadStyle = section.accentTarget === 'lead' ? { color: section.accent } : undefined
+  const accentStyle = section.accentTarget === 'lead' ? undefined : { color: section.accent }
+
   return (
     <section className="product-cta-section">
       <div className="product-cta-section__inner">
         <p className="product-cta-section__eyebrow">{section.eyebrow}</p>
         <h2>
-          {section.titleLead} <span style={{ color: section.accent }}>{section.titleAccent}</span>
+          <span style={leadStyle}>{section.titleLead}</span> <span style={accentStyle}>{section.titleAccent}</span>
         </h2>
         <p>{section.description}</p>
 

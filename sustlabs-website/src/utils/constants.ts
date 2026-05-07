@@ -9,7 +9,7 @@ export const NAV_LINKS = [
 
 export const MONITORING_PRODUCTS = [
   {
-    accent: '#1F9E8C',
+    accent: '#145599',
     ctaSection: {
       accent: '#4caf53',
       eyebrow: 'PROOF & CTA',
@@ -27,6 +27,14 @@ export const MONITORING_PRODUCTS = [
     },
     description:
       'o3 is the entry point into SustLabs electricity intelligence. It gives homeowners real-time visibility into power usage, appliance behaviour, and energy patterns without installing sensors on every appliance.',
+    introSection: {
+      accent: '#145599',
+      titleLead: 'o3 makes electricity',
+      titleAccent: 'visible',
+      descriptions: [
+        'o3 is the entry point into SustLabs electricity intelligence. It gives homeowners real-time visibility into power usage, appliance behaviour, and energy patterns without installing sensors on every appliance.',
+      ],
+    },
     detailSection: {
       visualColor: '#c96d00',
       items: [
@@ -129,210 +137,283 @@ export const MONITORING_PRODUCTS = [
     },
   },
   {
-    accent: '#4caf53',
+    accent: '#145599',
     badge: 'SAFETY AI',
     ctaSection: {
       accent: '#4caf53',
+      accentTarget: 'lead',
       eyebrow: 'PROOF & CTA',
-      titleLead: 'Your safety,',
-      titleAccent: 'finally visible.',
-      description: 'Fault signals, risk context, and guidance in one simple view.',
+      titleLead: 'Electrical safety,',
+      titleAccent: 'explained.',
+      description: 'Events are detected, classified, logged, and communicated clearly.',
       items: [
-        'Risk Signals',
-        'Fault Forecast',
-        'Load Stress',
-        'Safety Timeline',
-        'Alert Summary',
-        'OTA Updates',
+        'Arcing',
+        'Neutral Loss',
+        'Earth Leakage',
+        'Overload',
+        'Voltage Anomaly',
+        'Event Timeline',
+        'Notification Channels',
+        'Safety Override',
       ],
     },
     description:
-      'o4 watches electrical signatures for unstable behaviour, abnormal load patterns, and early warning signs that need attention before they become expensive or unsafe.',
+      'o4 builds on energy monitoring and adds a safety-first layer: alerts, notifications, anomaly detection, threshold configuration, event logging, and protection workflows.',
     detailSection: {
-      visualColor: '#4caf53',
+      visualColor: '#d9352a',
       items: [
         {
-          title: 'Electrical Risk Tracking',
-          description: 'See abnormal electrical behaviour as patterns become clear.',
+          title: 'Fault Detection',
+          description: 'Detect electrical events that traditional meters do not explain',
         },
         {
-          title: 'Fault Pattern Forecast',
-          description: 'Estimate which recurring signals need attention before they escalate.',
+          title: 'Severity-Based Alerts',
+          description: 'Critical, medium, and low-severity alerts help reduce noise and focus attention.',
         },
         {
-          title: 'Load Stress Analytics',
-          description: 'Understand overload and unstable usage patterns across the home.',
-        },
-        {
-          title: 'Safety Timeline',
-          description: 'Review daily, monthly, and yearly safety events where enabled.',
-        },
-        {
-          title: 'OTA Safety Intelligence',
+          title: 'Multi-Channel Notifications',
           description:
-            'Receive improved fault models, new anomaly libraries, and regional safety updates over time.',
+            'Notify users through app push, WhatsApp, SMS, email, calls, webhooks, MQTTS, or the Native Console where configured.',
+        },
+        {
+          title: 'Threshold Configuration',
+          description: 'Users and utilities can maintain independent thresholds, evaluated in parallel.',
+        },
+        {
+          title: 'Configurable Protection',
+          description:
+            'Auto-trip or manual trip can be configured based on severity, event type, and hardware support.',
+        },
+        {
+          title: 'Recovery Guidance',
+          description: 'Ohm AI can attach recommendations to help users understand recovery steps after an event.',
         },
       ],
-      body: 'The safety layer can improve over time through new fault signatures, better detection confidence, and regional wiring pattern intelligence.',
     },
     eyebrow: 'O4 MONITORING',
     featureSection: {
-      accent: '#4caf53',
-      eyebrow: 'WHAT IT DOES',
-      titleLead: 'Electrical safety',
-      titleAccent: 'intelligence for active homes',
+      accent: '#d9352a',
+      eyebrow: 'SAFETY INTELLIGENCE',
+      titleLead: 'Designed around',
+      titleAccent: 'early warnings',
       cards: [
         {
-          eyebrow: 'Anomaly Alerts',
-          title: 'Find abnormal electrical behaviour',
-          description: 'Translate unstable signatures into clear safety signals.',
+          eyebrow: 'Critical Faults',
+          title: 'Catch high risk events',
+          description:
+            'Detect critical conditions such as arcing, neutral loss, short circuit, earth leakage, and severe phase loss.',
         },
         {
-          eyebrow: 'Risk Patterns',
-          title: 'Watch repeated stress events',
-          description: 'Spot overload, voltage, and appliance patterns that deserve attention.',
+          eyebrow: 'Power Quality',
+          title: 'Understand electrical stress',
+          description:
+            'Track persistent power-quality issues such as THD, repeated overloads, and power factor deterioration',
         },
         {
-          eyebrow: 'Guidance',
-          title: 'Know what needs action',
-          description: 'Give residents practical next steps before a fault becomes costly.',
+          eyebrow: 'Alert Choices',
+          title: 'Choose what matters',
+          description:
+            'Users can configure alerts, thresholds, severity, and channels - while critical events require explicit safety overrides.',
         },
       ],
     },
-    heroAccent: 'Before it escalates.',
+    heroAccent: 'electrical risks',
+    heroAccentColor: '#e43d32',
     heroDescription:
-      'o4 adds electrical safety intelligence to the monitoring layer, translating hidden anomalies into clear alerts and practical next steps.',
+      'o4 combines energy visibility with safety intelligence - helping detect abnormal voltage, leakage, arcing, overloads, and fault conditions before they become serious incidents.',
     heroKicker: 'o4 monitoring',
-    heroLead: 'Spot electrical risk.',
+    heroLead: 'Detect',
+    heroRest: 'before they escalate',
     heroActions: [
       {
-        label: 'Get started',
-        href: '#contact',
+        label: 'Explore o4',
+        href: '#features',
         variant: 'primary',
       },
       {
-        label: 'See features',
-        href: '#features',
+        label: 'Talk to sales',
+        href: '#contact',
         variant: 'secondary',
       },
     ],
+    introSection: {
+      accent: '#145599',
+      titleLead: 'o4 adds',
+      titleAccent: 'electrical safety intelligence',
+      descriptions: [
+        'o4 builds on energy monitoring and adds a safety-first layer: alerts, notifications, anomaly detection, threshold configuration, event logging, and protection workflows.',
+        'The consolidated Native PRD defines the safety architecture as three separate layers: alerts for detection, notifications for communication, and tripping for hardware actuation. It also emphasizes user primacy, pipeline separation, safety-first defaults, independent thresholds, and always-on logging.',
+      ],
+    },
     navLabel: 'o4 - Electrical Safety Intelligence',
     path: '/monitoring/o4-electrical-safety',
-    title: 'o4 makes safety intelligent',
-    useCaseSection: {
-      accent: '#ad5849',
-      eyebrow: 'IDEAL USE',
-      titleLead: 'Built for homes',
-      titleAccent: 'that want safer power',
+    postDetailUseCaseSection: {
+      accent: '#34363a',
+      eyebrow: '',
+      titleLead: 'o4 Ideal Use',
+      titleAccent: '',
       cards: [
         {
           number: '01.',
-          title: 'Risk Awareness',
-          description: 'For residents who want early warnings from hidden electrical patterns.',
+          title: 'Premium Residential Project',
+          description: 'For developers who want safety intelligence as part of the home infrastructure.',
         },
         {
           number: '02.',
-          title: 'Preventive Care',
-          description: 'For homeowners who prefer planned action over emergency repairs.',
+          title: 'Existing Apartments',
+          description:
+            'For retrofit deployments where visibility and fault detection are more practical than full DB replacement.',
         },
         {
           number: '03.',
-          title: 'Load Safety',
-          description: 'For homes with high-demand appliances and changing daily loads.',
+          title: 'High-Risk Loads',
+          description: 'For homes with heavy appliances, unstable power quality, or repeated electrical issues.',
         },
         {
           number: '04.',
-          title: 'Service Support',
-          description: 'For teams that need clearer context before sending technicians.',
+          title: 'Facility / Society Monitoring',
+          description: 'For sites that need event history, alerts, and safety visibility.',
+        },
+      ],
+    },
+    title: 'o4 adds electrical safety intelligence',
+    useCaseSection: {
+      accent: '#24a595',
+      eyebrow: 'ALERTS, NOTIFICATIONS, PROTECTION',
+      titleLead: 'Detection is not the',
+      titleAccent: 'same as action',
+      cards: [
+        {
+          number: 'Alerts',
+          title: 'The system detects an event',
+          description: 'An alert is generated when a measured parameter deviates from configured norms.',
+        },
+        {
+          number: 'Notifications',
+          title: 'The user is informed',
+          description:
+            'Notifications carry alerts through selected channels such as app push, WhatsApp, SMS, email, or enterprise integrations.',
+        },
+        {
+          number: 'Tripping',
+          title: 'Protection happens only where configured',
+          description:
+            'Tripping is hardware actuation that isolates or shuts a circuit, distinct from a notification or normal "off" state.',
+        },
+        {
+          number: 'Audit Trail',
+          title: 'Every action is traceable',
+          description: 'Trip events include cause, actor, timestamp, method, and recovery history',
         },
       ],
     },
   },
   {
-    accent: '#24a595',
+    accent: '#145599',
     badge: 'SMART DB',
     ctaSection: {
       accent: '#4caf53',
       eyebrow: 'PROOF & CTA',
-      titleLead: 'Your circuits,',
-      titleAccent: 'finally visible.',
-      description: 'Circuit status, load priority, and automation readiness in one simple view.',
+      titleLead: 'A distribution board',
+      titleAccent: 'that thinks.',
+      description: 'Circuit-level visibility, control, safety, and energy orchestration.',
       items: [
-        'Circuit Load',
-        'Backup Priority',
-        'Appliance Zones',
-        'Control Timeline',
-        'Action Summary',
-        'OTA Updates',
+        'Circuit Map',
+        'Arc Detection',
+        'Load Priority',
+        'Solar / Battery',
+        'EV Ready',
+        'Local Autonomy',
+        'Installer Flow',
+        'Safety Event Timeline',
       ],
     },
     description:
-      'o5 extends monitoring into the distribution board, bringing circuit-level visibility, autonomous control, backup orchestration, and edge decisions into one connected system.',
+      'o5 is SustLabs next-generation Smart DB platform: a modular smart electrical panel designed for per-circuit monitoring, control, backup orchestration, native arc detection, and edge intelligence.',
+    introSection: {
+      accent: '#145599',
+      titleLead: 'o5 turns the distribution board into',
+      titleAccent: 'intelligence infrastructure',
+      descriptions: [
+        'o5 is SustLabs next-generation Smart DB platform: a modular smart electrical panel designed for per-circuit monitoring, control, backup orchestration, native arc detection, and edge intelligence.',
+        'The 5th Gen PRD defines the product as a modular smart electrical panel with per-circuit control, backup orchestration, native series/parallel arc detection, edge ML, homeowner and installer experiences, and privacy-first local autonomy.',
+      ],
+    },
     detailSection: {
-      visualColor: '#24a595',
+      visualColor: '#145599',
       items: [
         {
-          title: 'Circuit Power Tracking',
-          description: "See your home's circuit-level demand in real time.",
+          title: 'Circuit Intelligence',
+          description: 'View each branch circuit as an intelligent node, not just a wire.',
         },
         {
-          title: 'Backup Cost Awareness',
-          description: 'Estimate how load priority affects runtime and comfort.',
+          title: 'Native Safety Engine',
+          description: 'Detect arc, overcurrent, over temperature, and other high-risk conditions.',
         },
         {
-          title: 'Circuit-Level Analytics',
-          description: 'Understand zone usage patterns directly from the distribution board.',
+          title: 'Backup Orchestration',
+          description: 'Prioritize critical loads during outages and energy constraints.',
         },
         {
-          title: 'Control Timeline',
-          description: 'See daily, monthly, and yearly control events where enabled.',
+          title: 'Edge ML',
+          description: 'Run safety and anomaly intelligence locally for faster, more resilient decisions.',
         },
         {
-          title: 'OTA Control Intelligence',
+          title: 'Local API',
+          description: 'Support offline operation and local integrations where enabled.',
+        },
+        {
+          title: 'OTA Updates',
+          description: 'Improve models, thresholds, and firmware safely over time.',
+        },
+        {
+          title: 'Secure by Design',
           description:
-            'Receive improved control models, new circuit logic, and regional infrastructure updates over time.',
+            'Signed firmware, secure boot, mTLS, role-based access, and tamper logging. The PRD specifies signed firmware, secure boot, TLS 1.3 mTLS, rotating keys, OTA rollback, and role-based access.',
         },
       ],
-      body: 'The Smart DB layer can improve through new circuit signatures, better control policies, and regional infrastructure pattern intelligence.',
     },
     eyebrow: 'O5 MONITORING',
     featureSection: {
-      accent: '#24a595',
-      eyebrow: 'WHAT IT DOES',
-      titleLead: 'Circuit-level visibility',
-      titleAccent: 'for autonomous control',
+      accent: '#145599',
+      eyebrow: 'SMART DB INTELLIGENCE',
+      titleLead: 'Every circuit becomes',
+      titleAccent: 'visible',
       cards: [
         {
-          eyebrow: 'Circuit Status',
-          title: 'See each electrical zone clearly',
-          description: 'Track load, status, and circuit health from the distribution board.',
+          eyebrow: 'Per-Circuit Monitoring',
+          title: 'Know what each circuit is doing',
+          description:
+            'Track circuit status, current, voltage, temperature, energy, and safety events at the distribution layer.',
         },
         {
-          eyebrow: 'Automation',
-          title: 'Prioritize important loads',
-          description: 'Coordinate backup, isolation, and control decisions close to the panel.',
+          eyebrow: 'Per-Circuit Control',
+          title: 'Control the home from the panel',
+          description: 'Enable switching, schedules, scenes, and load groups where hardware supports it.',
         },
         {
-          eyebrow: 'Edge Decisions',
-          title: 'Act without waiting on the cloud',
-          description: 'Keep critical control logic local for faster electrical response.',
+          eyebrow: 'Native Arc Detection',
+          title: 'Detect dangerous arc signatures',
+          description:
+            'o5 is designed to detect series and parallel arcing on monitored branches using high-frequency sensing and edge classification.',
         },
       ],
     },
-    heroAccent: 'Automatically.',
+    heroAccent: 'reimagined',
+    heroAccentColor: '#f5a51d',
     heroDescription:
-      'o5 and Smart DB move from observation to control, letting homes prioritize loads, isolate risks, and coordinate energy decisions close to the panel.',
-    heroKicker: 'o5 monitoring',
-    heroLead: 'Control the electrical backbone.',
+      'o5 brings intelligence into the electrical backbone of the home - monitoring circuits, detecting risks, prioritizing backup loads, and enabling safer energy control.',
+    heroKicker: 'o5 smart db',
+    heroLead: 'The distribution board,',
     heroActions: [
       {
-        label: 'Get started',
-        href: '#contact',
+        label: 'Explore o5',
+        href: '#features',
         variant: 'primary',
       },
       {
-        label: 'See features',
-        href: '#features',
+        label: 'Partner with SustLabs',
+        href: '#contact',
         variant: 'secondary',
       },
     ],
@@ -340,30 +421,33 @@ export const MONITORING_PRODUCTS = [
     path: '/monitoring/o5-smart-db',
     title: 'o5 makes the DB autonomous',
     useCaseSection: {
-      accent: '#ad5849',
-      eyebrow: 'IDEAL USE',
-      titleLead: 'Built for homes',
-      titleAccent: 'that want intelligent control',
+      accent: '#f5a51d',
+      accentTarget: 'lead',
+      eyebrow: 'BACKUP & DER',
+      titleLead: 'Built for',
+      titleAccent: 'homes with backup, solar, batteries, and EVs',
       cards: [
         {
-          number: '01.',
-          title: 'Smart DB Upgrades',
-          description: 'For homes adding intelligence to the electrical backbone.',
+          number: 'Backup Prioritization',
+          title: 'Keep critical loads running',
+          description: 'Group circuits into Critical, Important, and Nice-to-have tiers',
         },
         {
-          number: '02.',
-          title: 'Backup Planning',
-          description: 'For residents who want smarter prioritization during outages.',
+          number: 'Deterministic Load Shedding',
+          title: 'Reduce guesswork during outages.',
+          description: 'o5 can support deterministic shed logic based on configured priorities.',
         },
         {
-          number: '03.',
-          title: 'Circuit Control',
-          description: 'For projects that need visibility and action at circuit level.',
+          number: 'Solar & Storage Ready',
+          title: 'Designed for distributed energy',
+          description:
+            'The PRD includes integrations for common inverters and ESS through Modbus-TCP/RTU and Sunspec.',
         },
         {
-          number: '04.',
-          title: 'Future DER',
-          description: 'For solar, battery, EV, and inverter-ready home infrastructure.',
+          number: 'EV & Tariff Ready',
+          title: 'Prepare for smarter demand',
+          description:
+            'o5 roadmap includes EVSE integration, time-of-use optimization, demand caps, and export limiting.',
         },
       ],
     },

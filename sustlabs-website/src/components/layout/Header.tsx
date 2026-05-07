@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { ChevronDown, Search, ShoppingBag } from 'lucide-react'
+import { Search, ShoppingBag } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
 import { MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
 
@@ -30,7 +30,6 @@ function HeaderComponent() {
             <div className="site-header__menu" key={link}>
               <button className="site-header__menu-trigger" type="button" aria-expanded="false">
                 {link}
-                {/* <ChevronDown aria-hidden="true" size={14} strokeWidth={1.8} /> */}
               </button>
               <div className="site-header__dropdown" aria-label="Monitoring products">
                 {MONITORING_PRODUCTS.map((product) => (

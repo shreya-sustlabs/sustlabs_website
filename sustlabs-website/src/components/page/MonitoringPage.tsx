@@ -14,19 +14,23 @@ type MonitoringPageProps = {
 function MonitoringPageComponent({ data }: MonitoringPageProps) {
   return (
     <main className="monitoring-page">
-      <MonitoringIntroSection accent={data.accent} description={data.description} title={data.title} />
+      <MonitoringIntroSection section={data.introSection} />
       <MonitoringHeroSection
-        accent={data.accent}
+        accent={data.heroAccentColor ?? data.accent}
         actions={data.heroActions}
         description={data.heroDescription}
         eyebrow={data.eyebrow}
         kicker={data.heroKicker}
         titleAccent={data.heroAccent}
         titleLead={data.heroLead}
+        titleRest={data.heroRest}
       />
       <ProductFeatureSection section={data.featureSection} />
       <ProductUseCaseSection section={data.useCaseSection} />
       <ProductDetailSection section={data.detailSection} />
+      {data.postDetailUseCaseSection ? (
+        <ProductUseCaseSection section={data.postDetailUseCaseSection} />
+      ) : null}
       <ProductCtaSection section={data.ctaSection} />
     </main>
   )

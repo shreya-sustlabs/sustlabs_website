@@ -80,19 +80,28 @@ export type MonitoringPageData = {
   featureSection: ProductFeatureSection
   heroActions: readonly ProductHeroAction[]
   heroAccent: string
+  heroAccentColor?: string
   heroDescription: string
   heroKicker: string
   heroLead: string
+  heroRest?: string
+  introSection: MonitoringIntroSectionData
   navLabel: string
   path: string
+  postDetailUseCaseSection?: ProductUseCaseSection
   title: string
   useCaseSection: ProductUseCaseSection
 }
 
-export type MonitoringIntroSectionProps = {
+export type MonitoringIntroSectionData = {
   accent: string
-  description: string
-  title: string
+  descriptions: readonly string[]
+  titleAccent: string
+  titleLead: string
+}
+
+export type MonitoringIntroSectionProps = {
+  section: MonitoringIntroSectionData
 }
 
 export type ProductHeroAction = {
@@ -109,10 +118,12 @@ export type MonitoringHeroSectionProps = {
   kicker: string
   titleAccent: string
   titleLead: string
+  titleRest?: string
 }
 
 export type ProductSectionHeadingProps = {
   accent: string
+  accentTarget?: 'lead' | 'accent'
   eyebrow: string
   titleAccent: string
   titleLead: string
@@ -135,13 +146,14 @@ export type ProductUseCaseSection = ProductSectionHeadingProps & {
 export type ProductDetailItem = BasicCardProps
 
 export type ProductDetailSection = {
-  body: string
+  body?: string
   items: readonly ProductDetailItem[]
   visualColor: string
 }
 
 export type ProductCtaSection = {
   accent: string
+  accentTarget?: 'lead' | 'accent'
   description: string
   eyebrow: string
   items: readonly string[]

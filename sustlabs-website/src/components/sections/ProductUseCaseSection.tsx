@@ -12,6 +12,7 @@ function ProductUseCaseSectionComponent({ section }: ProductUseCaseSectionProps)
     <section className="product-use-case-section">
       <ProductSectionHeading
         accent={section.accent}
+        accentTarget={section.accentTarget}
         eyebrow={section.eyebrow}
         titleAccent={section.titleAccent}
         titleLead={section.titleLead}

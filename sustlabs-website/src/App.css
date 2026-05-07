@@ -271,9 +271,15 @@
   line-height: 1.08;
 }
 
-.monitoring-intro__inner>p:last-child {
-  max-width: 820px;
+.monitoring-intro__descriptions {
+  display: grid;
+  gap: 34px;
   margin: 32px auto 0;
+}
+
+.monitoring-intro__descriptions p {
+  max-width: 820px;
+  margin: 0 auto;
   color: #8e9096;
   font-size: clamp(18px, 1.45vw, 23px);
   line-height: 1.42;
@@ -320,6 +326,10 @@
 
 .monitoring-hero h2 span {
   display: inline;
+}
+
+.monitoring-hero__title-rest {
+  color: #f8f8f9;
 }
 
 .monitoring-hero__copy>p:not(.monitoring-hero__kicker) {
@@ -2003,8 +2013,12 @@
     font-size: clamp(42px, 11vw, 58px);
   }
 
-  .monitoring-intro__inner>p:last-child {
+  .monitoring-intro__descriptions {
     margin-top: 24px;
+    gap: 24px;
+  }
+
+  .monitoring-intro__descriptions p {
     font-size: 17px;
   }
 

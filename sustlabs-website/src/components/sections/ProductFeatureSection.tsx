@@ -12,6 +12,7 @@ function ProductFeatureSectionComponent({ section }: ProductFeatureSectionProps)
     <section className="product-feature-section" id="features">
       <ProductSectionHeading
         accent={section.accent}
+        accentTarget={section.accentTarget}
         eyebrow={section.eyebrow}
         titleAccent={section.titleAccent}
         titleLead={section.titleLead}

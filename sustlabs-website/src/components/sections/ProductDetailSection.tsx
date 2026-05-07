@@ -24,7 +24,7 @@ function ProductDetailSectionComponent({ section }: ProductDetailSectionProps) {
           ))}
         </div>
 
-        <p className="product-detail-section__body">{section.body}</p>
+        {section.body ? <p className="product-detail-section__body">{section.body}</p> : null}
       </div>
     </section>
   )

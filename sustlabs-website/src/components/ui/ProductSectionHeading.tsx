@@ -3,15 +3,20 @@ import type { ProductSectionHeadingProps } from '../../types'
 
 function ProductSectionHeadingComponent({
   accent,
+  accentTarget,
   eyebrow,
   titleAccent,
   titleLead,
 }: ProductSectionHeadingProps) {
+  const leadStyle = accentTarget === 'lead' ? { color: accent } : undefined
+  const accentStyle = accentTarget === 'lead' ? undefined : { color: accent }
+
   return (
     <div className="product-section-heading">
-      <p className="product-section-heading__eyebrow">{eyebrow}</p>
+      {eyebrow ? <p className="product-section-heading__eyebrow">{eyebrow}</p> : null}
       <h2>
-        {titleLead} <span style={{ color: accent }}>{titleAccent}</span>
+        <span style={leadStyle}>{titleLead}</span>
+        {titleAccent ? <span style={accentStyle}> {titleAccent}</span> : null}
       </h2>
     </div>
   )

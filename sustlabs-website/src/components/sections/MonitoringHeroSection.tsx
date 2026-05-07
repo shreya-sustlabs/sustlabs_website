@@ -10,6 +10,7 @@ function MonitoringHeroSectionComponent({
   kicker,
   titleAccent,
   titleLead,
+  titleRest,
 }: MonitoringHeroSectionProps) {
   return (
     <section className="monitoring-hero" aria-labelledby="monitoring-hero-title">
@@ -17,6 +18,7 @@ function MonitoringHeroSectionComponent({
         <p className="monitoring-hero__kicker">{kicker}</p>
         <h2 id="monitoring-hero-title">
           {titleLead} <span style={{ color: accent }}>{titleAccent}</span>
+          {titleRest ? <span className="monitoring-hero__title-rest"> {titleRest}</span> : null}
         </h2>
         <p>{description}</p>
         <div className="monitoring-hero__actions" aria-label={`${eyebrow} actions`}>
