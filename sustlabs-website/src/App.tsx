@@ -1,16 +1,22 @@
-import { useEffect } from 'react'
-import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 import { Header } from './components/layout/Header'
 import { HomePage } from './components/page/HomePage'
-import { MonitoringPage } from './components/page/MonitoringPage'
-import { OhmOsPage } from './components/page/OhmOsPage'
-import { OraAddOnPage } from './components/page/OraAddOnPage'
-import { SmartDbPage } from './components/page/SmartDbPage'
-import { SolutionsPage } from './components/page/SolutionsPage'
-import { MONITORING_PRODUCTS } from './utils/constants'
 
-const DEFAULT_MONITORING_PATH = MONITORING_PRODUCTS[0].path
+const MonitoringRoute = lazy(() =>
+  import('./components/page/MonitoringRoute').then((module) => ({ default: module.MonitoringRoute })),
+)
+const OhmOsPage = lazy(() => import('./components/page/OhmOsPage').then((module) => ({ default: module.OhmOsPage })))
+const OraAddOnPage = lazy(() =>
+  import('./components/page/OraAddOnPage').then((module) => ({ default: module.OraAddOnPage })),
+)
+const SmartDbPage = lazy(() =>
+  import('./components/page/SmartDbPage').then((module) => ({ default: module.SmartDbPage })),
+)
+const SolutionsPage = lazy(() =>
+  import('./components/page/SolutionsPage').then((module) => ({ default: module.SolutionsPage })),
+)
 
 function ScrollToTop() {
   const { hash, pathname } = useLocation()
@@ -29,31 +35,22 @@ function ScrollToTop() {
   return null
 }
 
-function MonitoringRoute() {
-  const { slug } = useParams()
-  const monitoringProduct = MONITORING_PRODUCTS.find((product) => product.path.endsWith(`/${slug}`))
-
-  if (!monitoringProduct) {
-    return <Navigate replace to={DEFAULT_MONITORING_PATH} />
-  }
-
-  return <MonitoringPage data={monitoringProduct} />
-}
-
 function App() {
   return (
     <div className="app-shell">
       <ScrollToTop />
       <Header />
-      <Routes>
-        <Route element={<HomePage />} path="/" />
-        <Route element={<OhmOsPage />} path="/ohm-os" />
-        <Route element={<SmartDbPage />} path="/smart-db" />
-        <Route element={<OraAddOnPage />} path="/add-ons/ora" />
-        <Route element={<SolutionsPage />} path="/solutions" />
-        <Route element={<MonitoringRoute />} path="/monitoring/:slug" />
-        <Route element={<Navigate replace to="/" />} path="*" />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route element={<HomePage />} path="/" />
+          <Route element={<OhmOsPage />} path="/ohm-os" />
+          <Route element={<SmartDbPage />} path="/smart-db" />
+          <Route element={<OraAddOnPage />} path="/add-ons/ora" />
+          <Route element={<SolutionsPage />} path="/solutions" />
+          <Route element={<MonitoringRoute />} path="/monitoring/:slug" />
+          <Route element={<Navigate replace to="/" />} path="*" />
+        </Routes>
+      </Suspense>
     </div>
   )
 }
