@@ -198,6 +198,7 @@ export type MonitoringPageData = {
   postDetailUseCaseSection?: ProductUseCaseSection
   title: string
   useCaseSection: ProductUseCaseSection
+  itemsAccent?: string
 }
 
 export type MonitoringIntroSectionData = {
@@ -268,6 +269,7 @@ export type ProductCtaSection = {
   items: readonly string[]
   titleAccent: string
   titleLead: string
+  itemAccent?: string
 }
 
 export type SmartDbTone = 'teal' | 'violet' | 'amber' | 'coral' | 'blue'

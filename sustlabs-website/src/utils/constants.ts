@@ -240,13 +240,14 @@ export const SOLUTIONS_PAGE_CONTENT = {
 
 export const MONITORING_PRODUCTS = [
   {
-    accent: '#145599',
+    accent: 'var(--terra500)',
     ctaSection: {
-      accent: '#4caf53',
+      accent: 'var(--success500)',
       eyebrow: 'PROOF & CTA',
       titleLead: 'Your electricity,',
       titleAccent: 'finally visible.',
       description: 'Live load, bill estimate, and appliance patterns in one simple view.',
+      itemsAccent: 'linear-gradient(to right, #F1EDFB, #3D3D3D)',
       items: [
         'Live Load',
         'Bill Forecast',
@@ -259,7 +260,7 @@ export const MONITORING_PRODUCTS = [
     description:
       'o3 is the entry point into SustLabs electricity intelligence. It gives homeowners real-time visibility into power usage, appliance behaviour, and energy patterns without installing sensors on every appliance.',
     introSection: {
-      accent: '#145599',
+      accent: 'var(--black400)',
       titleLead: 'o3 makes electricity',
       titleAccent: 'visible',
       descriptions: [
@@ -295,7 +296,7 @@ export const MONITORING_PRODUCTS = [
     },
     eyebrow: 'O3 MONITORING',
     featureSection: {
-      accent: '#f5a51d',
+      accent: 'var(--black400)',
       eyebrow: 'WHAT IT DOES',
       titleLead: 'Real-time energy',
       titleAccent: 'visibility for everyday homes',
@@ -338,7 +339,7 @@ export const MONITORING_PRODUCTS = [
     path: '/monitoring/o3-energy-visibility',
     title: 'o3 makes electricity visible',
     useCaseSection: {
-      accent: '#ad5849',
+      accent: 'var(--black400)',
       eyebrow: 'IDEAL USE',
       titleLead: 'Built for homes',
       titleAccent: 'that want clarity',
@@ -371,7 +372,7 @@ export const MONITORING_PRODUCTS = [
     accent: '#145599',
     badge: 'SAFETY AI',
     ctaSection: {
-      accent: '#4caf53',
+      accent: 'var(--success500)',
       accentTarget: 'lead',
       eyebrow: 'PROOF & CTA',
       titleLead: 'Electrical safety,',
@@ -423,7 +424,7 @@ export const MONITORING_PRODUCTS = [
     },
     eyebrow: 'O4 MONITORING',
     featureSection: {
-      accent: '#d9352a',
+      accent: 'var(--black400)',
       eyebrow: 'SAFETY INTELLIGENCE',
       titleLead: 'Designed around',
       titleAccent: 'early warnings',
@@ -449,7 +450,7 @@ export const MONITORING_PRODUCTS = [
       ],
     },
     heroAccent: 'electrical risks',
-    heroAccentColor: '#e43d32',
+    heroAccentColor: 'var(--terra500)',
     heroDescription:
       'o4 combines energy visibility with safety intelligence - helping detect abnormal voltage, leakage, arcing, overloads, and fault conditions before they become serious incidents.',
     heroKicker: 'o4 monitoring',
@@ -468,7 +469,7 @@ export const MONITORING_PRODUCTS = [
       },
     ],
     introSection: {
-      accent: '#145599',
+      accent: 'var(--black400)',
       titleLead: 'o4 adds',
       titleAccent: 'electrical safety intelligence',
       descriptions: [
@@ -479,10 +480,9 @@ export const MONITORING_PRODUCTS = [
     navLabel: 'o4 - Electrical Safety Intelligence',
     path: '/monitoring/o4-electrical-safety',
     postDetailUseCaseSection: {
-      accent: '#34363a',
+      accent: 'var(--black400)',
       eyebrow: '',
       titleLead: 'o4 Ideal Use',
-      titleAccent: '',
       cards: [
         {
           number: '01.',
@@ -509,7 +509,7 @@ export const MONITORING_PRODUCTS = [
     },
     title: 'o4 adds electrical safety intelligence',
     useCaseSection: {
-      accent: '#24a595',
+      accent: 'var(--black400)',
       eyebrow: 'ALERTS, NOTIFICATIONS, PROTECTION',
       titleLead: 'Detection is not the',
       titleAccent: 'same as action',
@@ -562,7 +562,7 @@ export const MONITORING_PRODUCTS = [
     description:
       'o5 is SustLabs next-generation Smart DB platform: a modular smart electrical panel designed for per-circuit monitoring, control, backup orchestration, native arc detection, and edge intelligence.',
     introSection: {
-      accent: '#145599',
+      accent: 'var(--black400)',
       titleLead: 'o5 turns the distribution board into',
       titleAccent: 'intelligence infrastructure',
       descriptions: [
@@ -606,7 +606,7 @@ export const MONITORING_PRODUCTS = [
     },
     eyebrow: 'O5 MONITORING',
     featureSection: {
-      accent: '#145599',
+      accent: 'var(--black400)',
       eyebrow: 'SMART DB INTELLIGENCE',
       titleLead: 'Every circuit becomes',
       titleAccent: 'visible',
@@ -631,7 +631,7 @@ export const MONITORING_PRODUCTS = [
       ],
     },
     heroAccent: 'reimagined',
-    heroAccentColor: '#F5A51D',
+    heroAccentColor: 'var(--terra500)',
     heroDescription:
       'o5 brings intelligence into the electrical backbone of the home - monitoring circuits, detecting risks, prioritizing backup loads, and enabling safer energy control.',
     heroKicker: 'o5 smart db',
@@ -652,7 +652,7 @@ export const MONITORING_PRODUCTS = [
     path: '/monitoring/o5-smart-db',
     title: 'o5 makes the DB autonomous',
     useCaseSection: {
-      accent: '#F5A51D',
+      accent: 'var(--black400)',
       accentTarget: 'lead',
       eyebrow: 'BACKUP & DER',
       titleLead: 'Built for',

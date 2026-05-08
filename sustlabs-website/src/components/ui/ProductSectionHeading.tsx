@@ -9,7 +9,7 @@ function ProductSectionHeadingComponent({
   titleLead,
 }: ProductSectionHeadingProps) {
   const leadStyle = accentTarget === 'lead' ? { color: accent } : undefined
-  const accentStyle = accentTarget === 'lead' ? undefined : { color: 'var(--terra500)' }
+  const accentStyle = accentTarget === 'lead' ? undefined : { color: accent ? accent : 'var(--terra500)' }
 
   return (
     <div className="product-section-heading">

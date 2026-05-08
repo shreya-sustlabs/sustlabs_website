@@ -20,7 +20,7 @@ function ProductCtaSectionComponent({ section }: ProductCtaSectionProps) {
 
         <ul className="product-cta-section__list" aria-label={section.eyebrow}>
           {section.items.map((item) => (
-            <li key={item} style={{ color: section.accent }}>
+            <li key={item}>
               {item}
             </li>
           ))}
