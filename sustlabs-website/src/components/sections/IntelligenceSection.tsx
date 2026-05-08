@@ -1,13 +1,12 @@
 import { memo } from 'react'
-import { CORE_FEATURES, INTELLIGENCE_CONTENT, LIVE_INSIGHTS } from '../../utils/constants'
+import { CORE_FEATURES, INTELLIGENCE_CONTENT } from '../../utils/constants'
 import { CardRail } from '../ui/CardRail'
 import { FeatureCard } from '../ui/FeatureCard'
-import { InsightCard } from '../ui/InsightCard'
 
 function IntelligenceSectionComponent() {
   return (
     <section className="intelligence-section" id="monitoring">
-      <CardRail className="intelligence-section__insights" label="Live electricity intelligence">
+      {/* <CardRail className="intelligence-section__insights" label="Live electricity intelligence">
         {LIVE_INSIGHTS.map((item) => (
           <InsightCard
             description={item.description}
@@ -16,7 +15,7 @@ function IntelligenceSectionComponent() {
             title={item.title}
           />
         ))}
-      </CardRail>
+      </CardRail> */}
 
       <div className="promise-heading">
         <p className="promise-heading__eyebrow">{INTELLIGENCE_CONTENT.eyebrow}</p>

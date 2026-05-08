@@ -1,8 +1,12 @@
 :root {
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, 'Inter Tight';
+  --color-white: #fff;
+  --color-accent: #cc4e37;
+  --color-muted: #a9abb0;
+
 
   font: 16px/1.5 var(--sans);
-  color: #f7f7f8;
+  color: var(--color-white);
   background: #020304;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
