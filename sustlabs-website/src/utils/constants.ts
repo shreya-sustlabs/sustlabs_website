@@ -1445,7 +1445,7 @@ export const HOW_IT_WORKS_STEPS = [
 
 export const SAFETY_CONTENT = {
   eyebrow: 'SAFETY FIRST',
-  titleLead: 'Built to detect risks',
+  titleLead: 'Built to detect risks ',
   titleRest: 'before they become incidents',
   description:
     'Ohm separates detection, notification, and control — so every event is logged, every alert is explainable, and every action remains user-governed.',
