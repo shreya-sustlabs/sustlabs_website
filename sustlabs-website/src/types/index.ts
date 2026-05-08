@@ -234,7 +234,7 @@ export type ProductSectionHeadingProps = {
   accent: string
   accentTarget?: 'lead' | 'accent'
   eyebrow: string
-  titleAccent?: string
+  titleAccent: string
   titleLead: string
 }
 

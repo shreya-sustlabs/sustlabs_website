@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { HERO_CONTENT } from '../../utils/homeContent'
+import { HERO_CONTENT } from '../../utils/constants'
 import { Button } from '../ui/Button'
 
 function HeroSectionComponent() {

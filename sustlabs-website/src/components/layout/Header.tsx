@@ -1,7 +1,7 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { Search, ShoppingBag } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
-import { ADD_ON_PRODUCTS, MONITORING_NAV_PRODUCTS, NAV_LINKS } from '../../utils/navigation'
+import { ADD_ON_PRODUCTS, MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
 
 type OpenMenu = 'monitoring' | 'add-ons' | null
 
@@ -77,7 +77,7 @@ function HeaderComponent() {
                 aria-label="Monitoring products"
                 data-open={openMenu === 'monitoring'}
               >
-                {MONITORING_NAV_PRODUCTS.map((product) => (
+                {MONITORING_PRODUCTS.map((product) => (
                   <NavLink to={product.path} key={product.path} onClick={() => setOpenMenu(null)}>
                     {product.navLabel}
                   </NavLink>

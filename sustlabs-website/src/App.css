@@ -245,46 +245,6 @@
   color: #f1f1f1;
 }
 
-.intelligence-section,
-.signal-layer,
-.visibility-section,
-.setup-section,
-.layers-section,
-.smart-db-section,
-.ora-section,
-.enterprise-section,
-.infrastructure-section,
-.sovereignty-section,
-.impact-section,
-.monitoring-intro,
-.monitoring-hero,
-.product-feature-section,
-.product-use-case-section,
-.product-detail-section,
-.product-cta-section,
-.ohm-os-hero,
-.ohm-os-applications,
-.ohm-os-licensees,
-.ora-add-on-hero,
-.ora-add-on-developers,
-.ora-add-on-enables,
-.solutions-partner-section,
-.solution-panel__hero,
-.smart-db-page__intro,
-.smart-db-page__hero,
-.smart-db-page__promise,
-.smart-db-page__stack,
-.smart-db-page__safety,
-.smart-db-page__energy,
-.smart-db-page__variants,
-.smart-db-page__project,
-.smart-db-page__comparison,
-.smart-db-page__products,
-.smart-db-page__layer {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 900px;
-}
-
 .monitoring-page,
 .smart-db-page {
   background: #020304;

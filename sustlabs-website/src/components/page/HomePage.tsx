@@ -1,71 +1,32 @@
-import { lazy, memo, Suspense, useEffect, useState } from 'react'
+import { memo } from 'react'
+import { EnterpriseSection } from '../sections/EnterpriseSection'
 import { HeroSection } from '../sections/HeroSection'
-
-const ImpactSection = lazy(() =>
-  import('../sections/ImpactSection').then((module) => ({ default: module.ImpactSection })),
-)
-const EnterpriseSection = lazy(() =>
-  import('../sections/EnterpriseSection').then((module) => ({ default: module.EnterpriseSection })),
-)
-const InfrastructureSection = lazy(() =>
-  import('../sections/InfrastructureSection').then((module) => ({ default: module.InfrastructureSection })),
-)
-const IntelligenceSection = lazy(() =>
-  import('../sections/IntelligenceSection').then((module) => ({ default: module.IntelligenceSection })),
-)
-const LayersSection = lazy(() =>
-  import('../sections/LayersSection').then((module) => ({ default: module.LayersSection })),
-)
-const OraSection = lazy(() => import('../sections/OraSection').then((module) => ({ default: module.OraSection })))
-const SetupSection = lazy(() =>
-  import('../sections/SetupSection').then((module) => ({ default: module.SetupSection })),
-)
-const SignalLayerSection = lazy(() =>
-  import('../sections/SignalLayerSection').then((module) => ({ default: module.SignalLayerSection })),
-)
-const SmartDbSection = lazy(() =>
-  import('../sections/SmartDbSection').then((module) => ({ default: module.SmartDbSection })),
-)
-const SovereigntySection = lazy(() =>
-  import('../sections/SovereigntySection').then((module) => ({ default: module.SovereigntySection })),
-)
-const VisibilitySection = lazy(() =>
-  import('../sections/VisibilitySection').then((module) => ({ default: module.VisibilitySection })),
-)
+import { ImpactSection } from '../sections/ImpactSection'
+import { InfrastructureSection } from '../sections/InfrastructureSection'
+import { IntelligenceSection } from '../sections/IntelligenceSection'
+import { LayersSection } from '../sections/LayersSection'
+import { OraSection } from '../sections/OraSection'
+import { SetupSection } from '../sections/SetupSection'
+import { SignalLayerSection } from '../sections/SignalLayerSection'
+import { SmartDbSection } from '../sections/SmartDbSection'
+import { SovereigntySection } from '../sections/SovereigntySection'
+import { VisibilitySection } from '../sections/VisibilitySection'
 
 function HomePageComponent() {
-  const [showDeferredSections, setShowDeferredSections] = useState(false)
-
-  useEffect(() => {
-    const loadSections = () => setShowDeferredSections(true)
-
-    if ('requestIdleCallback' in window) {
-      const idleId = window.requestIdleCallback(loadSections, { timeout: 1500 })
-      return () => window.cancelIdleCallback(idleId)
-    }
-
-    const timeoutId = globalThis.setTimeout(loadSections, 600)
-    return () => globalThis.clearTimeout(timeoutId)
-  }, [])
-
   return (
     <>
       <HeroSection />
-      {showDeferredSections ? (
-        <Suspense fallback={null}>
-          <IntelligenceSection />
-          <SignalLayerSection />
-          <VisibilitySection />
-          <SetupSection />
-          <LayersSection />
-          <SmartDbSection />
-          <OraSection />
-          <EnterpriseSection />
-          <InfrastructureSection />
-          <SovereigntySection />
-          <ImpactSection />
-        </Suspense>
-      ) : null}
+      <IntelligenceSection />
+      <SignalLayerSection />
+      <VisibilitySection />
+      <SetupSection />
+      <LayersSection />
+      <SmartDbSection />
+      <OraSection />
+      <EnterpriseSection />
+      <InfrastructureSection />
+      <SovereigntySection />
+      <ImpactSection />
     </>
   )
 }
