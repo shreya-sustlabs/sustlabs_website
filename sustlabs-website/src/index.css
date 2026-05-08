@@ -1,12 +1,16 @@
 :root {
   --sans: system-ui, 'Inter Tight';
-  --color-white: #fff;
-  --color-accent: #cc4e37;
-  --color-muted: #a9abb0;
+  --terra500: #CC4E37;
+  --black200: #E4E5E6;
+  --black300: '#A9ABB0';
+  --black400: #373839;
+  --black500: #050608;
+  --success500: #4CAF50;
+  --white: #FFF;
 
 
   font: 16px/1.5 var(--sans);
-  color: var(--color-white);
+  color: var(--white);
   background: #020304;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
