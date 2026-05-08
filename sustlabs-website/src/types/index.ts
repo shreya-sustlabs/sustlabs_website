@@ -152,15 +152,13 @@ export type OraEnablesSectionProps = {
   section: OraEnablesSectionData
 }
 
-export type SolutionPanelTone = 'violet' | 'amber' | 'coral' | 'blue' | 'mint'
-
 export type SolutionPanelData = {
   capabilities: readonly string[]
   description?: string
+  eyebrow: string
   titleAccent: string
   titleLead: string
   titlePrefix?: string
-  tone: SolutionPanelTone
 }
 
 export type SolutionPanelProps = {
@@ -176,6 +174,33 @@ export type SolutionsPartnerSectionData = ProductSectionHeadingProps & {
 
 export type SolutionsPartnerSectionProps = {
   section: SolutionsPartnerSectionData
+}
+
+export type SupportHeroSectionData = {
+  action: PageAction
+  description: string
+  title: string
+}
+
+export type SupportHeroSectionProps = {
+  section: SupportHeroSectionData
+}
+
+export type SupportFormField = {
+  id: string
+  label: string
+  placeholder: string
+  type?: string
+  variant?: 'textarea'
+}
+
+export type SupportContactSectionData = {
+  fields: readonly SupportFormField[]
+  title: string
+}
+
+export type SupportContactSectionProps = {
+  section: SupportContactSectionData
 }
 
 export type MonitoringPageData = {

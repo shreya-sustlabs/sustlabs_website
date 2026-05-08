@@ -3,11 +3,13 @@ import type { SolutionPanelProps } from '../../types'
 
 function SolutionPanelComponent({ panel }: SolutionPanelProps) {
   return (
-    <section className={`solution-panel solution-panel--${panel.tone}`}>
+    <section className={`solution-panel`}>
       <div className="solution-panel__hero">
         <div className="solution-panel__heading">
+          <p className="solution-panel__eyebrow">{panel.eyebrow}</p>
           <h2>
             <span className="solution-panel__lead">{panel.titleLead}</span>
+            <br/>
             {panel.titlePrefix ? <> {panel.titlePrefix}</> : null}
             <span className="solution-panel__accent"> {panel.titleAccent}</span>
           </h2>

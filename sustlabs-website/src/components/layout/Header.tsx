@@ -18,6 +18,10 @@ function getNavTarget(link: string) {
     return '/solutions'
   }
 
+  if (link === 'Support') {
+    return '/support'
+  }
+
   const hash = link.toLowerCase().replaceAll(' ', '-')
 
   return `/#${hash}`

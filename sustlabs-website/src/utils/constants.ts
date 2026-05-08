@@ -16,6 +16,43 @@ export const ADD_ON_PRODUCTS = [
   },
 ] as const
 
+export const FOOTER_CONTENT = {
+  tagline: 'Rewiring the Future of Homes',
+  columns: [
+    {
+      title: 'Explore',
+      links: [
+        { label: 'Home', path: '/' },
+        { label: 'Ohm OS', path: '/ohm-os' },
+        { label: 'Smart DB', path: '/smart-db' },
+        { label: 'Add-ons', path: '/add-ons/ora' },
+      ],
+    },
+    {
+      title: 'Store',
+      links: [
+        { label: 'o3', path: '/monitoring/o3-energy-visibility' },
+        { label: 'o4', path: '/monitoring/o4-electrical-safety' },
+      ],
+    },
+    {
+      title: 'Solutions',
+      links: [{ label: 'Solutions', path: '/solutions' }],
+    },
+    {
+      title: 'Connect',
+      links: [
+        { label: 'Sales', path: '/support' },
+        { label: 'Book a Demo', path: '/support#contact-sales' },
+      ],
+    },
+  ],
+  legalLinks: [
+    { label: 'Privacy Policy', path: '/privacy-policy' },
+    { label: 'Terms & Conditions', path: '/terms-and-conditions' },
+  ],
+} as const
+
 export const OHM_OS_PAGE_CONTENT = {
   titleLead: 'The',
   titleAccent: 'intelligence layer',
@@ -135,6 +172,7 @@ export const ORA_ENABLES_SECTION = {
 export const SOLUTIONS_PAGE_CONTENT = {
   panels: [
     {
+      eyebrow: 'Fire Pump Rooms',
       titleLead: 'Mission-critical fire infrastructure,',
       titleAccent: 'continuously monitored',
       description:
@@ -147,9 +185,9 @@ export const SOLUTIONS_PAGE_CONTENT = {
         'Compliance reports',
         'Audit timeline',
       ],
-      tone: 'violet',
     },
     {
+      eyebrow: 'Real Estate Developers',
       titleLead: 'Smart electrical infrastructure',
       titleAccent: 'residents can understand',
       description:
@@ -161,12 +199,12 @@ export const SOLUTIONS_PAGE_CONTENT = {
         'Visible smart-home value',
         'Premium project positioning',
       ],
-      tone: 'amber',
     },
     {
+      eyebrow: 'Warehouses',
       titleLead: 'Detect electrical risk',
-      titleAccent: 'becomes downtime',
-      titlePrefix: 'before it',
+      titleAccent: 'before it becomes downtime',
+      titlePrefix: '',
       capabilities: [
         'Load visibility',
         'Abnormal current draw',
@@ -174,12 +212,12 @@ export const SOLUTIONS_PAGE_CONTENT = {
         'Equipment behaviour',
         'Multi-site dashboard',
       ],
-      tone: 'coral',
     },
     {
+      eyebrow: 'DATA CENTERS',
       titleLead: 'Power-quality intelligence',
-      titleAccent: 'critical infrastructure',
-      titlePrefix: 'for',
+      titleAccent: 'for critical infrastructure',
+      titlePrefix: '',
       capabilities: [
         'Voltage and current anomalies',
         'THD / power factor',
@@ -187,12 +225,12 @@ export const SOLUTIONS_PAGE_CONTENT = {
         'Auditability',
         'Early warning for critical circuits',
       ],
-      tone: 'blue',
     },
     {
-      titleLead: 'One',
-      titleAccent: 'intelligence layer',
-      titlePrefix: 'across every store',
+      eyebrow: 'RETAIL / QSR',
+      titleLead: 'One intelligence layer',
+      titleAccent: 'across every store',
+      titlePrefix: '',
       capabilities: [
         'Site comparisons',
         'Appliance health',
@@ -200,13 +238,12 @@ export const SOLUTIONS_PAGE_CONTENT = {
         'Fault alerts',
         'Remote operations',
       ],
-      tone: 'mint',
     },
   ],
   partnerSection: {
-    accent: '#ad5849',
+    accent: 'var(--black400)',
     accentTarget: 'lead',
-    eyebrow: '',
+    eyebrow: 'UTILITIES / ECOSYSTEM',
     titleLead: 'Consent-led energy intelligence',
     titleAccent: 'for partners',
     description:
@@ -233,6 +270,60 @@ export const SOLUTIONS_PAGE_CONTENT = {
       {
         title: 'No Third-Party Control',
         description: 'Partners receive intelligence. They do not control actuation.',
+      },
+    ],
+  },
+} as const
+
+export const SUPPORT_PAGE_CONTENT = {
+  hero: {
+    title: 'Support',
+    description:
+      "Have questions, planning a deployment, or exploring where Sustlabs fits? We're here to help you understand the system, the right setup, and what it could look like for your site or business.",
+    action: {
+      label: 'Book a demo',
+      href: '#contact-sales',
+      variant: 'primary',
+    },
+  },
+  contact: {
+    title: 'Contact our sales team',
+    fields: [
+      {
+        id: 'name',
+        label: 'Name',
+        placeholder: 'Enter your name',
+        type: 'text',
+      },
+      {
+        id: 'email',
+        label: 'Email',
+        placeholder: 'Enter your email',
+        type: 'email',
+      },
+      {
+        id: 'phone',
+        label: 'Phone',
+        placeholder: 'Enter your phone number',
+        type: 'tel',
+      },
+      {
+        id: 'roles',
+        label: 'Roles',
+        placeholder: 'Enter your role',
+        type: 'text',
+      },
+      {
+        id: 'organisation',
+        label: 'Organisation',
+        placeholder: 'Enter your organisation',
+        type: 'text',
+      },
+      {
+        id: 'comment',
+        label: 'Comment',
+        placeholder: 'Comment',
+        variant: 'textarea',
       },
     ],
   },
