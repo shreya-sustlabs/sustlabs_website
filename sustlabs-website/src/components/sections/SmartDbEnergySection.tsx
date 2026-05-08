@@ -12,7 +12,7 @@ function SmartDbEnergySectionComponent({ section }: SmartDbEnergySectionProps) {
       <div className="smart-db-page__energy-inner">
         <SmartDbPill>{section.eyebrow}</SmartDbPill>
         <h2 id="smart-db-energy-title">
-          <span style={{ color: section.accent }}>{section.titleLead}</span> {section.titleAccent}
+          <span style={{ color: section.accent }}>{section.titleLead}</span> <span style={{ color: 'var(--black300)' }}>{section.titleAccent} </span>
         </h2>
         <div className="smart-db-page__energy-grid" aria-label="Smart DB energy control capabilities">
           {section.cards.map((item) => (

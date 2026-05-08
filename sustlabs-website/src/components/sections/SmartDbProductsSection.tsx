@@ -13,7 +13,7 @@ function SmartDbProductsSectionComponent({ section }: SmartDbProductsSectionProp
       <div className="smart-db-page__products-heading">
         <SmartDbPill>{section.eyebrow}</SmartDbPill>
         <h2 id="smart-db-products-title">
-          <span style={{ color: section.accent }}>{section.titleLead}</span> {section.titleAccent}
+          <span style={{ color: section.accent }}>{section.titleLead}</span> <span style={{ color: 'var(--black300)' }}>{section.titleAccent}</span>
         </h2>
         <p>{section.description}</p>
       </div>

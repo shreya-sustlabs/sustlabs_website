@@ -7,7 +7,7 @@ function OhmOsApplicationsSectionComponent({ section }: OhmOsApplicationsSection
     <section className="ohm-os-applications" id="ecosystem" aria-labelledby="ohm-os-applications-title">
       <div className="ohm-os-applications__intro">
         <ProductSectionHeading
-          accent="#24a595"
+          accent="var(--terra500)"
           eyebrow=""
           titleAccent={section.titleAccent}
           titleLead={section.titleLead}

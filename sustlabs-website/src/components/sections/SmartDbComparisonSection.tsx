@@ -11,7 +11,7 @@ function SmartDbComparisonSectionComponent({ section }: SmartDbComparisonSection
     <section className="smart-db-page__comparison" aria-labelledby="smart-db-comparison-title">
       <div className="smart-db-page__comparison-heading">
         <SmartDbPill>{section.eyebrow}</SmartDbPill>
-        <h2 id="smart-db-comparison-title">
+        <h2 id="smart-db-comparison-title" style={{ color: 'var(--black300)' }}>
           {section.titleLead} <span style={{ color: section.accent }}>{section.titleAccent}</span>
         </h2>
       </div>

@@ -695,13 +695,13 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     eyebrow: 'Smart DB by Sustlabs',
     titleLead: 'Smart DB is the',
     titleAccent: 'physical layer of Ohm OS',
-    accent: '#145599',
+    accent: 'var(--black400)',
     descriptions: [
       'Smart DB brings Sustlabs intelligence into the electrical distribution board - the place where power is divided, protected, monitored, and controlled. Instead of treating the DB as a passive box, Smart DB turns it into an intelligent infrastructure layer for homes, buildings, and energy ecosystems.',
     ],
   },
   heroSection: {
-    accent: '#145599',
+    accent: 'var(--terra500)',
     eyebrow: 'Smart DB',
     kicker: 'Smart DB by Sustlabs',
     titleLead: 'The electrical panel',
@@ -722,7 +722,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   promiseSection: {
-    accent: '#f5a51d',
+    accent: 'var(--black400)',
     eyebrow: 'Core promise',
     titleLead: 'From passive protection to',
     titleAccent: 'active intelligence',
@@ -815,7 +815,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   energySection: {
-    accent: '#24a595',
+    accent: 'var(--black400)',
     eyebrow: 'Energy control',
     titleLead: 'Designed for the future',
     titleAccent: 'of home energy',
@@ -849,7 +849,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   variantsSection: {
-    accent: '#7146dd',
+    accent: 'var(--black400)',
     eyebrow: 'Product architecture',
     titleLead: 'Built for different',
     titleAccent: 'electrical realities',
@@ -871,7 +871,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   projectSection: {
-    accent: '#24a595',
+    accent: 'var(--black400)',
     eyebrow: 'Installer & developer value',
     titleLead: 'Made for projects,',
     titleAccent: 'not just products',
@@ -903,7 +903,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   comparisonSection: {
-    accent: '#f5a51d',
+    accent: 'var(--black400)',
     eyebrow: 'Product comparison',
     titleLead: 'Three products.',
     titleAccent: 'One intelligence system',
@@ -923,7 +923,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   productsSection: {
-    accent: '#145599',
+    accent: 'var(--black400)',
     eyebrow: 'Monitoring products',
     titleLead: 'Monitoring that grows',
     titleAccent: 'with your electrical system',
@@ -972,7 +972,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   layerSection: {
-    accent: '#f5a51d',
+    accent: 'var(--terra500)',
     eyebrow: 'Intelligence layer',
     titleLead: 'From visibility to autonomous',
     titleAccent: 'electricity intelligence',
@@ -997,7 +997,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
   },
   derSection: {
-    accent: '#24a595',
+    accent: 'var(--black400)',
     eyebrow: 'Backup & DER',
     titleLead: 'A distribution board that',
     titleAccent: 'sees, learns, and acts',
