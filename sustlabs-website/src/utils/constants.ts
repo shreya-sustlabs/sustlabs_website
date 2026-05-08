@@ -9,6 +9,235 @@ export const NAV_LINKS = [
   'Support',
 ] as const
 
+export const ADD_ON_PRODUCTS = [
+  {
+    navLabel: 'Ora',
+    path: '/add-ons/ora',
+  },
+] as const
+
+export const OHM_OS_PAGE_CONTENT = {
+  titleLead: 'The',
+  titleAccent: 'intelligence layer',
+  titleRest: 'behind modern electrical systems',
+  description:
+    'Ohm OS helps make electrical systems easier to read, easier to manage and easier to act on.',
+  actions: [
+    {
+      label: 'Explore the ecosystem',
+      href: '#ecosystem',
+      variant: 'primary',
+    },
+    {
+      label: 'Talk to Sustlabs',
+      href: '#contact',
+      variant: 'secondary',
+    },
+  ],
+} as const
+
+export const OHM_OS_APPLICATION_CONTENT = {
+  titleLead: 'One Platform.',
+  titleAccent: 'Many Applications.',
+  eyebrow: 'One core layer, applied across the system',
+  description:
+    'Ohm OS sits at the center of the electrical system and helps different parts of it respond with more context. What starts as one signal in the electrical layer can lead to very different outcomes - depending on who needs to use it.',
+} as const
+
+export const OHM_OS_APPLICATIONS = [
+  {
+    title: 'Appliance activity and health',
+    description:
+      'For appliance brands and connected product partners such as Panasonic, changes in electrical behaviour can help surface usage patterns, efficiency drift, and early service need.',
+  },
+  {
+    title: 'Data-backed servicing',
+    description:
+      'For service-led businesses such as Urban Company, electrical signals can help make diagnosis faster and maintenance less reactive.',
+  },
+  {
+    title: 'Autonomous load management',
+    description:
+      'For infrastructure and energy partners such as Fenice and Havells, the same intelligence can support smarter decisions around what should run, when, and at what priority.',
+  },
+  {
+    title: 'Transformer health and DSM',
+    description:
+      'For utilities and grid-side stakeholders such as Tata Power, load behaviour across connected systems can offer better visibility into electrical stress and changing demand patterns.',
+  },
+  {
+    title: 'AMC and insurance companies',
+    description:
+      'For protection and lifecycle partners such as Zopper and Onsitego, electrical history can add context to faults, servicing, and claims-related decisions.',
+  },
+] as const
+
+export const OHM_OS_LICENSEE_CONTENT = {
+  title: 'Licensee Partners',
+  description:
+    'For electrical and infrastructure brands, Ohm OS can extend intelligence into products, systems, and connected experiences beyond a single deployment.',
+  logoLabel: 'Logos:',
+  logos: ['Legrand', 'Panasonic', 'INEPRO', 'Schneider Electric'],
+  note:
+    'Structured intelligence can also be shared with connected systems and partners where needed, with clear boundaries around access and control.',
+} as const
+
+export const ORA_ADD_ON_PAGE_CONTENT = {
+  titleLead: 'What if a',
+  titleAccent: 'wall clock did more?',
+  description:
+    'A built-in amenity for modern developments. A new category of built-in intelligence designed to integrate at the building level and add long-term value to residential projects.',
+  action: {
+    label: 'Book an Appointment',
+    href: '#contact',
+    variant: 'primary',
+  },
+} as const
+
+export const ORA_DEVELOPER_SECTION = {
+  titleLead: 'For Real-Estate',
+  titleAccent: 'Developers',
+  description: 'Designed to add value where it matters',
+  benefits: [
+    {
+      number: '01.',
+      title: 'Stronger project differentiation',
+      description: 'Elevates perceived value without increasing resident complexity.',
+    },
+    {
+      number: '02.',
+      title: 'Enhanced everyday safety',
+      description: 'Enhances everyday safety through passive, always on intelligence.',
+    },
+    {
+      number: '03.',
+      title: 'Forward looking insights',
+      description: 'Enables early maintenance and predicts appliance and circuit failures.',
+    },
+    {
+      number: '04.',
+      title: "Sustainability that's visible.",
+      description: 'Encourages efficient living through subtle, ambient awareness.',
+    },
+  ],
+} as const
+
+export const ORA_ENABLES_SECTION = {
+  titleLead: 'What this',
+  titleAccent: 'enables',
+  description: 'Transforming raw data into meaningful, everyday value for residents.',
+  safetyTitle: 'Safety you can trust.',
+  safetyDescription:
+    'Keeps a check on electrical activity and notifies you if something needs attention.',
+  safetyEyebrow: 'ALWAYS WATCHING QUIETLY',
+} as const
+
+export const SOLUTIONS_PAGE_CONTENT = {
+  panels: [
+    {
+      titleLead: 'Mission-critical fire infrastructure,',
+      titleAccent: 'continuously monitored',
+      description:
+        'Sustlabs extends Ohm Native into fire-pump-room monitoring for commercial buildings, hospitals, campuses, industrial sites, and data centres.',
+      capabilities: [
+        'Pump health',
+        'Water level and pressure',
+        'Control panel status',
+        'Critical alarms',
+        'Compliance reports',
+        'Audit timeline',
+      ],
+      tone: 'violet',
+    },
+    {
+      titleLead: 'Smart electrical infrastructure',
+      titleAccent: 'residents can understand',
+      description:
+        'Offer homes that are not just connected, but electrically intelligent - with visibility, safety alerts, appliance insights, and ambient displays through Ora.',
+      capabilities: [
+        'Differentiated amenity',
+        'Resident safety',
+        'Lower post-handover complaints',
+        'Visible smart-home value',
+        'Premium project positioning',
+      ],
+      tone: 'amber',
+    },
+    {
+      titleLead: 'Detect electrical risk',
+      titleAccent: 'becomes downtime',
+      titlePrefix: 'before it',
+      capabilities: [
+        'Load visibility',
+        'Abnormal current draw',
+        'Safety alerts',
+        'Equipment behaviour',
+        'Multi-site dashboard',
+      ],
+      tone: 'coral',
+    },
+    {
+      titleLead: 'Power-quality intelligence',
+      titleAccent: 'critical infrastructure',
+      titlePrefix: 'for',
+      capabilities: [
+        'Voltage and current anomalies',
+        'THD / power factor',
+        'Event logging',
+        'Auditability',
+        'Early warning for critical circuits',
+      ],
+      tone: 'blue',
+    },
+    {
+      titleLead: 'One',
+      titleAccent: 'intelligence layer',
+      titlePrefix: 'across every store',
+      capabilities: [
+        'Site comparisons',
+        'Appliance health',
+        'Energy cost visibility',
+        'Fault alerts',
+        'Remote operations',
+      ],
+      tone: 'mint',
+    },
+  ],
+  partnerSection: {
+    accent: '#ad5849',
+    accentTarget: 'lead',
+    eyebrow: '',
+    titleLead: 'Consent-led energy intelligence',
+    titleAccent: 'for partners',
+    description:
+      'Ohm Native lets utilities, OEMs, service partners, and facility managers access structured electricity intelligence through a secure console and API bundle - only with user consent.',
+    items: [
+      {
+        title: 'Utility Console',
+        description: 'A Native-based interface for monitoring and analysis.',
+      },
+      {
+        title: 'REST APIs',
+        description:
+          '15-minute non-critical summaries, account data, analytics, and historical aggregates.',
+      },
+      {
+        title: 'MQTTS Streams',
+        description:
+          'Real-time critical data: faults, voltage, THD, leakage, arcing, neutral loss, and power-quality events.',
+      },
+      {
+        title: 'Consent Ledger',
+        description: 'Every data access is scoped, logged, and revocable.',
+      },
+      {
+        title: 'No Third-Party Control',
+        description: 'Partners receive intelligence. They do not control actuation.',
+      },
+    ],
+  },
+} as const
+
 export const MONITORING_PRODUCTS = [
   {
     accent: '#145599',

@@ -1,15 +1,21 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { Search, ShoppingBag } from 'lucide-react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
-import { MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
+import { Link, NavLink } from 'react-router-dom'
+import { ADD_ON_PRODUCTS, MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
+
+type OpenMenu = 'monitoring' | 'add-ons' | null
 
 function getNavTarget(link: string) {
   if (link === 'Ohm OS') {
-    return '/'
+    return '/ohm-os'
   }
 
   if (link === 'Smart DB') {
     return '/smart-db'
+  }
+
+  if (link === 'Solutions') {
+    return '/solutions'
   }
 
   const hash = link.toLowerCase().replaceAll(' ', '-')
@@ -18,28 +24,23 @@ function getNavTarget(link: string) {
 }
 
 function HeaderComponent() {
-  const location = useLocation()
-  const menuRef = useRef<HTMLDivElement>(null)
-  const [isMonitoringOpen, setIsMonitoringOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
+  const [openMenu, setOpenMenu] = useState<OpenMenu>(null)
 
   useEffect(() => {
-    setIsMonitoringOpen(false)
-  }, [location.pathname, location.hash])
-
-  useEffect(() => {
-    if (!isMonitoringOpen) {
+    if (!openMenu) {
       return undefined
     }
 
     function handlePointerDown(event: PointerEvent) {
-      if (!menuRef.current?.contains(event.target as Node)) {
-        setIsMonitoringOpen(false)
+      if (!navRef.current?.contains(event.target as Node)) {
+        setOpenMenu(null)
       }
     }
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
-        setIsMonitoringOpen(false)
+        setOpenMenu(null)
       }
     }
 
@@ -50,41 +51,60 @@ function HeaderComponent() {
       document.removeEventListener('pointerdown', handlePointerDown)
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [isMonitoringOpen])
+  }, [openMenu])
 
   return (
     <header className="site-header" aria-label="Primary navigation">
-      <Link className="site-header__brand" to="/" aria-label="Sustlabs home">
+      <Link className="site-header__brand" to="/" aria-label="Sustlabs home" onClick={() => setOpenMenu(null)}>
         SUSTLABS
       </Link>
 
-      <nav className="site-header__nav" aria-label="Main menu">
+      <nav className="site-header__nav" aria-label="Main menu" ref={navRef}>
         {NAV_LINKS.map((link) =>
           link === 'Monitoring' ? (
-            <div className="site-header__menu" key={link} ref={menuRef}>
+            <div className="site-header__menu" key={link}>
               <button
                 className="site-header__menu-trigger"
                 type="button"
-                aria-expanded={isMonitoringOpen}
+                aria-expanded={openMenu === 'monitoring'}
                 aria-haspopup="true"
-                onClick={() => setIsMonitoringOpen((isOpen) => !isOpen)}
+                onClick={() => setOpenMenu((currentMenu) => (currentMenu === 'monitoring' ? null : 'monitoring'))}
               >
                 {link}
               </button>
               <div
                 className="site-header__dropdown"
                 aria-label="Monitoring products"
-                data-open={isMonitoringOpen}
+                data-open={openMenu === 'monitoring'}
               >
                 {MONITORING_PRODUCTS.map((product) => (
-                  <NavLink to={product.path} key={product.path} onClick={() => setIsMonitoringOpen(false)}>
+                  <NavLink to={product.path} key={product.path} onClick={() => setOpenMenu(null)}>
+                    {product.navLabel}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          ) : link === 'Add-ons' ? (
+            <div className="site-header__menu" key={link}>
+              <button
+                className="site-header__menu-trigger"
+                type="button"
+                aria-expanded={openMenu === 'add-ons'}
+                aria-haspopup="true"
+                onClick={() => setOpenMenu((currentMenu) => (currentMenu === 'add-ons' ? null : 'add-ons'))}
+              >
+                {link}
+              </button>
+              <div className="site-header__dropdown" aria-label="Add-on products" data-open={openMenu === 'add-ons'}>
+                {ADD_ON_PRODUCTS.map((product) => (
+                  <NavLink to={product.path} key={product.path} onClick={() => setOpenMenu(null)}>
                     {product.navLabel}
                   </NavLink>
                 ))}
               </div>
             </div>
           ) : (
-            <Link to={getNavTarget(link)} key={link}>
+            <Link to={getNavTarget(link)} key={link} onClick={() => setOpenMenu(null)}>
               {link}
             </Link>
           ),

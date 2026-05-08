@@ -71,6 +71,113 @@ export type ImpactMetricProps = {
   variant: ImpactMetricVariant
 }
 
+export type PageAction = {
+  href: string
+  label: string
+  variant: ButtonVariant
+}
+
+export type OhmOsHeroSectionData = {
+  actions: readonly PageAction[]
+  description: string
+  titleAccent: string
+  titleLead: string
+  titleRest: string
+}
+
+export type OhmOsHeroSectionProps = {
+  section: OhmOsHeroSectionData
+}
+
+export type OhmOsApplication = BasicCardProps
+
+export type OhmOsApplicationsSectionData = {
+  description: string
+  eyebrow: string
+  items: readonly OhmOsApplication[]
+  titleAccent: string
+  titleLead: string
+}
+
+export type OhmOsApplicationsSectionProps = {
+  section: OhmOsApplicationsSectionData
+}
+
+export type OhmOsLicenseeSectionData = {
+  description: string
+  logoLabel: string
+  logos: readonly string[]
+  note: string
+  title: string
+}
+
+export type OhmOsLicenseeSectionProps = {
+  section: OhmOsLicenseeSectionData
+}
+
+export type OraHeroSectionData = {
+  action: PageAction
+  description: string
+  titleAccent: string
+  titleLead: string
+}
+
+export type OraHeroSectionProps = {
+  section: OraHeroSectionData
+}
+
+export type OraDeveloperBenefit = NumberedCardProps
+
+export type OraDeveloperSectionData = {
+  benefits: readonly OraDeveloperBenefit[]
+  description: string
+  titleAccent: string
+  titleLead: string
+}
+
+export type OraDeveloperSectionProps = {
+  section: OraDeveloperSectionData
+}
+
+export type OraEnablesSectionData = {
+  description: string
+  safetyDescription: string
+  safetyEyebrow: string
+  safetyTitle: string
+  titleAccent: string
+  titleLead: string
+}
+
+export type OraEnablesSectionProps = {
+  section: OraEnablesSectionData
+}
+
+export type SolutionPanelTone = 'violet' | 'amber' | 'coral' | 'blue' | 'mint'
+
+export type SolutionPanelData = {
+  capabilities: readonly string[]
+  description?: string
+  titleAccent: string
+  titleLead: string
+  titlePrefix?: string
+  tone: SolutionPanelTone
+}
+
+export type SolutionPanelProps = {
+  panel: SolutionPanelData
+}
+
+export type SolutionsPartnerItem = BasicCardProps
+
+export type SolutionsPartnerSectionData = ProductSectionHeadingProps & {
+  description: string
+  items: readonly SolutionsPartnerItem[]
+}
+
+export type SolutionsPartnerSectionProps = {
+  section: SolutionsPartnerSectionData
+}
+
 export type MonitoringPageData = {
   accent: string
   ctaSection: ProductCtaSection

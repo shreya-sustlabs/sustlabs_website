@@ -1378,6 +1378,516 @@
   line-height: 1;
 }
 
+.ohm-os-page {
+  min-height: calc(100svh - 70px);
+  background: #f3f3f5;
+  color: #a9abb1;
+}
+
+.ohm-os-hero {
+  display: grid;
+  min-height: 317px;
+  place-items: center;
+  padding: 48px 24px 62px;
+}
+
+.ohm-os-hero__inner {
+  width: min(100%, 770px);
+  text-align: center;
+}
+
+.ohm-os-hero h1 {
+  margin: 0;
+  color: #a9abb1;
+  font-size: clamp(46px, 5.25vw, 64px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.14;
+}
+
+.ohm-os-hero__accent {
+  color: #145599;
+}
+
+.ohm-os-hero p {
+  margin: 28px auto 0;
+  color: #8e9096;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.ohm-os-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.ohm-os-hero .button,
+.ora-add-on-hero .button {
+  min-width: auto;
+  min-height: 42px;
+  border-radius: 8px;
+  padding: 0 22px;
+  font-size: 13px;
+}
+
+.ohm-os-hero .button--primary,
+.ora-add-on-hero .button--primary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.ohm-os-hero .button--secondary {
+  border-color: #aeb2bb;
+  color: #4f5258;
+}
+
+.ora-add-on-page {
+  min-height: calc(100svh - 70px);
+  background: #f3f3f5;
+  color: #8e9096;
+}
+
+.ora-add-on-hero__media {
+  min-height: 323px;
+  background: #020304;
+}
+
+.ora-add-on-hero__content {
+  width: min(100%, 480px);
+  margin-left: clamp(28px, 12.4vw, 128px);
+  padding: 62px 24px 72px 0;
+}
+
+.ora-add-on-hero h1 {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  color: #a9abb1;
+  font-size: clamp(36px, 5.2vw, 55px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.ora-add-on-hero__accent {
+  color: #145599;
+}
+
+.ora-add-on-hero p {
+  margin: 18px 0 0;
+  color: #8e9096;
+  font-size: 18px;
+  line-height: 1.24;
+}
+
+.ora-add-on-hero .button {
+  margin-top: 28px;
+}
+
+.ora-add-on-developers {
+  background: #020304;
+  color: #f8f8f9;
+}
+
+.ora-add-on-developers__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(280px, 365px);
+  gap: clamp(72px, 13vw, 150px);
+  width: min(100%, 760px);
+  margin-inline: auto;
+  padding: 60px 24px 58px;
+}
+
+.ora-add-on-developers__heading h2 {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  color: #a9abb1;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.ora-add-on-developers__heading h2 span:first-child {
+  color: #f5a51d;
+}
+
+.ora-add-on-developers__heading p {
+  margin: 22px 0 0;
+  color: #9a9ba0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ora-add-on-developers__benefits {
+  display: grid;
+  gap: 28px;
+}
+
+.ora-add-on-benefit__number {
+  margin: 0 0 8px;
+  color: #a9abb1;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.ora-add-on-benefit h3 {
+  margin: 0 0 8px;
+  color: #f8f8f9;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.ora-add-on-benefit p:last-child {
+  margin: 0;
+  color: #85878c;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ora-add-on-enables {
+  background: #f3f3f5;
+  color: #a9abb1;
+}
+
+.ora-add-on-enables__heading {
+  width: min(100%, 520px);
+  margin-inline: auto;
+  padding: 70px 24px 68px;
+  text-align: center;
+}
+
+.ora-add-on-enables__heading h2 {
+  margin: 0;
+  color: #a9abb1;
+  font-size: clamp(42px, 5.8vw, 54px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.ora-add-on-enables__heading h2 span {
+  color: #197238;
+}
+
+.ora-add-on-enables__heading p {
+  margin: 18px auto 0;
+  color: #a9abb1;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.ora-add-on-enables__visual {
+  min-height: 303px;
+  background: #155c64;
+}
+
+.ora-add-on-enables__safety {
+  background: #020304;
+  padding: 74px clamp(24px, 12vw, 120px) 72px;
+  text-align: center;
+}
+
+.ora-add-on-enables__safety h3 {
+  margin: 0;
+  color: #f8f8f9;
+  font-size: clamp(40px, 5.4vw, 54px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.ora-add-on-enables__safety p {
+  max-width: 520px;
+  margin: 20px auto 0;
+  color: #9a9ba0;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.ora-add-on-enables__safety p:last-child {
+  color: #f5a51d;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.solutions-page {
+  min-height: calc(100svh - 70px);
+  background: #020304;
+  color: #f8f8f9;
+}
+
+.solution-panel__hero {
+  background: #f3f3f5;
+  color: #a9abb1;
+}
+
+.solution-panel__heading {
+  width: min(100%, 760px);
+  margin-inline: auto;
+  padding: 72px 24px 74px;
+  text-align: center;
+}
+
+.solution-panel__heading h2 {
+  margin: 0;
+  color: #a9abb1;
+  font-size: clamp(42px, 5.2vw, 58px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
+
+.solution-panel--violet .solution-panel__lead {
+  color: #7146dd;
+}
+
+.solution-panel--amber .solution-panel__lead,
+.solution-panel--amber .solution-panel__capabilities li {
+  color: #f5a51d;
+}
+
+.solution-panel--coral .solution-panel__lead,
+.solution-panel--coral .solution-panel__capabilities li {
+  color: #dd3f36;
+}
+
+.solution-panel--blue .solution-panel__lead,
+.solution-panel--blue .solution-panel__capabilities li {
+  color: #145599;
+}
+
+.solution-panel--mint .solution-panel__accent,
+.solution-panel--mint .solution-panel__capabilities li {
+  color: #8fe3bd;
+}
+
+.solution-panel__heading p {
+  max-width: 700px;
+  margin: 28px auto 0;
+  color: #85878c;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.solution-panel__capabilities {
+  display: grid;
+  min-height: 470px;
+  place-items: center;
+  padding: 54px 24px 66px;
+  background: #020304;
+}
+
+.solution-panel__capabilities ul {
+  display: grid;
+  gap: 34px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.solution-panel__capabilities li {
+  color: #b9a5ef;
+  font-size: clamp(34px, 4.1vw, 46px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.solutions-partner-section {
+  background: #f3f3f5;
+  color: #85878c;
+  padding: 82px 24px 72px;
+  text-align: center;
+}
+
+.solutions-partner-section .product-section-heading {
+  width: min(100%, 620px);
+  padding-inline: 0;
+}
+
+.solutions-partner-section .product-section-heading h2 {
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.solutions-partner-section__description {
+  max-width: 610px;
+  margin: 22px auto 0;
+  color: #85878c;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.solutions-partner-section__items {
+  display: grid;
+  gap: 34px;
+  width: min(100%, 630px);
+  margin: 66px auto 0;
+}
+
+.solutions-partner-item h3 {
+  margin: 0 0 8px;
+  color: #ad5849;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.solutions-partner-item p {
+  max-width: 610px;
+  margin: 0 auto;
+  color: #85878c;
+  font-size: 22px;
+  line-height: 1.42;
+}
+
+.ohm-os-applications {
+  background: #f3f3f5;
+  color: #8e9096;
+}
+
+.ohm-os-applications__intro {
+  background: #020304;
+  padding: 54px 24px 52px;
+  text-align: center;
+}
+
+.ohm-os-applications__intro h2 {
+  margin: 0;
+  color: #a9abb1;
+  font-size: clamp(36px, 4.8vw, 52px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.ohm-os-applications__intro h2 span,
+.ohm-os-application h3 {
+  color: #24a595;
+}
+
+.ohm-os-applications__eyebrow {
+  margin: 22px 0 0;
+  color: #9b9ca2;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ohm-os-applications__intro>p:last-child {
+  max-width: 640px;
+  margin: 34px auto 0;
+  color: #b0b1b6;
+  font-size: 19px;
+  line-height: 1.28;
+}
+
+.ohm-os-applications__list {
+  display: grid;
+  gap: 35px;
+  width: min(100%, 560px);
+  margin-inline: auto;
+  padding: 55px 24px 72px;
+  text-align: center;
+}
+
+.ohm-os-application h3 {
+  margin: 0 0 8px;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.18;
+}
+
+.ohm-os-application p {
+  margin: 0;
+  color: #85878c;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.ohm-os-licensees {
+  background: #f9f9fa;
+  color: #34363a;
+  text-align: center;
+}
+
+.ohm-os-licensees__inner {
+  width: min(100%, 640px);
+  margin-inline: auto;
+  padding: 66px 24px 70px;
+}
+
+.ohm-os-licensees h2 {
+  margin: 0;
+  color: #34363a;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
+
+.ohm-os-licensees__inner>p {
+  max-width: 460px;
+  margin: 18px auto 0;
+  color: #85878c;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.ohm-os-licensees__logos {
+  margin-top: 28px;
+}
+
+.ohm-os-licensees__logos p {
+  margin: 0;
+  color: #020304;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.ohm-os-licensees__logos span {
+  display: block;
+}
+
+.ohm-os-licensees__logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.ohm-os-licensees__logo-grid span {
+  display: block;
+  height: 34px;
+  border-radius: 3px;
+  background: #38393b;
+}
+
+.ohm-os-licensees__note {
+  background: #e2e3e5;
+  padding: 46px 24px;
+}
+
+.ohm-os-licensees__note p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #a5a8ae;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
 .intelligence-section {
   overflow: hidden;
   padding: 72px 0 110px;
