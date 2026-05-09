@@ -574,6 +574,7 @@ export const MONITORING_PRODUCTS = [
       accent: 'var(--black400)',
       eyebrow: '',
       titleLead: 'o4 Ideal Use',
+      titleAccent: '',
       cards: [
         {
           number: '01.',
