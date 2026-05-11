@@ -9,7 +9,7 @@ function SignalLayerSectionComponent() {
         <div className="signal-layer__heading">
           <p className="signal-layer__eyebrow">{SIGNAL_LAYER_CONTENT.eyebrow}</p>
           <h2>
-            {SIGNAL_LAYER_CONTENT.titleLead}{' '}
+            {SIGNAL_LAYER_CONTENT.titleLead}
             <span>{SIGNAL_LAYER_CONTENT.titleAccent}</span>
           </h2>
           <p>{SIGNAL_LAYER_CONTENT.description}</p>

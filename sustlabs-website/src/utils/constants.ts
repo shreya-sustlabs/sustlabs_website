@@ -1130,13 +1130,13 @@ export const HERO_CONTENT = {
     "See what is using power, catch electrical risk early and make better decisions without reworking your building.",
   actions: [
     {
-      label: 'Get Ohm Assistant',
-      href: '#assistant',
+      label: 'Get Ohm',
+      href: 'https://ultron.lifestylecommerce.in/our-products.html?cat=4',
       variant: 'primary',
     },
     {
       label: 'Explore Ohm OS',
-      href: '#ohm-os',
+      href: '/ohm-os',
       variant: 'secondary',
     },
   ],
@@ -1189,7 +1189,7 @@ export const CORE_FEATURES = [
 
 export const SIGNAL_LAYER_CONTENT = {
   eyebrow: 'INTELLIGENCE LAYER',
-  titleLead: "Your home's electrical heartbeat,",
+  titleLead: "Your home's electrical heartbeat, ",
   titleAccent: 'decoded.',
   description:
     'Ohm OS reads high-frequency electrical signals and translates them into appliance insights, safety alerts, predictions, and decisions.',

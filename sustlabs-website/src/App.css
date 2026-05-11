@@ -291,7 +291,7 @@
   margin: 0 0 35px;
   padding: 2px 20px;
   border-radius: 9px;
-  background: #373839;
+  background: var(--black400);
   color: var(--black300);
   font-size: 16px;
   font-weight: 500;
@@ -322,8 +322,7 @@
 .hero__description {
   max-width: 720px;
   margin: 33px auto 0;
-  /* color: #888888; */
-  color: var(--black400);
+  color: var(--grey);
   font-size: clamp(20px, 1.65vw, 24px);
   line-height: 1.45;
 }
@@ -338,7 +337,7 @@
 
 .button {
   display: inline-flex;
-  min-width: 184px;
+  min-width: 220px;
   min-height: 60px;
   align-items: center;
   justify-content: center;
@@ -364,6 +363,7 @@
 .button--primary {
   background: var(--white);
   color: var(--black500);
+  width: 200;
 }
 
 .button--primary:hover {
@@ -2440,7 +2440,7 @@
 .signal-layer__heading>p:last-child {
   max-width: 1030px;
   margin: 40px 0 0;
-  color: var(--black300);
+  color: var(--grey);
   font-size: clamp(22px, 1.75vw, 27px);
   line-height: 1.42;
 }
@@ -3355,23 +3355,22 @@
 }
 
 .process-step-card {
-  min-height: 224px;
-  padding: 46px 18px 26px;
-  border: 1px solid #202124;
+  min-height: 160px;
+  padding: 24px 14px 24px;
+  /* border: 1px solid #b9bdc3; */
   border-radius: 8px;
-  background: #020304;
-  color: var(--white);
+  background: var(--black500);
 }
 
 .process-step-card__number {
-  margin: 0 0 17px;
+  margin: 0 0 14px;
   color: var(--white);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1;
 }
 
 .process-step-card h3 {
-  margin: 0 0 13px;
+  margin: 0 0 14px;
   color: var(--white);
   font-size: 20px;
   font-weight: 700;
@@ -3682,11 +3681,11 @@
   }
 
   .signal-layer__inner {
-    padding: 86px 28px 92px;
+    padding: 50px 28px 50px;
   }
 
   .signal-layer__heading h2 {
-    font-size: clamp(48px, 9vw, 68px);
+    font-size: clamp(50px, 9vw, 70px);
   }
 
   .signal-layer__steps {
@@ -3696,7 +3695,7 @@
   }
 
   .signal-step {
-    max-width: 620px;
+    max-width: 650px;
   }
 
   .setup-section__inner {
