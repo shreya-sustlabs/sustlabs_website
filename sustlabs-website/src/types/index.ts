@@ -105,9 +105,10 @@ export type OhmOsApplicationsSectionProps = {
 
 export type OhmOsLicenseeSectionData = {
   description: string
-  logoLabel: string
-  logos: readonly string[]
-  note: string
+  logos: readonly {
+    id: string
+    label: string
+  }[]
   title: string
 }
 

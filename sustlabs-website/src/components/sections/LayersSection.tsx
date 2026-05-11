@@ -1,6 +1,24 @@
 import { memo } from 'react'
-import { LAYERS_CONTENT, SYSTEM_LAYERS } from '../../utils/constants'
-import { LayerCard } from '../ui/LayerCard'
+import assistantLayerImage from '../../assets/Group 1.png'
+import nativeLayerImage from '../../assets/Group 2.png'
+import { LAYERS_CONTENT } from '../../utils/constants'
+
+const LAYER_SHOWCASE = [
+  {
+    title: 'Ohm Assistant',
+    description:
+      'The consumer-facing app for energy visibility, safety alerts, appliance intelligence, and bill clarity.',
+    image: assistantLayerImage,
+    tone: 'light',
+  },
+  {
+    title: 'Ohm Native',
+    description:
+      'The core intelligence and data exchange layer for dashboards, APIs, utilities, and enterprise workflows.',
+    image: nativeLayerImage,
+    tone: 'dark',
+  },
+] as const
 
 function LayersSectionComponent() {
     return (
@@ -16,13 +34,17 @@ function LayersSectionComponent() {
                 </div>
 
                 <div className="layers-grid" aria-label="Ohm OS product layers">
-                    {SYSTEM_LAYERS.map((layer) => (
-                        <LayerCard
+                    {LAYER_SHOWCASE.map((layer) => (
+                        <article
+                            className={`layer-card layer-card--${layer.tone}`}
                             key={layer.title}
-                            title={layer.title}
-                            description={layer.description}
-                            tone={layer.tone}
-                        />
+                        >
+                            <div className="layer-card__copy">
+                                <h3>{layer.title}</h3>
+                                <p>{layer.description}</p>
+                            </div>
+                            <img src={layer.image} alt="" className="layer-card__image" />
+                        </article>
                     ))}
                 </div>
             </div>

@@ -7,20 +7,15 @@ function OhmOsLicenseeSectionComponent({ section }: OhmOsLicenseeSectionProps) {
       <div className="ohm-os-licensees__inner">
         <h2 id="ohm-os-licensees-title">{section.title}</h2>
         <p>{section.description}</p>
-        <div className="ohm-os-licensees__logos" aria-label="Licensee partner logos">
-          <p>
-            <span>{section.logoLabel}</span>
-            {section.logos.join(' · ')}
-          </p>
-          <div className="ohm-os-licensees__logo-grid" aria-hidden="true">
-            {section.logos.map((logo) => (
-              <span key={logo} />
-            ))}
-          </div>
+
+        <div className="ohm-os-licensees__logo-grid" aria-label="Licensee partner logos">
+          {section.logos.map((logo) => (
+            <div className={`ohm-os-licensees__logo ohm-os-licensees__logo--${logo.id}`} key={logo.id}>
+              {logo.id === 'legrand' ? <span className="ohm-os-licensees__mark" aria-hidden="true">▰▱</span> : null}
+              <span>{logo.label}</span>
+            </div>
+          ))}
         </div>
-      </div>
-      <div className="ohm-os-licensees__note">
-        <p>{section.note}</p>
       </div>
     </section>
   )

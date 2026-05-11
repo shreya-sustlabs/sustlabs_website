@@ -1,7 +1,16 @@
 import { memo } from 'react'
+import applianceVisibilityImage from '../../assets/324.png'
+import safetyAlertsImage from '../../assets/iMockup - iPhone 15.png'
+import liveTrackingImage from '../../assets/iMockup - iPhone 14.png'
 import { CORE_FEATURES, INTELLIGENCE_CONTENT } from '../../utils/constants'
 import { CardRail } from '../ui/CardRail'
 import { FeatureCard } from '../ui/FeatureCard'
+
+const FEATURE_IMAGES = {
+  'Live Tracking': liveTrackingImage,
+  'Appliance-Level Visibility': applianceVisibilityImage,
+  'Advanced Safety': safetyAlertsImage,
+} as const
 
 function IntelligenceSectionComponent() {
   return (
@@ -28,7 +37,12 @@ function IntelligenceSectionComponent() {
 
       <CardRail className="intelligence-section__features" label="Core Ohm OS features">
         {CORE_FEATURES.map((item) => (
-          <FeatureCard description={item.description} key={item.title} title={item.title} />
+          <FeatureCard
+            description={item.description}
+            image={FEATURE_IMAGES[item.title]}
+            key={item.title}
+            title={item.title}
+          />
         ))}
       </CardRail>
     </section>

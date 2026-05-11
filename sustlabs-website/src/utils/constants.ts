@@ -113,10 +113,12 @@ export const OHM_OS_LICENSEE_CONTENT = {
   title: 'Licensee Partners',
   description:
     'For electrical and infrastructure brands, Ohm OS can extend intelligence into products, systems, and connected experiences beyond a single deployment.',
-  logoLabel: 'Logos:',
-  logos: ['Legrand', 'Panasonic', 'INEPRO', 'Schneider Electric'],
-  note:
-    'Structured intelligence can also be shared with connected systems and partners where needed, with clear boundaries around access and control.',
+  logos: [
+    { id: 'legrand', label: 'legrand' },
+    { id: 'panasonic', label: 'Panasonic' },
+    { id: 'inepro', label: 'inepro' },
+    { id: 'schneider', label: 'Schneider Electric' },
+  ],
 } as const
 
 export const ORA_ADD_ON_PAGE_CONTENT = {
@@ -1176,16 +1178,12 @@ export const CORE_FEATURES = [
     description: 'See electricity usage as it happens.',
   },
   {
-    title: 'Bill Clarity',
-    description: 'Know your cost before the bill arrives.',
+    title: 'Appliance-Level Visibility',
+    description: 'See which appliances are driving your usage.',
   },
   {
-    title: 'Waste Detection',
-    description: 'Find hidden standby loads and inefficient appliances.',
-  },
-  {
-    title: 'Risk Alerts',
-    description: 'Spot unusual patterns before they become issues.',
+    title: 'Advanced Safety',
+    description: 'Catch voltage, leakage, arcing, and fault risks early.',
   },
 ] as const
 
@@ -1530,8 +1528,8 @@ export const HOW_IT_WORKS_STEPS = [
   },
   {
     number: '04.',
-    title: 'Guide',
-    description: 'Send alerts, insights, recommendations, and control signals where supported.',
+    title: 'Act',
+    description: 'Move from insight to response with alerts, recommendations, and supported control actions.',
   },
 ] as const
 

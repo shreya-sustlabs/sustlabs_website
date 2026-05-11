@@ -1,13 +1,11 @@
 import { memo } from 'react'
+import safetyDiagramImage from '../../assets/0987654.png'
 import {
   HOW_IT_WORKS_CONTENT,
   HOW_IT_WORKS_STEPS,
-  SAFETY_CARDS,
   SAFETY_CONTENT,
 } from '../../utils/constants'
-import { CardRail } from '../ui/CardRail'
 import { ProcessStepCard } from '../ui/ProcessStepCard'
-import { SafetyCard } from '../ui/SafetyCard'
 
 function VisibilitySectionComponent() {
   return (
@@ -42,11 +40,9 @@ function VisibilitySectionComponent() {
         </div>
       </div>
 
-      <CardRail className="visibility-section__safety-rail" label="Electrical safety detections">
-        {SAFETY_CARDS.map((card) => (
-          <SafetyCard description={card.description} key={card.title} title={card.title} />
-        ))}
-      </CardRail>
+      <div className="visibility-section__safety-graphic">
+        <img src={safetyDiagramImage} alt="Electrical safety detections around Ohm intelligence" />
+      </div>
     </section>
   )
 }
