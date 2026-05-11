@@ -1,23 +1,23 @@
 import { memo } from 'react'
 import assistantLayerImage from '../../assets/Group 1.png'
-import nativeLayerImage from '../../assets/Group 2.png'
+import nativeLayerImage from '../../assets/Group.png'
 import { LAYERS_CONTENT } from '../../utils/constants'
 
 const LAYER_SHOWCASE = [
-  {
-    title: 'Ohm Assistant',
-    description:
-      'The consumer-facing app for energy visibility, safety alerts, appliance intelligence, and bill clarity.',
-    image: assistantLayerImage,
-    tone: 'light',
-  },
-  {
-    title: 'Ohm Native',
-    description:
-      'The core intelligence and data exchange layer for dashboards, APIs, utilities, and enterprise workflows.',
-    image: nativeLayerImage,
-    tone: 'dark',
-  },
+    {
+        title: 'Ohm Assistant',
+        description:
+            'The consumer-facing app for energy visibility, safety alerts, appliance intelligence, and bill clarity.',
+        image: assistantLayerImage,
+        tone: 'light',
+    },
+    {
+        title: 'Ohm Native',
+        description:
+            'The core intelligence and data exchange layer for dashboards, APIs, utilities, and enterprise workflows.',
+        image: nativeLayerImage,
+        tone: 'dark',
+    },
 ] as const
 
 function LayersSectionComponent() {

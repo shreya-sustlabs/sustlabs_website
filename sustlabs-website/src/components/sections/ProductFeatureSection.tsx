@@ -5,11 +5,12 @@ import { ProductSectionHeading } from '../ui/ProductSectionHeading'
 
 type ProductFeatureSectionProps = {
   section: ProductFeatureSectionData
+  variant?: 'smart-db'
 }
 
-function ProductFeatureSectionComponent({ section }: ProductFeatureSectionProps) {
+function ProductFeatureSectionComponent({ section, variant }: ProductFeatureSectionProps) {
   return (
-    <section className="product-feature-section" id="features">
+    <section className={`product-feature-section${variant ? ` product-feature-section--${variant}` : ''}`} id="features">
       <ProductSectionHeading
         accent={section.accent}
         accentTarget={section.accentTarget}

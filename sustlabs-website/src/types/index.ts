@@ -250,6 +250,9 @@ export type MonitoringHeroSectionProps = {
   actions: readonly ProductHeroAction[]
   description: string
   eyebrow: string
+  imageAlt?: string
+  imageSrc?: string
+  imageVariant?: 'o3' | 'o4' | 'smart-db'
   kicker: string
   titleAccent: string
   titleLead: string

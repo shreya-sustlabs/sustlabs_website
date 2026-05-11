@@ -22,15 +22,28 @@ function SmartDbTextStackSectionComponent({
     variant === 'project' ? 'smart-db-page__project-item' : 'smart-db-page__stack-item'
   const leadStyle = section.accentTarget === 'lead' ? { color: section.accent } : undefined
   const accentStyle = section.accentTarget === 'lead' ? undefined : { color: section.accent }
+  const stackLeadWords = section.titleLead.split(' ')
+  const stackLeadFirstWord = stackLeadWords[0]
+  const stackLeadRest = stackLeadWords.slice(1).join(' ')
 
   return (
     <section className={sectionClass} aria-labelledby={headingId}>
       <div className={innerClass}>
         <SmartDbPill>{section.eyebrow}</SmartDbPill>
-        <h2 id={headingId}>
-          <span style={leadStyle}>{section.titleLead}</span>{' '}
-          <span style={accentStyle}>{section.titleAccent}</span>
-        </h2>
+        {variant === 'stack' ? (
+          <h2 id={headingId}>
+            <span className="smart-db-page__stack-title-muted">{stackLeadFirstWord}</span>{' '}
+            <span className="smart-db-page__stack-title-strong">{stackLeadRest}</span>
+            <span className="smart-db-page__stack-title-muted smart-db-page__stack-title-line">
+              {section.titleAccent}
+            </span>
+          </h2>
+        ) : (
+          <h2 id={headingId}>
+            <span style={leadStyle}>{section.titleLead}</span>{' '}
+            <span style={accentStyle}>{section.titleAccent}</span>
+          </h2>
+        )}
         <div className={listClass}>
           {section.cards.map((item) => (
             <article className={itemClass} key={item.title}>

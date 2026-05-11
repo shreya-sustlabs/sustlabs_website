@@ -7,6 +7,9 @@ function MonitoringHeroSectionComponent({
   actions,
   description,
   eyebrow,
+  imageAlt = '',
+  imageSrc,
+  imageVariant,
   kicker,
   titleAccent,
   titleLead,
@@ -29,6 +32,11 @@ function MonitoringHeroSectionComponent({
           ))}
         </div>
       </div>
+      {imageSrc ? (
+        <div className={`monitoring-hero__media monitoring-hero__media--${imageVariant ?? 'default'}`}>
+          <img src={imageSrc} alt={imageAlt} />
+        </div>
+      ) : null}
     </section>
   )
 }

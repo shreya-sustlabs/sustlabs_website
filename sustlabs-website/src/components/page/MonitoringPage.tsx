@@ -1,4 +1,6 @@
 import { memo } from 'react'
+import o4HeroImage from '../../assets/image 16.png'
+import o3HeroImage from '../../assets/image 17.png'
 import type { MonitoringPageData } from '../../types'
 import { MonitoringHeroSection } from '../sections/MonitoringHeroSection'
 import { MonitoringIntroSection } from '../sections/MonitoringIntroSection'
@@ -11,7 +13,22 @@ type MonitoringPageProps = {
   data: MonitoringPageData
 }
 
+const MONITORING_HERO_IMAGES = {
+  '/monitoring/o3-energy-visibility': {
+    alt: 'o3 energy monitoring device',
+    src: o3HeroImage,
+    variant: 'o3',
+  },
+  '/monitoring/o4-electrical-safety': {
+    alt: 'o4 electrical safety device',
+    src: o4HeroImage,
+    variant: 'o4',
+  },
+} as const
+
 function MonitoringPageComponent({ data }: MonitoringPageProps) {
+  const heroImage = MONITORING_HERO_IMAGES[data.path as keyof typeof MONITORING_HERO_IMAGES]
+
   return (
     <main className="monitoring-page">
       <MonitoringIntroSection section={data.introSection} />
@@ -20,6 +37,9 @@ function MonitoringPageComponent({ data }: MonitoringPageProps) {
         actions={data.heroActions}
         description={data.heroDescription}
         eyebrow={data.eyebrow}
+        imageAlt={heroImage?.alt}
+        imageSrc={heroImage?.src}
+        imageVariant={heroImage?.variant}
         kicker={data.heroKicker}
         titleAccent={data.heroAccent}
         titleLead={data.heroLead}

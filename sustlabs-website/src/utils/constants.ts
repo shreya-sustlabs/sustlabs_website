@@ -838,9 +838,10 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
           'Enable switching, scenes, schedules, emergency cutoff, and load prioritization where supported.',
       },
       {
-        eyebrow: 'Autonomy',
-        title: 'Keep decisions local',
-        description: 'Run edge decisions for safety, backup, and load control inside the distribution layer.',
+        eyebrow: 'Intelligence',
+        title: 'Learn from every event',
+        description:
+          'Use edge ML and cloud analytics to improve safety, detection, and recommendations over time.',
       },
     ],
   },
@@ -916,8 +917,8 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     accentTarget: 'lead',
     cards: [
       {
-        eyebrow: 'Backup Scenes',
-        title: 'Define what stays on during outages',
+        eyebrow: 'Demand Caps',
+        title: 'Help manage sanctioned load, peak demand, or time-of-use constraints',
         tone: 'teal',
       },
       {
@@ -926,19 +927,14 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
         tone: 'violet',
       },
       {
-        eyebrow: 'Solar Self-Consumption',
-        title: 'Support policies that use solar energy more intelligently',
-        tone: 'amber',
-      },
-      {
-        eyebrow: 'Demand Caps',
-        title: 'Help manage sanctioned load, peak demand, or time-of-use constraints',
+        eyebrow: 'EV Smart Charging',
+        title: 'Coordinate EV load with home demand and available supply',
         tone: 'coral',
       },
       {
-        eyebrow: 'EV Smart Charging',
-        title: 'Coordinate EV load with home demand and available supply',
-        tone: 'blue',
+        eyebrow: 'Solar Self-Consumption',
+        title: 'Support policies that use solar energy more intelligently',
+        tone: 'amber',
       },
     ],
   },
