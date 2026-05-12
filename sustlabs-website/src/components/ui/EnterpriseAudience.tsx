@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import type { EnterpriseAudienceProps } from '../../types'
 
-function EnterpriseAudienceComponent({ description, number, title }: EnterpriseAudienceProps) {
+function EnterpriseAudienceComponent({ description, title }: EnterpriseAudienceProps) {
     return (
         <article className="enterprise-audience">
             {/* <p className="enterprise-audience__number">{number}</p> */}

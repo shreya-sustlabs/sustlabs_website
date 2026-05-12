@@ -1,11 +1,8 @@
 import { memo } from 'react'
 import safetyDiagramImage from '../../assets/home4.webp'
 import {
-  HOW_IT_WORKS_CONTENT,
-  HOW_IT_WORKS_STEPS,
   SAFETY_CONTENT,
 } from '../../utils/constants'
-import { ProcessStepCard } from '../ui/ProcessStepCard'
 
 function VisibilitySectionComponent() {
   return (

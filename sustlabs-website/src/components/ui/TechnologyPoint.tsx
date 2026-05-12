@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import type { TechnologyPointProps } from '../../types'
 
-function TechnologyPointComponent({ description, number, title }: TechnologyPointProps) {
+function TechnologyPointComponent({ description, title }: TechnologyPointProps) {
     return (
         <article className="technology-point">
             {/* <p className="technology-point__number">{number}</p> */}

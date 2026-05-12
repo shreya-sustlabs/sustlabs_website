@@ -5,7 +5,6 @@ import type { MonitoringPageData } from '../../types'
 import { MonitoringHeroSection } from '../sections/MonitoringHeroSection'
 import { MonitoringIntroSection } from '../sections/MonitoringIntroSection'
 import { ProductCtaSection } from '../sections/ProductCtaSection'
-import { ProductDetailSection } from '../sections/ProductDetailSection'
 import { ProductFeatureSection } from '../sections/ProductFeatureSection'
 import { ProductUseCaseSection } from '../sections/ProductUseCaseSection'
 
