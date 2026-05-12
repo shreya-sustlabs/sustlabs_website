@@ -20,7 +20,6 @@ function SmartDbSafetySectionComponent({ section }: SmartDbSafetySectionProps) {
         <div className="smart-db-page__safety-list">
           {section.cards.map((item) => (
             <article className="smart-db-page__safety-item" key={item.title}>
-              <p>{item.number}</p>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>

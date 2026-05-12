@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { Search, ShoppingBag } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
+import logo from '../../assets/logo.png'
 import { ADD_ON_PRODUCTS, MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
 
 type OpenMenu = 'monitoring' | 'add-ons' | null
@@ -59,9 +60,17 @@ function HeaderComponent() {
 
   return (
     <header className="site-header" aria-label="Primary navigation">
-      <Link className="site-header__brand" to="/" aria-label="Sustlabs home" onClick={() => setOpenMenu(null)}>
+      {/* <Link className="site-header__brand" to="/" aria-label="Sustlabs home" onClick={() => setOpenMenu(null)}>
         SUSTLABS
-      </Link>
+      </Link> */}
+      <section className="logo-outer" aria-label="sustlab logo">
+        <Link to="/" aria-label="Sustlabs home" onClick={() => setOpenMenu(null)}>
+          <div className="logo-outer-div">
+            <img src={logo} alt="sustlabs" />
+          </div>
+        </Link>
+      </section>
+
 
       <nav className="site-header__nav" aria-label="Main menu" ref={navRef}>
         {NAV_LINKS.map((link) =>
@@ -115,14 +124,14 @@ function HeaderComponent() {
         )}
       </nav>
 
-      <div className="site-header__actions" aria-label="Quick actions">
+      {/* <div className="site-header__actions" aria-label="Quick actions">
         <button className="icon-button" type="button" aria-label="Search">
           <Search aria-hidden="true" size={22} strokeWidth={1.75} />
         </button>
         <button className="icon-button" type="button" aria-label="Open bag">
           <ShoppingBag aria-hidden="true" size={21} strokeWidth={1.75} />
         </button>
-      </div>
+      </div> */}
     </header>
   )
 }

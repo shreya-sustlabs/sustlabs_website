@@ -793,38 +793,37 @@ export const SMART_DB_PRODUCT: MonitoringPageData = {
 
 export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
   introSection: {
-    eyebrow: 'Smart DB by Sustlabs',
-    titleLead: 'Smart DB is the',
-    titleAccent: 'physical layer of Ohm OS',
+    eyebrow: 'Smart DB',
+    titleLead: 'Bring intelligence',
+    titleAccent: 'into the DB',
     accent: 'var(--black400)',
     descriptions: [
-      'Smart DB brings Sustlabs intelligence into the electrical distribution board - the place where power is divided, protected, monitored, and controlled. Instead of treating the DB as a passive box, Smart DB turns it into an intelligent infrastructure layer for homes, buildings, and energy ecosystems.',
+      'Turn your electrical panel from a passive black box into a readable, responsive layer for monitoring, safety, control, and energy decisions.',
     ],
   },
   heroSection: {
     accent: 'var(--terra500)',
     eyebrow: 'Smart DB',
-    kicker: 'Smart DB by Sustlabs',
-    titleLead: 'The electrical panel',
-    titleAccent: 'becomes intelligent',
-    description:
-      'Smart DB combines monitoring, safety detection, circuit-level intelligence, backup orchestration, and edge decision-making inside the distribution layer.',
+    kicker: 'Smart DB',
+    titleLead: 'The electrical panel,',
+    titleAccent: 'reimagined',
+    description: 'Circuit awareness, safety intelligence, and control readiness, all into one place where power is divided, protected, and managed.',
     actions: [
+      // {
+      //   label: 'Explore Smart DB',
+      //   href: '#features',
+      //   variant: 'primary',
+      // },
       {
-        label: 'Explore Smart DB',
-        href: '#features',
-        variant: 'primary',
-      },
-      {
-        label: 'Talk to Sustlabs',
-        href: '#contact',
+        label: 'Talk to sales',
+        href: '/support',
         variant: 'secondary',
       },
     ],
   },
   promiseSection: {
     accent: 'var(--black400)',
-    eyebrow: 'Core promise',
+    eyebrow: 'CORE PROMISE',
     titleLead: 'From passive protection to',
     titleAccent: 'active intelligence',
     cards: [
@@ -836,13 +835,13 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
       {
         eyebrow: 'Safety',
         title: 'Detect abnormal electrical behaviour',
-        description: 'Identify arc signatures, overloads, over temperature, and unsafe patterns.',
+        description: 'Identify Anomalies, overloads and unsafe patterns.',
       },
       {
         eyebrow: 'Control',
         title: 'Act at the circuit level',
         description:
-          'Enable switching, scenes, schedules, emergency cutoff, and load prioritization where supported.',
+          'Enable switching, isolation, schedules, and load priority where enabled.',
       },
       {
         eyebrow: 'Intelligence',
@@ -886,12 +885,11 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     eyebrow: 'Safety',
     titleLead: 'Built for safety',
     titleAccent: 'critical intelligence',
-    description:
-      'Smart DB is designed to detect, classify, log, and act on critical events with clear separation between detection, notification, and actuation.',
+    description: 'Electrical anomalies detection using high-frequency signatures.',
     cards: [
       {
         number: '01.',
-        title: 'Arc Detection',
+        title: 'Fault Detection',
         description: 'Series and parallel arc detection using high-frequency signatures.',
       },
       {
@@ -909,11 +907,6 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
         title: 'Safe Actuation',
         description: 'Isolation commands are configurable and auditable.',
       },
-      {
-        number: '05.',
-        title: 'Monthly Self-Test',
-        description: 'The arc engine includes self-test logic and health reporting in the 5th Gen PRD.',
-      },
     ],
   },
   energySection: {
@@ -925,12 +918,12 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     cards: [
       {
         eyebrow: 'Demand Caps',
-        title: 'Help manage sanctioned load, peak demand, or time-of-use constraints',
+        title: 'Manages sanctioned load, peak demand, and time-of-use limits.',
         tone: 'teal',
       },
       {
         eyebrow: 'Critical Load Groups',
-        title: 'Prioritise essential circuits',
+        title: 'Prioritises essential circuits when supply is limited.',
         tone: 'violet',
       },
       {
@@ -990,12 +983,11 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
       },
       {
         title: 'Support Visibility',
-        description: 'Support teams can access fleet health, diagnostics, OTA status, and event history.',
+        description: 'Support teams can access fleet health, diagnostics, and event history.',
       },
       {
         title: 'Channel Friendly',
-        description:
-          'Designed for builders, solar / EPC partners, backup installers, and electrical contractors. The PRD identifies channel partners as a primary user group.',
+        description: 'Designed for builders, solar / EPC partners, backup installers, and electrical contractors.'
       },
     ],
   },
@@ -1008,15 +1000,13 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     rows: [
       ['Primary role', 'Energy visibility', 'Safety intelligence', 'Circuit-level intelligence'],
       ['Best for', 'Homes', 'Premium homes / developers', 'Future-ready homes / buildings'],
-      ['Live energy', 'Yes', 'Yes', 'Yes'],
-      ['Appliance insights', 'Yes', 'Yes', 'Yes, with circuit context'],
-      ['Bill clarity', 'Yes', 'Yes', 'Yes'],
-      ['Fault alerts', 'Basic / selected', 'Advanced', 'Advanced + circuit-aware'],
-      ['Notifications', 'App-first', 'Multi-channel', 'Multi-channel + local event logic'],
-      ['Tripping / control', 'No / limited', 'Where supported', 'Circuit-level where supported'],
-      ['Backup orchestration', 'No', 'Limited', 'Yes'],
-      ['Smart DB integration', 'No', 'Partial / external', 'Native'],
-      ['Installer workflow', 'Simple install', 'Safety-led install', 'Guided commissioning'],
+      ['Real-time visibility ', '✓', '✓', '✓'],
+      ['Appliance insights', '✓', '✓', '✓'],
+      ['Bill clarity', '✓', '✓', '✓'],
+      ['Fault alerts', '10 faults covered', '14 faults covered', '14 faults covered'],
+      ['Tripping / control', '-', 'Mains-level', 'Circuit-level'],
+      ['Backup orchestration', '-', '-', '✓'],
+      ['Smart DB integration', '-', 'Partial', 'Native'],
     ],
   },
   productsSection: {
