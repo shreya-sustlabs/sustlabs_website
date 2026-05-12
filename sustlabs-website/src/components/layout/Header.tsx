@@ -1,5 +1,4 @@
 import { memo, useEffect, useRef, useState } from 'react'
-import { Search, ShoppingBag } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import { ADD_ON_PRODUCTS, MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
