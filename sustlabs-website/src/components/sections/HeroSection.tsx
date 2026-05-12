@@ -11,7 +11,7 @@ function HeroSectionComponent() {
         <h1 className="hero__title">
           <span>{HERO_CONTENT.titleLead}</span>
           <span>
-            <span className="hero__title-text">electricity </span>
+            <span >electricity </span>
             <span className="hero__title-accent">{HERO_CONTENT.titleAccent}</span>
           </span>
         </h1>

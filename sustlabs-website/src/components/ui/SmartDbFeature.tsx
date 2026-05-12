@@ -1,9 +1,9 @@
 import { memo } from 'react'
 import type { SmartDbFeatureProps } from '../../types'
 
-function SmartDbFeatureComponent({ accent, description, title }: SmartDbFeatureProps) {
+function SmartDbFeatureComponent({ description, title }: SmartDbFeatureProps) {
     return (
-        <article className={`smart-db-feature smart-db-feature--${accent}`}>
+        <article className={`smart-db-feature smart-db-feature`}>
             <h3>{title}</h3>
             <p>{description}</p>
         </article>

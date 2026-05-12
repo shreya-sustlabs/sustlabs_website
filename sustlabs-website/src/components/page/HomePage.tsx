@@ -21,9 +21,9 @@ function HomePageComponent() {
       <LayersSection />
       <SmartDbSection />
       {/* <OraSection /> */}
+      <SovereigntySection />
       <EnterpriseSection />
       {/* <InfrastructureSection /> */}
-      <SovereigntySection />
       <ImpactSection />
     </>
   )
