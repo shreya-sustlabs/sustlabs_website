@@ -10,9 +10,15 @@ function SignalLayerSectionComponent() {
           <p className="signal-layer__eyebrow">{SIGNAL_LAYER_CONTENT.eyebrow}</p>
           <h2>
             {SIGNAL_LAYER_CONTENT.titleLead}
+            <br />
+            {SIGNAL_LAYER_CONTENT.titleLeadLine}{" "}
             <span>{SIGNAL_LAYER_CONTENT.titleAccent}</span>
           </h2>
-          <p>{SIGNAL_LAYER_CONTENT.description}</p>
+          <p>
+            {SIGNAL_LAYER_CONTENT.description.split("|")[0]}
+            <br />
+            {SIGNAL_LAYER_CONTENT.description.split("|")[1]}
+          </p>
         </div>
 
         <div className="signal-layer__steps" aria-label="Signal intelligence process">

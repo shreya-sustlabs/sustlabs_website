@@ -336,28 +336,33 @@ export const MONITORING_PRODUCTS = [
     accent: 'var(--terra500)',
     ctaSection: {
       accent: 'var(--success500)',
-      eyebrow: 'PROOF & CTA',
-      titleLead: 'Your electricity,',
-      titleAccent: 'finally visible.',
-      description: 'Live load, bill estimate, and appliance patterns in one simple view.',
+      eyebrow: 'ELECTRICAL FAULTS COVERED',
+      titleLead: 'Alerts,',
+      titleAccent: 'that matter.',
+      description: 'Know when your electrical system needs attention',
       itemsAccent: 'linear-gradient(to right, #F1EDFB, #3D3D3D)',
       items: [
-        'Live Load',
-        'Bill Forecast',
-        'Appliance View',
-        'Daily Timeline',
-        'Insight Summary',
-        'OTA Updates',
+        'Over Current',
+        'Over Voltage',
+        'Under Voltage',
+        'Phase Loss',
+        'Phase Reversal',
+        'Neutral Loss',
+        'Power Quality',
+        'Low Power Factor',
+        'High Harmonics',
       ],
+      footer: "*Load imbalance applies to 3-phase meters."
     },
     description:
-      'o3 is the entry point into SustLabs electricity intelligence. It gives homeowners real-time visibility into power usage, appliance behaviour, and energy patterns without installing sensors on every appliance.',
+      'o3 gives homes a live view of electricity usage, appliance activity, and key electrical conditions — from one connection at the panel.',
     introSection: {
       accent: 'var(--black400)',
-      titleLead: 'o3 makes electricity',
+      titleKicker: 'o3 Energy Monitor',
+      titleLead: 'Makes electricity',
       titleAccent: 'visible',
       descriptions: [
-        'o3 is the entry point into SustLabs electricity intelligence. It gives homeowners real-time visibility into power usage, appliance behaviour, and energy patterns without installing sensors on every appliance.',
+        'o3 gives homes a live view of electricity usage, appliance activity, and key electrical conditions — from one connection at the panel.',
       ],
     },
     detailSection: {
@@ -396,7 +401,7 @@ export const MONITORING_PRODUCTS = [
       cards: [
         {
           eyebrow: 'Live Usage',
-          title: 'Know your load in real time',
+          title: 'Know your consumption in real time',
           description: 'See how much electricity your home is using at any moment.',
         },
         {
@@ -409,22 +414,27 @@ export const MONITORING_PRODUCTS = [
           title: 'Track cost before the bill arrives',
           description: 'Follow your usage through the month instead of waiting for a surprise.',
         },
+        {
+          eyebrow: 'Usage History',
+          title: 'See how behaviour changes over time',
+          description: 'With subscription-enabled analytics, users can unlock daily, monthly, and yearly energy views, appliance analytics, health scores, and insight summaries.',
+        },
       ],
     },
-    heroAccent: 'As it happens.',
+    heroAccent: 'in real-time.',
     heroDescription:
-      "o3 turns your home's electrical activity into live insights, helping you understand usage, track costs, and identify the appliances that matter most.",
+      "Track live usage, understand appliance patterns, and get alerts when key electrical conditions need attention.",
     heroKicker: 'o3 monitoring',
-    heroLead: 'See what your home is using.',
+    heroLead: 'See what your home is using',
     heroActions: [
       {
-        label: 'Get started',
-        href: '#contact',
+        label: 'Get o3*',
+        href: 'https://ultron.lifestylecommerce.in/ohm-assistant-3rd-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },
       {
-        label: 'See features',
-        href: '#features',
+        label: 'Talks to sales',
+        href: '/support',
         variant: 'secondary',
       },
     ],
@@ -467,20 +477,17 @@ export const MONITORING_PRODUCTS = [
     ctaSection: {
       accent: 'var(--success500)',
       accentTarget: 'lead',
-      eyebrow: 'PROOF & CTA',
-      titleLead: 'Electrical safety,',
-      titleAccent: 'explained.',
-      description: 'Events are detected, classified, logged, and communicated clearly.',
+      eyebrow: 'ELECTRICAL FAULTS COVERED',
+      titleLead: 'Alerts,',
+      titleAccent: 'that matter.',
+      description: 'Covers 14 electrical parameters aligned with Fire-safetly compliance.',
       items: [
+        'o3+',
         'Arcing',
-        'Neutral Loss',
         'Earth Leakage',
-        'Overload',
-        'Voltage Anomaly',
-        'Event Timeline',
-        'Notification Channels',
-        'Safety Override',
-      ],
+        'Short Circuit',
+        'High Inrush'
+      ]
     },
     description:
       'o4 builds on energy monitoring and adds a safety-first layer: alerts, notifications, anomaly detection, threshold configuration, event logging, and protection workflows.',
@@ -540,34 +547,39 @@ export const MONITORING_PRODUCTS = [
           description:
             'Users can configure alerts, thresholds, severity, and channels - while critical events require explicit safety overrides.',
         },
+        {
+          eyebrow: 'Always-On Logging',
+          title: 'Every event has a record',
+          description:
+            'Events are logged at theedge and synced to the cloud when online, independent of notification preferences.',
+        },
       ],
     },
     heroAccent: 'electrical risks',
     heroAccentColor: 'var(--terra500)',
     heroDescription:
-      'o4 combines energy visibility with safety intelligence - helping detect abnormal voltage, leakage, arcing, overloads, and fault conditions before they become serious incidents.',
+      'Track live usage, detect higher-risk electrical events, and trigger alerts or supported trip actions when conditions need attention.',
     heroKicker: 'o4 monitoring',
-    heroLead: 'Detect',
-    heroRest: 'before they escalate',
+    heroLead: 'Prevent',
+    heroRest: 'before they turn serious.',
     heroActions: [
       {
-        label: 'Explore o4',
-        href: '#features',
+        label: 'Get o4',
+        href: 'https://ultron.lifestylecommerce.in/ohm-assistant-4th-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },
       {
         label: 'Talk to sales',
-        href: '#contact',
+        href: '/support',
         variant: 'secondary',
       },
     ],
     introSection: {
       accent: 'var(--black400)',
-      titleLead: 'o4 adds',
-      titleAccent: 'electrical safety intelligence',
-      descriptions: [
-        'o4 builds on energy monitoring and adds a safety-first layer: alerts, notifications, anomaly detection, threshold configuration, event logging, and protection workflows.',
-        'The consolidated Native PRD defines the safety architecture as three separate layers: alerts for detection, notifications for communication, and tripping for hardware actuation. It also emphasizes user primacy, pipeline separation, safety-first defaults, independent thresholds, and always-on logging.',
+      titleKicker: "o4 Energy Analyzer",
+      titleLead: 'Adds',
+      titleAccent: 'safety intelligence',
+      descriptions: ['o4 includes everything in o3, then adds deeper anomaly detection and trip capability for higher-risk electrical events.'
       ],
     },
     navLabel: 'o4 - Electrical Safety Intelligence',
@@ -1067,24 +1079,23 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     titleLead: 'From visibility to autonomous',
     titleAccent: 'electricity intelligence',
     description:
-      'Ohm OS reads high-frequency electrical signals and translates them into appliance insights, safety alerts, predictions, and decisions.',
-    cards: [
-      {
-        eyebrow: 'o3',
-        title: 'Energy Visibility',
-        description: 'Live usage, appliance insights, and bill clarity.',
-      },
-      {
-        eyebrow: 'o4',
-        title: 'Safety Intelligence',
-        description: 'Fault detection, alerts, notifications, and protection workflows.',
-      },
-      {
-        eyebrow: 'o5',
-        title: 'Smart DB Control',
-        description: 'Circuit-level intelligence, backup orchestration, and native arc detection.',
-      },
-    ],
+      "Ohm OS reads high-frequency electrical signals and translates them into appliance insights.|safety alerts, predictions, and decisions.", cards: [
+        {
+          eyebrow: 'o3',
+          title: 'Energy Visibility',
+          description: 'Live usage, appliance insights, and bill clarity.',
+        },
+        {
+          eyebrow: 'o4',
+          title: 'Safety Intelligence',
+          description: 'Fault detection, alerts, notifications, and protection workflows.',
+        },
+        {
+          eyebrow: 'o5',
+          title: 'Smart DB Control',
+          description: 'Circuit-level intelligence, backup orchestration, and native arc detection.',
+        },
+      ],
   },
   derSection: {
     accent: 'var(--black400)',
@@ -1131,7 +1142,7 @@ export const HERO_CONTENT = {
       variant: 'primary',
     },
     {
-      label: 'Explore Ohm OS',
+      label: 'Book a Demo',
       href: '/ohm-os',
       variant: 'secondary',
     },
@@ -1185,7 +1196,8 @@ export const CORE_FEATURES = [
 
 export const SIGNAL_LAYER_CONTENT = {
   eyebrow: 'INTELLIGENCE LAYER',
-  titleLead: "Your home's electrical heartbeat, ",
+  titleLead: "Your home's ",
+  titleLeadLine: "electrical heartbeat, ",
   titleAccent: 'decoded.',
   description:
     'Ohm OS reads high-frequency electrical signals and translates them into appliance insights, safety alerts, predictions, and decisions.',
@@ -1194,18 +1206,18 @@ export const SIGNAL_LAYER_CONTENT = {
 export const SIGNAL_STEPS = [
   {
     number: '01.',
-    title: 'Signal',
+    title: 'Read',
     description: 'Electrical waveform data from the main panel.',
   },
   {
     number: '02.',
     title: 'Sense',
-    description: 'Voltage, current, power factor, harmonics, frequency, and fault signatures.',
+    description: 'Anomalous electrical events as they happen.',
   },
   {
     number: '03.',
     title: 'Understand',
-    description: 'Appliance disaggregation, anomaly detection, and behavioural pattern recognition.',
+    description: 'Consumption patterns and turn them into actionable insights.',
   },
 ] as const
 
@@ -1219,28 +1231,28 @@ export const SETUP_CONTENT = {
 export const SETUP_POINTS = [
   {
     number: '01.',
-    title: 'No appliance sensors',
+    title: 'No appliance-level sensors',
     description: 'Appliance intelligence without installing sensors on every device.',
   },
   {
     number: '02.',
     title: 'Existing wiring',
-    description: 'Designed around real homes, not ideal lab environments.',
+    description: 'Designed around real homes.',
   },
   {
     number: '03.',
     title: 'App + Web',
-    description: 'For residents, installers, support, and enterprise users.',
+    description: 'For residents and enterprise users.',
   },
   {
     number: '03.',
-    title: 'OTA Intelligence',
-    description: 'New signatures, models, and safety logic improve over time.',
+    title: 'OTA Updates',
+    description: 'Safety Logic improves over time.',
   },
 ] as const
 
 export const LAYERS_CONTENT = {
-  eyebrow: 'ONE SYSTEM, MULTIPLE LAYERS',
+  eyebrow: 'DASHBOARD  AND INTERFACES',
   titleLead: 'One system.',
   titleAccent: 'Multiple layers.',
   description:
@@ -1275,10 +1287,10 @@ export const SYSTEM_LAYERS = [
 ] as const
 
 export const SMART_DB_CONTENT = {
-  eyebrow: 'SMART DB / o5',
+  eyebrow: 'SMART DB',
   title: 'A distribution board that thinks...',
   description:
-    'o5 and Smart DB bring intelligence from the meter into the electrical backbone - enabling circuit-level tracking, safety, automation, backup orchestration, and edge decision-making.',
+    'Smart DB bring intelligence from the meter into the electrical backbone - enabling circuit-level tracking, safety, automation, backup orchestration, and edge decision-making.',
 } as const
 
 export const SMART_DB_FEATURES = [
@@ -1288,8 +1300,8 @@ export const SMART_DB_FEATURES = [
     accent: 'mint',
   },
   {
-    title: 'Arc Safety',
-    description: 'Detect arc events and issue high-confidence isolation commands.',
+    title: 'Electrical Safety',
+    description: 'Detect anomalies and issue high-confidence isolation commands.',
     accent: 'lavender',
   },
   {
@@ -1299,12 +1311,12 @@ export const SMART_DB_FEATURES = [
   },
   {
     title: 'DER Ready',
-    description: 'Built for solar, batteries, EV charging, and inverter integration.',
+    description: 'Route power from the right source — grid, solar, battery or inverter.',
     accent: 'blush',
   },
   {
     title: 'Local Autonomy',
-    description: 'Built for solar, batteries, EV charging, and inverter integration.',
+    description: 'Makes decisions at the panel, even when cloud connectivity is limited.',
     accent: 'ice',
   },
 ] as const
@@ -1355,7 +1367,7 @@ export const ENTERPRISE_CONTENT = {
   titleLead: 'Powering the',
   titleAccent: 'next generation of energy systems.',
   description:
-    'Ohm OS helps utilities, developers, OEMs, facility managers, and energy partners build safer, more efficient, and data-driven infrastructure.',
+    'Ohm OS helps utilities, developers, Licensee partners, facility managers, and energy partners build safer, more efficient, and data-driven infrastructure.',
 } as const
 
 export const ENTERPRISE_AUDIENCES = [
@@ -1372,7 +1384,7 @@ export const ENTERPRISE_AUDIENCES = [
   },
   {
     number: '03.',
-    title: 'OEMs',
+    title: 'Licensee Partners',
     description: 'Embedded intelligence for meters, appliances, panels, and energy products.',
   },
   {

@@ -81,7 +81,7 @@ function HeaderComponent() {
                 aria-label="Monitoring products"
                 data-open={openMenu === 'monitoring'}
               >
-                {MONITORING_PRODUCTS.map((product) => (
+                {MONITORING_PRODUCTS.filter((product) => !product?.navLabel.includes('o5')).map((product) => (
                   <NavLink to={product.path} key={product.path} onClick={() => setOpenMenu(null)}>
                     {product.navLabel}
                   </NavLink>

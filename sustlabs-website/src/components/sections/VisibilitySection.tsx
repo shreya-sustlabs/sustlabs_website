@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import safetyDiagramImage from '../../assets/0987654.png'
+import safetyDiagramImage from '../../assets/home4.webp'
 import {
   HOW_IT_WORKS_CONTENT,
   HOW_IT_WORKS_STEPS,
@@ -11,14 +11,14 @@ function VisibilitySectionComponent() {
   return (
     <section className="visibility-section" id="solutions">
       <div className="visibility-section__inner">
-        <div className="visibility-heading visibility-heading--connection">
+        {/* <div className="visibility-heading visibility-heading--connection">
           <p className="section-pill">{HOW_IT_WORKS_CONTENT.eyebrow}</p>
           <h2>
             {HOW_IT_WORKS_CONTENT.titleLead} <span>{HOW_IT_WORKS_CONTENT.titleAccent}</span>
           </h2>
           <p>{HOW_IT_WORKS_CONTENT.description}</p>
-        </div>
-
+        </div> */}
+        {/* 
         <div className="process-grid" aria-label="How Ohm works">
           {HOW_IT_WORKS_STEPS.map((step) => (
             <ProcessStepCard
@@ -28,7 +28,7 @@ function VisibilitySectionComponent() {
               title={step.title}
             />
           ))}
-        </div>
+        </div> */}
 
         <div className="visibility-heading visibility-heading--safety">
           <p className="section-pill">{SAFETY_CONTENT.eyebrow}</p>

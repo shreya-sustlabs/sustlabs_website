@@ -25,6 +25,7 @@ function ProductCtaSectionComponent({ section }: ProductCtaSectionProps) {
             </li>
           ))}
         </ul>
+        <p className='product-cta-section__footer'>{section.footer}</p>
       </div>
     </section>
   )

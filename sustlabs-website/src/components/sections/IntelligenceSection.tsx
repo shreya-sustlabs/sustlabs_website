@@ -1,15 +1,15 @@
 import { memo } from 'react'
-import applianceVisibilityImage from '../../assets/324.png'
-import safetyAlertsImage from '../../assets/iMockup - iPhone 15.png'
-import liveTrackingImage from '../../assets/iMockup - iPhone 14.png'
+import home1 from '../../assets/home1.webp'
+import home2 from '../../assets/home2.webp'
+import home3 from '../../assets/home3.webp'
 import { CORE_FEATURES, INTELLIGENCE_CONTENT } from '../../utils/constants'
 import { CardRail } from '../ui/CardRail'
 import { FeatureCard } from '../ui/FeatureCard'
 
 const FEATURE_IMAGES = {
-  'Live Tracking': liveTrackingImage,
-  'Appliance-Level Visibility': applianceVisibilityImage,
-  'Advanced Safety': safetyAlertsImage,
+  'Live Tracking': home1,
+  'Appliance-Level Visibility': home2,
+  'Advanced Safety': home3,
 } as const
 
 function IntelligenceSectionComponent() {

@@ -15,7 +15,7 @@ function ProductSectionHeadingComponent({
     <div className="product-section-heading">
       {eyebrow ? <p className="product-section-heading__eyebrow">{eyebrow}</p> : null}
       <h2>
-        <span style={leadStyle}>{titleLead}</span>
+        <span style={leadStyle}>{titleLead}</span> <br />
         {titleAccent ? <span style={accentStyle}> {titleAccent}</span> : null}
       </h2>
     </div>

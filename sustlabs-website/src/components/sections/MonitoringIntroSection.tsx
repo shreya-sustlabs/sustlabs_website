@@ -5,6 +5,9 @@ function MonitoringIntroSectionComponent({ section }: MonitoringIntroSectionProp
   return (
     <section className="monitoring-intro" aria-labelledby="monitoring-page-title">
       <div className="monitoring-intro__inner">
+        {section?.titleKicker ? <p className="monitoring-intro__kicker">{section.titleKicker}</p> : null}
+
+
         {section.eyebrow ? <p className="monitoring-intro__eyebrow">{section.eyebrow}</p> : null}
         <h1 id="monitoring-page-title">
           {section.titleLead} <span style={{ color: section.accent }}>{section.titleAccent}</span>
@@ -15,7 +18,7 @@ function MonitoringIntroSectionComponent({ section }: MonitoringIntroSectionProp
           ))}
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 

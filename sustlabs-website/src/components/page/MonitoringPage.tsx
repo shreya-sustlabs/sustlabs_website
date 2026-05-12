@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import o4HeroImage from '../../assets/image 16.png'
-import o3HeroImage from '../../assets/image 17.png'
+import o4HeroImage from '../../assets/o4.webp'
+import o3HeroImage from '../../assets/o3.webp'
 import type { MonitoringPageData } from '../../types'
 import { MonitoringHeroSection } from '../sections/MonitoringHeroSection'
 import { MonitoringIntroSection } from '../sections/MonitoringIntroSection'
@@ -46,8 +46,8 @@ function MonitoringPageComponent({ data }: MonitoringPageProps) {
         titleRest={data.heroRest}
       />
       <ProductFeatureSection section={data.featureSection} />
-      <ProductUseCaseSection section={data.useCaseSection} />
-      <ProductDetailSection section={data.detailSection} />
+      {/* <ProductUseCaseSection section={data.useCaseSection} /> */}
+      {/* <ProductDetailSection section={data.detailSection} /> */}
       {data.postDetailUseCaseSection ? (
         <ProductUseCaseSection section={data.postDetailUseCaseSection} />
       ) : null}

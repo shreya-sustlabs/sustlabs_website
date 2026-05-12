@@ -233,6 +233,7 @@ export type MonitoringIntroSectionData = {
   eyebrow?: string
   titleAccent: string
   titleLead: string
+  titleKicker?: string
 }
 
 export type MonitoringIntroSectionProps = {
@@ -299,6 +300,7 @@ export type ProductCtaSection = {
   titleAccent: string
   titleLead: string
   itemAccent?: string
+  footer?: string
 }
 
 export type SmartDbTone = 'teal' | 'violet' | 'amber' | 'coral' | 'blue'

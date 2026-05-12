@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import assistantLayerImage from '../../assets/Group 1.png'
-import nativeLayerImage from '../../assets/Group.png'
+import assistantLayerImage from '../../assets/home5.webp'
+import nativeLayerImage from '../../assets/home6.webp'
 import { LAYERS_CONTENT } from '../../utils/constants'
 
 const LAYER_SHOWCASE = [
