@@ -55,30 +55,25 @@ export const FOOTER_CONTENT = {
 
 export const OHM_OS_PAGE_CONTENT = {
   titleLead: 'The',
-  titleAccent: 'intelligence layer',
+  titleAccent: 'intelligence layer ',
   titleRest: 'behind modern electrical systems',
   description:
-    'Ohm OS helps make electrical systems easier to read, easier to manage and easier to act on.',
+    'Ohm OS helps make electrical systems easier to read, easier\n to manage and easier to act on.',
   actions: [
     {
-      label: 'Explore the ecosystem',
-      href: '#ecosystem',
-      variant: 'primary',
-    },
-    {
-      label: 'Talk to Sustlabs',
-      href: '#contact',
+      label: 'Partner with us',
+      href: '/support',
       variant: 'secondary',
     },
   ],
 } as const
 
 export const OHM_OS_APPLICATION_CONTENT = {
-  titleLead: 'One Platform.',
-  titleAccent: 'Many Applications.',
+  titleLead: 'Our Ecosystem',
+  titleAccent: '',
   eyebrow: 'One core layer, applied across the system',
   description:
-    'Ohm OS sits at the center of the electrical system and helps different parts of it respond with more context. What starts as one signal in the electrical layer can lead to very different outcomes - depending on who needs to use it.',
+    'Ohm OS sits at the center of the electrical system, turning one layer of intelligence into useful outcomes across homes, buildings, partners, and infrastructure.',
 } as const
 
 export const OHM_OS_APPLICATIONS = [

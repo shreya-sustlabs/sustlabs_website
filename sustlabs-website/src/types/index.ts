@@ -163,6 +163,7 @@ export type SolutionPanelData = {
 }
 
 export type SolutionPanelProps = {
+  index: number
   panel: SolutionPanelData
 }
 

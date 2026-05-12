@@ -45,7 +45,6 @@ function SmartDbPageComponent() {
       />
       <SmartDbComparisonSection section={SMART_DB_PAGE_CONTENT.comparisonSection} />
       <SmartDbProductsSection section={SMART_DB_PAGE_CONTENT.productsSection} />
-      <SmartDbLayerSection section={SMART_DB_PAGE_CONTENT.layerSection} />
       <ProductUseCaseSection section={SMART_DB_PAGE_CONTENT.derSection} />
     </main>
   )

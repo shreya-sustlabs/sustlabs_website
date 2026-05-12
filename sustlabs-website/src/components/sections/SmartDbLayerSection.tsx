@@ -18,7 +18,7 @@ function SmartDbLayerSectionComponent({ section }: SmartDbLayerSectionProps) {
         <div className="smart-db-page__layer-grid">
           {section.cards.map((item) => (
             <article className="smart-db-page__layer-item" key={item.eyebrow}>
-              <p>{item.eyebrow}</p>
+              {/* <p>{item.eyebrow}</p> */}
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>
