@@ -5,6 +5,8 @@ import { ProductSectionHeading } from '../ui/ProductSectionHeading'
 function SolutionsPartnerSectionComponent({ section }: SolutionsPartnerSectionProps) {
   return (
     <section className="solutions-partner-section">
+      <p className="solutions-partner-section__number">06.</p>
+
       <ProductSectionHeading
         accent={section.accent}
         accentTarget={section.accentTarget}
@@ -12,6 +14,7 @@ function SolutionsPartnerSectionComponent({ section }: SolutionsPartnerSectionPr
         titleAccent={section.titleAccent}
         titleLead={section.titleLead}
       />
+      
       <p className="solutions-partner-section__description">{section.description}</p>
 
       <div className="solutions-partner-section__items" aria-label="Consent-led partner intelligence">

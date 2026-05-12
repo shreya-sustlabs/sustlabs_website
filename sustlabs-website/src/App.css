@@ -1919,7 +1919,7 @@
 
 .solution-panel {
   background: #f3f3f5;
-  padding: 86px 48px 74px;
+  padding: 50px 48px 30px;
 }
 
 .solution-panel__hero {
@@ -1935,15 +1935,15 @@
 .solution-panel__number {
   margin: 0 0 26px;
   color: var(--black300);
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
   line-height: 1;
 }
 
 .solution-panel__heading h2 {
   margin: 0;
   color: var(--black300);
-  font-size: clamp(58px, 5.6vw, 76px);
+  font-size: clamp(52px, 5.6vw, 70px);
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.04;
@@ -1996,26 +1996,53 @@
 .solutions-partner-section {
   background: #f3f3f5;
   color: var(--black300);
-  padding: 82px 24px 72px;
+  padding: 16px 24px 72px;
   text-align: center;
 }
 
-.solutions-partner-section {
-  width: min(100%, 800px);
+.solutions-partner-section__number {
+  margin: 50px 10px 10px 18px;
+  color: var(--black300);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.solutions-partner-section .product-section-heading {
+  width: min(100%, 840px);
   padding-inline: 0;
 }
 
-.solutions-partner-section {
-  font-size: clamp(38px, 5vw, 52px);
+.solutions-partner-section .product-section-heading__eyebrow {
+  min-height: 24px;
+  margin-bottom: 28px;
+  padding-inline: 16px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.solutions-partner-section .product-section-heading h2 {
+  max-width: 760px;
+  color: var(--black400);
+  font-size: clamp(58px, 5vw, 72px);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.14;
+}
+
+.solutions-partner-section .product-section-heading h2 span {
+  color: var(--black400);
+}
+
+.solutions-partner-section .product-section-heading h2 span:last-child {
+  color: var(--black300);
 }
 
 .solutions-partner-section__description {
-  max-width: 610px;
+  max-width: 800px;
   margin: 22px auto 0;
-  color: var(--black300);
-  font-size: 13px;
+  color: var(--grey);
+  font-size: 20px;
+  font-weight: 400;
   line-height: 1.45;
 }
 
@@ -2029,7 +2056,7 @@
 .solutions-partner-item h3 {
   margin: 0 0 8px;
   color: var(--black400);
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 1.15;
@@ -2038,8 +2065,9 @@
 .solutions-partner-item p {
   max-width: 610px;
   margin: 0 auto;
-  color: var(--black300);
-  font-size: 22px;
+  color: var(--grey);
+  font-size: 28px;
+  font-weight: 400;
   line-height: 1.42;
 }
 
@@ -2063,8 +2091,8 @@
 .support-hero h1 {
   margin: 0;
   color: var(--black400);
-  font-size: clamp(42px, 4.8vw, 56px);
-  font-weight: 700;
+  font-size: clamp(42px, 4.8vw, 70px);
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1;
 }
@@ -2073,7 +2101,8 @@
   max-width: 700px;
   margin: 30px auto 0;
   color: var(--black300);
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -2116,7 +2145,7 @@
 .support-contact__field {
   display: grid;
   gap: 14px;
-  color: var(--black500);
+  color: var(--black400);
   font-size: 13px;
   line-height: 1;
 }
@@ -2162,8 +2191,8 @@
 
 .support-contact input:focus,
 .support-contact textarea:focus {
-  border-color: var(--terra500);
-  box-shadow: 0 0 0 3px rgba(204, 78, 55, 0.16);
+  border-color: var(--black500);
+  box-shadow: 0 0 0 3px var(--black300);
 }
 
 .support-contact__submit {
@@ -3597,6 +3626,18 @@
     font-size: clamp(28px, 4.6vw, 36px);
   }
 
+  .solutions-partner-section {
+    padding-top: 12px;
+  }
+
+  .solutions-partner-section .product-section-heading {
+    width: min(100%, 720px);
+  }
+
+  .solutions-partner-section .product-section-heading h2 {
+    font-size: clamp(48px, 8vw, 64px);
+  }
+
   .site-footer__nav {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
     width: min(100%, 520px);
@@ -4036,6 +4077,24 @@
 
   .solution-panel__capabilities li {
     font-size: clamp(24px, 8vw, 32px);
+  }
+
+  .solutions-partner-section {
+    padding: 14px 18px 56px;
+  }
+
+  .solutions-partner-section__number {
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+
+  .solutions-partner-section .product-section-heading__eyebrow {
+    margin-bottom: 22px;
+    font-size: 10px;
+  }
+
+  .solutions-partner-section .product-section-heading h2 {
+    font-size: clamp(39px, 11vw, 52px);
   }
 
   .site-footer__inner {

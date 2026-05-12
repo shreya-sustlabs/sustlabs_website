@@ -170,8 +170,8 @@ export const SOLUTIONS_PAGE_CONTENT = {
   panels: [
     {
       eyebrow: 'Fire Pump Rooms',
-      titleLead: 'Mission-critical fire infrastructure,',
-      titleAccent: 'continuously monitored',
+      titleLead: 'Fire ',
+      titleAccent: 'Pump Rooms',
       description:
         'Sustlabs extends Ohm Native into fire-pump-room monitoring for commercial buildings, hospitals, campuses, industrial sites, and data centres.',
       capabilities: [
@@ -185,8 +185,8 @@ export const SOLUTIONS_PAGE_CONTENT = {
     },
     {
       eyebrow: 'Real Estate Developers',
-      titleLead: 'Smart electrical infrastructure',
-      titleAccent: 'residents can understand',
+      titleLead: 'Real Estate ',
+      titleAccent: 'Developers',
       description:
         'Offer homes that are not just connected, but electrically intelligent - with visibility, safety alerts, appliance insights, and ambient displays through Ora.',
       capabilities: [
@@ -199,9 +199,9 @@ export const SOLUTIONS_PAGE_CONTENT = {
     },
     {
       eyebrow: 'Warehouses',
-      titleLead: 'Detect electrical risk',
-      titleAccent: 'before it becomes downtime',
-      titlePrefix: '',
+      titleLead: 'Warehouses',
+      description:
+        'Monitor power quality, anomalies, and event history before small issues become downtime or operational risk.',
       capabilities: [
         'Load visibility',
         'Abnormal current draw',
@@ -212,9 +212,9 @@ export const SOLUTIONS_PAGE_CONTENT = {
     },
     {
       eyebrow: 'DATA CENTERS',
-      titleLead: 'Power-quality intelligence',
-      titleAccent: 'for critical infrastructure',
-      titlePrefix: '',
+      titleLead: 'Data Centers',
+      description:
+        'Track power quality, anomalies, and event history across systems where continuity matters.',
       capabilities: [
         'Voltage and current anomalies',
         'THD / power factor',
@@ -225,9 +225,9 @@ export const SOLUTIONS_PAGE_CONTENT = {
     },
     {
       eyebrow: 'RETAIL / QSR',
-      titleLead: 'One intelligence layer',
-      titleAccent: 'across every store',
-      titlePrefix: '',
+      titleLead: 'RETAIL / QSR',
+      description:
+        'See every store from one view and Keep every outlet running cleaner. Track across distributed locations.',
       capabilities: [
         'Site comparisons',
         'Appliance health',
@@ -239,7 +239,7 @@ export const SOLUTIONS_PAGE_CONTENT = {
   ],
   partnerSection: {
     accent: 'var(--black400)',
-    accentTarget: 'lead',
+    accentTarget: 'accent',
     eyebrow: 'UTILITIES / ECOSYSTEM',
     titleLead: 'Consent-led energy intelligence',
     titleAccent: 'for partners',
@@ -256,9 +256,9 @@ export const SOLUTIONS_PAGE_CONTENT = {
           '15-minute non-critical summaries, account data, analytics, and historical aggregates.',
       },
       {
-        title: 'MQTTS Streams',
+        title: 'Streams',
         description:
-          'Real-time critical data: faults, voltage, THD, leakage, arcing, neutral loss, and power-quality events.',
+          'Real-time faults and power quality issues',
       },
       {
         title: 'Consent Ledger',
@@ -284,7 +284,7 @@ export const SUPPORT_PAGE_CONTENT = {
     },
   },
   contact: {
-    title: 'Contact our sales team',
+    title: 'Get in touch',
     fields: [
       {
         id: 'name',

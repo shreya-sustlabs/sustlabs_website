@@ -156,15 +156,15 @@ export type OraEnablesSectionProps = {
 export type SolutionPanelData = {
   capabilities: readonly string[]
   description?: string
-  eyebrow: string
-  titleAccent: string
+  eyebrow?: string
+  titleAccent?: string
   titleLead: string
   titlePrefix?: string
 }
 
 export type SolutionPanelProps = {
   index: number
-  panel: SolutionPanelData
+  panel: SolutionPanelData 
 }
 
 export type SolutionsPartnerItem = BasicCardProps

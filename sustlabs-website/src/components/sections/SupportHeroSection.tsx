@@ -8,7 +8,7 @@ function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
       <div className="support-hero__inner">
         <h1>{section.title}</h1>
         <p>{section.description}</p>
-        <Button className="support-hero__button" href={section.action.href} variant={section.action.variant}>
+        <Button className="support-hero__button" href={'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo'} variant={section.action.variant}>
           {section.action.label}
         </Button>
       </div>
