@@ -68,7 +68,7 @@ export const OHM_OS_PAGE_CONTENT = {
     {
       label: 'Partner with us',
       href: '/support',
-      variant: 'secondary',
+      variant: 'primary',
     },
   ],
 } as const
