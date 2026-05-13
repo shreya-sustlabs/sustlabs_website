@@ -15,7 +15,7 @@ function MonitoringHeroSectionComponent({
   titleLead,
   titleRest,
 }: MonitoringHeroSectionProps) {
-  const hasCommerceAction = actions.some((action) => action.href.includes('ultron.lifestylecommerce.in'))
+  // const hasCommerceAction = actions.some((action) => action.href.includes('ultron.lifestylecommerce.in'))
 
   return (
     <section className="monitoring-hero" aria-labelledby="monitoring-hero-title">
