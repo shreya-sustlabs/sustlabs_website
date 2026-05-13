@@ -76,7 +76,7 @@ function HeaderComponent() {
 
       <nav className="site-header__nav" aria-label="Main menu" ref={navRef}>
         {NAV_LINKS.map((link) =>
-          link === 'Monitoring' ? (
+          link === 'Products' ? (
             <div className="site-header__menu" key={link}>
               <button
                 className={`site-header__menu-trigger${isMonitoringActive ? ' active' : ''}`}

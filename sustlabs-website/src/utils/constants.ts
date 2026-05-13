@@ -2,7 +2,7 @@ import type { MonitoringPageData, SmartDbPageData } from '../types'
 
 export const NAV_LINKS = [
   'Ohm OS',
-  'Monitoring',
+  'Products',
   'Smart DB',
   'Add-ons',
   'Solutions',
@@ -81,27 +81,27 @@ export const OHM_OS_APPLICATIONS = [
   {
     title: 'Appliance activity and health',
     description:
-      'For appliance brands and connected product partners such as Panasonic, changes in electrical behaviour can help surface usage patterns, efficiency drift, and early service need.',
+      'For appliance brands and connected product partners, changes in electrical behavior can help surface usage patterns, efficiency drift, and early service need.',
   },
   {
     title: 'Data-backed servicing',
     description:
-      'For service-led businesses such as Urban Company, electrical signals can help make diagnosis faster and maintenance less reactive.',
+      'For service-led businesses, electrical signals can help make diagnosis faster and maintenance less reactive.',
   },
   {
     title: 'Autonomous load management',
     description:
-      'For infrastructure and energy partners such as Fenice and Havells, the same intelligence can support smarter decisions around what should run, when, and at what priority.',
+      'For infrastructure and energy partners, the same intelligence can support smarter decisions around what should run, when, and at what priority.',
   },
   {
     title: 'Transformer health and DSM',
     description:
-      'For utilities and grid-side stakeholders such as Tata Power, load behaviour across connected systems can offer better visibility into electrical stress and changing demand patterns.',
+      'For utilities and grid-side stakeholders, behavior across connected systems can offer better visibility into electrical stress and changing demand patterns.',
   },
   {
     title: 'AMC and insurance companies',
     description:
-      'For protection and lifecycle partners such as Zopper and Onsitego, electrical history can add context to faults, servicing, and claims-related decisions.',
+      'For protection and lifecycle partners, electrical history can add context to faults, servicing, and claims-related decisions.',
   },
 ] as const
 

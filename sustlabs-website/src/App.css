@@ -281,11 +281,11 @@
   text-decoration: none;
 }
 
-.site-footer__bottom nav a + a {
+.site-footer__bottom nav a+a {
   position: relative;
 }
 
-.site-footer__bottom nav a + a::before {
+.site-footer__bottom nav a+a::before {
   position: absolute;
   top: 50%;
   left: -9px;
@@ -2489,7 +2489,7 @@
 .ohm-os-application p {
   margin: 0;
   color: var(--grey);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 1.4;
 }
