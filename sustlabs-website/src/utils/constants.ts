@@ -43,7 +43,7 @@ export const FOOTER_CONTENT = {
       title: 'Connect',
       links: [
         { label: 'Sales', path: '/support' },
-        { label: 'Book a Demo', path: '/support#contact-sales' },
+        { label: 'Book a Demo', path: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo' },
       ],
     },
   ],
@@ -293,7 +293,7 @@ export const SUPPORT_PAGE_CONTENT = {
       "Have questions, planning a deployment, or exploring where Sustlabs fits? We're here to help you understand the system, the right setup, and what it could look like for your site or business.",
     action: {
       label: 'Book a demo',
-      href: '#contact-sales',
+      href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
       variant: 'primary',
     },
   },
@@ -1142,7 +1142,7 @@ export const HERO_CONTENT = {
     },
     {
       label: 'Book a Demo',
-      href: '/ohm-os',
+      href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
       variant: 'secondary',
     },
   ],
