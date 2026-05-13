@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import { ADD_ON_PRODUCTS, MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
 
@@ -29,7 +29,10 @@ function getNavTarget(link: string) {
 
 function HeaderComponent() {
   const navRef = useRef<HTMLElement>(null)
+  const { pathname } = useLocation()
   const [openMenu, setOpenMenu] = useState<OpenMenu>(null)
+  const isMonitoringActive = pathname.startsWith('/monitoring')
+  const isAddOnsActive = pathname.startsWith('/add-ons')
 
   useEffect(() => {
     if (!openMenu) {
@@ -76,7 +79,7 @@ function HeaderComponent() {
           link === 'Monitoring' ? (
             <div className="site-header__menu" key={link}>
               <button
-                className="site-header__menu-trigger"
+                className={`site-header__menu-trigger${isMonitoringActive ? ' active' : ''}`}
                 type="button"
                 aria-expanded={openMenu === 'monitoring'}
                 aria-haspopup="true"
@@ -99,7 +102,7 @@ function HeaderComponent() {
           ) : link === 'Add-ons' ? (
             <div className="site-header__menu" key={link}>
               <button
-                className="site-header__menu-trigger"
+                className={`site-header__menu-trigger${isAddOnsActive ? ' active' : ''}`}
                 type="button"
                 aria-expanded={openMenu === 'add-ons'}
                 aria-haspopup="true"
@@ -116,9 +119,9 @@ function HeaderComponent() {
               </div>
             </div>
           ) : (
-            <Link to={getNavTarget(link)} key={link} onClick={() => setOpenMenu(null)}>
+            <NavLink to={getNavTarget(link)} key={link} onClick={() => setOpenMenu(null)}>
               {link}
-            </Link>
+            </NavLink>
           ),
         )}
       </nav>

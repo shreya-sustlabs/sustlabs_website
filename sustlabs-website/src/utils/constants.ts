@@ -437,12 +437,12 @@ export const MONITORING_PRODUCTS = [
     heroLead: 'See what your home is using',
     heroActions: [
       {
-        label: 'Get o3*',
+        label: 'Get o3',
         href: 'https://ultron.lifestylecommerce.in/ohm-assistant-3rd-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },
       {
-        label: 'Talks to sales',
+        label: 'Talk to sales',
         href: '/support',
         variant: 'secondary',
       },
@@ -573,7 +573,7 @@ export const MONITORING_PRODUCTS = [
     heroRest: 'before they turn serious.',
     heroActions: [
       {
-        label: 'Get o4*',
+        label: 'Get o4',
         href: 'https://ultron.lifestylecommerce.in/ohm-assistant-4th-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },

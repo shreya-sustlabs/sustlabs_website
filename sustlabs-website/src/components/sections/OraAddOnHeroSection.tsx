@@ -3,7 +3,9 @@ import oraHeroImage from '../../assets/ora1.webp'
 import type { OraHeroSectionProps } from '../../types'
 // import { Button } from '../ui/Button'
 
-function OraAddOnHeroSectionComponent({ }: OraHeroSectionProps) {
+function OraAddOnHeroSectionComponent({ section }: OraHeroSectionProps) {
+  void section
+
   return (
     <section className="ora-add-on-hero" aria-labelledby="ora-add-on-page-title">
       <div className="ora-add-on-hero__media" aria-hidden="true">
