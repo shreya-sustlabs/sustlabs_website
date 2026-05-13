@@ -31,11 +31,7 @@ export function Button({ children, className = '', href, onClick, variant = 'pri
   }
 
   return (
-<<<<<<< Updated upstream
-    <a className={classNames} href={href} {...props} target="_blank">
-=======
-    <a className={classNames} href={href} onClick={handleClick} {...props}>
->>>>>>> Stashed changes
+    <a className={classNames} href={href} onClick={handleClick} {...props} target="_blank">
       {children}
     </a>
   )
