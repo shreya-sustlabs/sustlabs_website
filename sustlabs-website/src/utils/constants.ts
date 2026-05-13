@@ -1010,7 +1010,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     eyebrow: 'Product comparison',
     titleLead: 'Three products.',
     titleAccent: 'One intelligence system',
-    columns: ['', 'o3', 'o4', 'o5 / Smart DB'],
+    columns: ['', 'o3', 'o4', 'Smart DB'],
     rows: [
       ['Primary role', 'Energy visibility', 'Safety intelligence', 'Circuit-level intelligence'],
       ['Best for', 'Homes', 'Premium homes / developers', 'Future-ready homes / buildings'],
