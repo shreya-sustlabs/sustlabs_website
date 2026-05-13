@@ -118,12 +118,12 @@ export const OHM_OS_LICENSEE_CONTENT = {
 
 export const ORA_ADD_ON_PAGE_CONTENT = {
   titleLead: 'What if a',
-  titleAccent: 'wall clock did more?',
+  titleAccent: ' wall clock did more?',
   description:
     'A built-in amenity for modern developments. A new category of built-in intelligence designed to integrate at the building level and add long-term value to residential projects.',
   action: {
-    label: 'Book an Appointment',
-    href: '#contact',
+    label: 'Talk to sales',
+    href: '/support#contact-sales',
     variant: 'primary',
   },
 } as const
@@ -160,6 +160,20 @@ export const ORA_ENABLES_SECTION = {
   titleLead: 'What this',
   titleAccent: 'enables',
   description: 'Transforming raw data into meaningful, everyday value for residents.',
+  cards: [
+    {
+      title: 'Safety you can trust',
+      description: 'Keeps a check on electrical activity and notifies you if something needs attention',
+    },
+    {
+      title: 'Early alerts, fewer surprises',
+      description: 'Monitors daily electrical activity and alerts you early before issues become problems',
+    },
+    {
+      title: 'Real-time energy clarity',
+      description: 'Shows real-time energy use so you stay informed and in control effortlessly',
+    },
+  ],
   safetyTitle: 'Safety you can trust.',
   safetyDescription:
     'Keeps a check on electrical activity and notifies you if something needs attention.',
@@ -238,7 +252,7 @@ export const SOLUTIONS_PAGE_CONTENT = {
     },
   ],
   partnerSection: {
-    accent: 'var(--black400)',
+    accent: 'var(--black300)',
     accentTarget: 'accent',
     eyebrow: 'UTILITIES / ECOSYSTEM',
     titleLead: 'Consent-led energy intelligence',
@@ -389,7 +403,7 @@ export const MONITORING_PRODUCTS = [
     },
     eyebrow: 'O3 MONITORING',
     featureSection: {
-      accent: 'var(--black400)',
+      accent: 'var(--black500)',
       eyebrow: 'WHAT IT DOES',
       titleLead: 'Real-time energy',
       titleAccent: 'visibility for everyday homes',
@@ -519,7 +533,7 @@ export const MONITORING_PRODUCTS = [
     },
     eyebrow: 'O4 MONITORING',
     featureSection: {
-      accent: 'var(--black400)',
+      accent: 'var(--black500)',
       eyebrow: 'SAFETY INTELLIGENCE',
       titleLead: 'Designed around',
       titleAccent: 'early warnings',
@@ -559,7 +573,7 @@ export const MONITORING_PRODUCTS = [
     heroRest: 'before they turn serious.',
     heroActions: [
       {
-        label: 'Get o4',
+        label: 'Get o4*',
         href: 'https://ultron.lifestylecommerce.in/ohm-assistant-4th-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },

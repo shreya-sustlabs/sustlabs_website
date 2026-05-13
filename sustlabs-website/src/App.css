@@ -138,33 +138,22 @@
 }
 
 .site-footer__inner {
-  width: min(100%, 1110px);
+  width: min(100%, 1374px);
   margin-inline: auto;
   padding: 62px 24px 26px;
 }
 
 .site-footer__brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--black500);
-  font-size: 31px;
-  font-weight: 700;
-  line-height: 1;
+  display: block;
+  width: min(100%, 310px);
+  margin-inline: auto;
   text-decoration: none;
 }
 
-.site-footer__mark {
-  display: inline-grid;
-  width: 34px;
-  height: 22px;
-  place-items: center;
-  color: #0b8298;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1;
-  transform: translateY(-1px);
+.site-footer__brand img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .site-footer__tagline {
@@ -223,7 +212,8 @@
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 24px;
-  margin-top: 98px;
+  width: min(100%, 1088px);
+  margin: 98px auto 0;
   color: var(--black400);
   font-size: 13px;
   line-height: 1;
@@ -231,6 +221,7 @@
 
 .site-footer__bottom p {
   margin: 0;
+  white-space: nowrap;
 }
 
 .site-footer__bottom p:last-child {
@@ -238,9 +229,11 @@
 }
 
 .site-footer__bottom nav {
+  justify-self: center;
   display: flex;
   align-items: center;
   gap: 18px;
+  white-space: nowrap;
 }
 
 .site-footer__bottom nav a {
@@ -580,8 +573,18 @@
   background: #eef0f1;
 }
 
-.logo-outer {
+.footer-logo-outer {
   overflow: hidden;
+}
+
+.footer-logo-outer-div {
+  width: 30%;
+}
+
+.logo-outer-div img {
+  display: block;
+  width: 70%;
+  height: auto;
 }
 
 .logo-outer div {
@@ -681,7 +684,7 @@
   max-width: 520px;
   margin: 32px 0 0;
   color: var(--white);
-  font-size: clamp(50px, 5.1vw, 72px);
+  font-size: clamp(50px, 5.1vw, 65px);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.15;
@@ -1288,7 +1291,7 @@
   max-width: 680px;
   margin: 0;
   color: var(--white);
-  font-size: clamp(54px, 5.4vw, 82px);
+  font-size: clamp(54px, 5.4vw, 62px);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.14;
@@ -1384,7 +1387,7 @@
 }
 
 .product-section-heading h2 span {
-  color: var(--black500);
+  color: var(--black300);
 }
 
 .product-feature-rail {
@@ -1739,45 +1742,94 @@
 
 .ora-add-on-page {
   min-height: calc(100svh - 70px);
-  background: #f3f3f5;
-  color: #8e9096;
+  background: #f4f4f6;
+  color: var(--black400);
+}
+
+.ora-add-on-hero {
+  background: #f4f4f6;
 }
 
 .ora-add-on-hero__media {
-  min-height: 323px;
+  position: relative;
+  min-height: clamp(400px, 53vw, 640px);
+  overflow: hidden;
   background: #020304;
 }
 
-.ora-add-on-hero__content {
-  width: min(100%, 480px);
-  margin-left: clamp(28px, 12.4vw, 128px);
-  padding: 62px 24px 72px 0;
+.ora-add-on-hero__media img {
+  position: absolute;
+  left: 0;
+  bottom: -10%;
+  width: min(78vw, 950px);
+  height: auto;
+  transform: translateX(-11%);
 }
 
-.ora-add-on-hero h1 {
-  display: grid;
-  gap: 4px;
+.ora-add-on-hero__callout {
+  position: absolute;
+  top: clamp(180px, 21vw, 285px);
+  right: clamp(32px, 10.5vw, 150px);
+  width: min(24vw, 400px);
+}
+
+.ora-add-on-hero__callout h2,
+.ora-add-on-hero__callout p {
   margin: 0;
-  color: var(--black300);
-  font-size: clamp(36px, 5.2vw, 55px);
+}
+
+.ora-add-on-hero__callout h2 {
+  color: #f5f5f7;
+  font-size: clamp(20px, 2.25vw, 35px);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.08;
 }
 
-.ora-add-on-hero__accent {
-  color: #145599;
+.ora-add-on-hero__callout p {
+  margin-top: 10px;
+  color: #a5a6aa;
+  font-size: clamp(15px, 1.5vw, 19px);
+  line-height: 1.1;
+}
+
+.ora-add-on-hero__content {
+  width: min(100%, 820px);
+  margin-inline: auto;
+  padding: clamp(70px, 8.5vw, 106px) 24px clamp(64px, 8vw, 92px);
+  text-align: center;
+}
+
+.ora-add-on-hero h1 {
+  margin: 0;
+  color: #323337;
+  font-size: clamp(44px, 7.4vw, 86px);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.ora-add-on-hero h1 span {
+  display: inline;
+}
+
+.ora-add-on-hero h1 span:first-child {
+  color: #b1b3b9;
 }
 
 .ora-add-on-hero p {
-  margin: 18px 0 0;
-  color: #8e9096;
-  font-size: 18px;
-  line-height: 1.24;
+  max-width: 780px;
+  margin: 24px auto 0;
+  color: #898a8f;
+  font-size: clamp(20px, 2.5vw, 25px);
+  line-height: 1.18;
 }
 
 .ora-add-on-hero .button {
-  margin-top: 28px;
+  margin-top: 34px;
+  border-color: #aeb0b6;
+  background: transparent;
+  color: #4f5156;
 }
 
 .ora-add-on-developers {
@@ -1787,51 +1839,45 @@
 
 .ora-add-on-developers__inner {
   display: grid;
-  grid-template-columns: minmax(0, 320px) minmax(280px, 365px);
-  gap: clamp(72px, 13vw, 150px);
-  width: min(100%, 760px);
+  grid-template-columns: minmax(0, 420px) minmax(320px, 390px);
+  justify-content: space-between;
+  gap: clamp(72px, 14vw, 178px);
+  width: min(100%, 1040px);
   margin-inline: auto;
-  padding: 60px 24px 58px;
+  padding: clamp(80px, 9vw, 108px) 24px clamp(72px, 9vw, 102px);
 }
 
 .ora-add-on-developers__heading h2 {
   display: grid;
-  gap: 5px;
+  gap: 2px;
   margin: 0;
-  color: var(--black300);
-  font-size: 42px;
+  color: #babcc2;
+  font-size: clamp(46px, 5vw, 58px);
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 .ora-add-on-developers__heading h2 span:first-child {
-  color: #f5a51d;
+  color: var(--terra500);
 }
 
 .ora-add-on-developers__heading p {
-  margin: 22px 0 0;
-  color: #9a9ba0;
-  font-size: 13px;
+  margin: 26px 0 0;
+  color: #9b9ca2;
+  font-size: 16px;
   line-height: 1.4;
 }
 
 .ora-add-on-developers__benefits {
   display: grid;
-  gap: 28px;
-}
-
-.ora-add-on-benefit__number {
-  margin: 0 0 8px;
-  color: var(--black300);
-  font-size: 10px;
-  line-height: 1;
+  gap: 34px;
 }
 
 .ora-add-on-benefit h3 {
-  margin: 0 0 8px;
+  margin: 0 0 7px;
   color: var(--white);
-  font-size: 20px;
+  font-size: 25 px;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 1.1;
@@ -1839,76 +1885,87 @@
 
 .ora-add-on-benefit p:last-child {
   margin: 0;
-  color: #85878c;
-  font-size: 13px;
-  line-height: 1.4;
+  color: #8d8e93;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .ora-add-on-enables {
-  background: #f3f3f5;
+  overflow: hidden;
+  background: #f4f4f6;
   color: var(--black300);
 }
 
+.ora-add-on-enables__intro {
+  padding: clamp(76px, 9vw, 110px) 24px clamp(72px, 8.5vw, 96px);
+}
+
 .ora-add-on-enables__heading {
-  width: min(100%, 520px);
+  width: min(100%, 650px);
   margin-inline: auto;
-  padding: 70px 24px 68px;
   text-align: center;
 }
 
 .ora-add-on-enables__heading h2 {
   margin: 0;
-  color: var(--black300);
-  font-size: clamp(42px, 5.8vw, 54px);
+  color: #323337;
+  font-size: clamp(46px, 6.2vw, 72px);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.08;
 }
 
 .ora-add-on-enables__heading h2 span {
-  color: #197238;
+  color: #b1b3b9;
 }
 
 .ora-add-on-enables__heading p {
-  margin: 18px auto 0;
-  color: var(--black300);
-  font-size: 17px;
-  line-height: 1.3;
+  max-width: 560px;
+  margin: 25px auto 0;
+  color: #a4a6ad;
+  font-size: clamp(19px, 2.1vw, 24px);
+  line-height: 1.16;
+}
+
+.ora-add-on-enables__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  width: min(100%, 930px);
+  margin: 48px auto 0;
+}
+
+.ora-add-on-enables__card {
+  min-height: 128px;
+  padding: 22px 30px 24px;
+  border: 1px solid #e4e4e8;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 5px 12px rgba(5, 6, 8, 0.08);
+}
+
+.ora-add-on-enables__card h3 {
+  margin: 0;
+  color: #111214;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.ora-add-on-enables__card p {
+  margin: 11px 0 0;
+  color: #85868b;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .ora-add-on-enables__visual {
-  min-height: 303px;
-  background: #155c64;
-}
-
-.ora-add-on-enables__safety {
-  background: #020304;
-  padding: 74px clamp(24px, 12vw, 120px) 72px;
-  text-align: center;
-}
-
-.ora-add-on-enables__safety h3 {
-  margin: 0;
-  color: var(--white);
-  font-size: clamp(40px, 5.4vw, 54px);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.08;
-}
-
-.ora-add-on-enables__safety p {
-  max-width: 520px;
-  margin: 20px auto 0;
-  color: #9a9ba0;
-  font-size: 17px;
-  line-height: 1.35;
-}
-
-.ora-add-on-enables__safety p:last-child {
-  color: #f5a51d;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
+  display: block;
+  width: 100%;
+  min-height: clamp(420px, 64vw, 720px);
+  object-fit: cover;
+  object-position: center top;
 }
 
 .solutions-page {
@@ -3609,6 +3666,40 @@
     gap: 18px;
   }
 
+  .ora-add-on-hero__media {
+    min-height: 520px;
+  }
+
+  .ora-add-on-hero__media img {
+    width: 880px;
+    transform: translateX(-24%);
+  }
+
+
+  .ora-add-on-hero__callout {
+    right: 34px;
+    width: 230px;
+  }
+
+  .ora-add-on-developers__inner {
+    grid-template-columns: 1fr;
+    gap: 54px;
+    width: min(100%, 620px);
+  }
+
+  .ora-add-on-developers__benefits {
+    gap: 28px;
+  }
+
+  .ora-add-on-enables__cards {
+    grid-template-columns: 1fr;
+    width: min(100%, 560px);
+  }
+
+  .ora-add-on-enables__visual {
+    min-height: 470px;
+  }
+
   .solution-panel {
     padding: 72px 28px 64px;
   }
@@ -4046,6 +4137,71 @@
     font-size: 14px;
   }
 
+  .ora-add-on-hero__media {
+    min-height: 390px;
+  }
+
+  .ora-add-on-hero__media img {
+    left: 50%;
+    bottom: -4%;
+    width: 610px;
+    transform: translateX(-50%);
+  }
+
+  .ora-add-on-hero__callout {
+    display: none;
+  }
+
+  .ora-add-on-hero__content {
+    padding: 54px 18px 62px;
+  }
+
+  .ora-add-on-hero h1 {
+    font-size: clamp(38px, 12vw, 56px);
+  }
+
+  .ora-add-on-hero p {
+    font-size: 18px;
+  }
+
+  .ora-add-on-developers__inner {
+    padding: 62px 18px 68px;
+  }
+
+  .ora-add-on-developers__heading h2 {
+    font-size: clamp(38px, 11vw, 48px);
+  }
+
+  .ora-add-on-benefit h3 {
+    font-size: 20px;
+  }
+
+  .ora-add-on-enables__intro {
+    padding: 58px 18px 64px;
+  }
+
+  .ora-add-on-enables__heading h2 {
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .ora-add-on-enables__heading p {
+    font-size: 18px;
+  }
+
+  .ora-add-on-enables__cards {
+    margin-top: 36px;
+  }
+
+  .ora-add-on-enables__card {
+    min-height: 116px;
+    padding: 20px;
+  }
+
+  .ora-add-on-enables__visual {
+    min-height: 360px;
+    object-position: 44% top;
+  }
+
   .solution-panel {
     padding: 58px 18px 48px;
   }
@@ -4102,7 +4258,7 @@
   }
 
   .site-footer__brand {
-    font-size: 27px;
+    width: min(100%, 260px);
   }
 
   .site-footer__tagline {

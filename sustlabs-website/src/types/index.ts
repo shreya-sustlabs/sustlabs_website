@@ -141,6 +141,7 @@ export type OraDeveloperSectionProps = {
 }
 
 export type OraEnablesSectionData = {
+  cards: readonly BasicCardProps[]
   description: string
   safetyDescription: string
   safetyEyebrow: string

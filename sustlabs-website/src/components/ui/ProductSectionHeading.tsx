@@ -8,14 +8,13 @@ function ProductSectionHeadingComponent({
   titleAccent,
   titleLead,
 }: ProductSectionHeadingProps) {
-  const leadStyle = accentTarget === 'lead' ? { color: accent } : undefined
+  const leadStyle = accentTarget === 'lead' ? { color: accent } : titleLead.includes('o4 Ideal Use') ? { color: 'var(--black400)' } : undefined
   const accentStyle = accentTarget === 'lead' ? undefined : { color: accent ? accent : 'var(--terra500)' }
-
   return (
     <div className="product-section-heading">
       {eyebrow ? <p className="product-section-heading__eyebrow">{eyebrow}</p> : null}
       <h2>
-        <span style={leadStyle}>{titleLead}</span> <br />
+        <span style={leadStyle}>{titleLead}</span> {!titleAccent.includes('for partners') ? <br /> : null}
         {titleAccent ? <span style={accentStyle}> {titleAccent}</span> : null}
       </h2>
     </div>

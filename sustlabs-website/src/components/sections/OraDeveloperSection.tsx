@@ -16,7 +16,6 @@ function OraDeveloperSectionComponent({ section }: OraDeveloperSectionProps) {
         <div className="ora-add-on-developers__benefits" aria-label="Ora benefits for developers">
           {section.benefits.map((benefit) => (
             <article className="ora-add-on-benefit" key={benefit.number}>
-              <p className="ora-add-on-benefit__number">{benefit.number}</p>
               <h3>{benefit.title}</h3>
               <p>{benefit.description}</p>
             </article>

@@ -7,6 +7,7 @@ type SmartDbSafetySectionProps = {
 }
 
 function SmartDbSafetySectionComponent({ section }: SmartDbSafetySectionProps) {
+  console.log("section.titleAccent", section.titleAccent)
   return (
     <section className="smart-db-page__safety" aria-labelledby="smart-db-safety-title">
       <div className="smart-db-page__safety-inner">

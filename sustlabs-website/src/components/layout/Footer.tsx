@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
+import footerLogo from '../../assets/logo.png'
 import { FOOTER_CONTENT } from '../../utils/constants'
 
 function FooterComponent() {
@@ -7,10 +8,7 @@ function FooterComponent() {
     <footer className="site-footer">
       <div className="site-footer__inner">
         <Link className="site-footer__brand" to="/" aria-label="SustLabs home">
-          <span className="site-footer__mark" aria-hidden="true">
-            &infin;
-          </span>
-          <span>SustLabs</span>
+          <img alt="SustLabs" src={footerLogo} />
         </Link>
         <p className="site-footer__tagline">{FOOTER_CONTENT.tagline}</p>
 
