@@ -2,10 +2,10 @@ import { memo } from 'react'
 import oraEnablesImage from '../../assets/ora2.webp'
 import type { OraEnablesSectionProps } from '../../types'
 
-function OraEnablesSectionComponent({ section }: OraEnablesSectionProps) {
+function OraEnablesSectionComponent({ }: OraEnablesSectionProps) {
   return (
     <section className="ora-add-on-enables" aria-labelledby="ora-enables-title">
-      <div className="ora-add-on-enables__intro">
+      {/* <div className="ora-add-on-enables__intro">
         <div className="ora-add-on-enables__heading">
           <h2 id="ora-enables-title">
             <span>{section.titleLead}</span> {section.titleAccent}
@@ -20,7 +20,7 @@ function OraEnablesSectionComponent({ section }: OraEnablesSectionProps) {
             </article>
           ))}
         </div>
-      </div>
+      </div> */}
       <img
         alt="Ora wall display states showing safety alerts, energy clarity, appliance insights, and ambient clock views"
         className="ora-add-on-enables__visual"

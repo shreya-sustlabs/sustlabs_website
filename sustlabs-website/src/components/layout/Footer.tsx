@@ -36,8 +36,18 @@ function FooterComponent() {
               </Link>
             ))}
           </nav>
-          <p>India</p>
-        </div>
+          <p>
+            SustLabs - 9th floor, IIT Bombay,
+            <br />
+            <span
+              style={{
+                display: 'inline-block',
+                marginTop: '10px',
+              }}
+            >
+              Aspire Research Park, Mumbai, Maharashtra (India)
+            </span>
+          </p>        </div>
       </div>
     </footer>
   )

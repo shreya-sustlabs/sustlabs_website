@@ -1265,7 +1265,7 @@
 .monitoring-intro h1 {
   margin: 0;
   color: var(--black300);
-  font-size: clamp(48px, 5.5vw, 70px);
+  font-size: clamp(48px, 5.5vw, 65px);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.08;
@@ -1386,7 +1386,7 @@
 
 .monitoring-hero__media img {
   display: block;
-  width: min(100%, 650px);
+  width: min(100%, 450px);
   max-width: none;
   height: auto;
 }
@@ -1505,7 +1505,7 @@
 .product-feature-section--smart-db .product-section-heading h2 {
   max-width: 720px;
   color: #aeb0b6;
-  font-size: clamp(46px, 4.7vw, 64px);
+  font-size: clamp(46px, 4.7vw, 60px);
 }
 
 .product-feature-section--smart-db .product-section-heading h2 span:last-child {
@@ -1860,7 +1860,7 @@
   margin: 0;
   color: #323337;
   font-size: clamp(44px, 7.4vw, 86px);
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1.1;
 }
@@ -2137,7 +2137,7 @@
 .solutions-partner-section .product-section-heading h2 {
   max-width: 760px;
   color: var(--black400);
-  font-size: clamp(58px, 5vw, 72px);
+  font-size: clamp(58px, 5vw, 65px);
   font-weight: 500;
   line-height: 1.14;
 }
