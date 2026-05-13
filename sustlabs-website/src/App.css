@@ -2273,7 +2273,7 @@
 }
 
 .support-page {
-  min-height: calc(100svh - 70px);
+  /* min-height: calc(100svh - 70px); */
   background: var(--black200);
   color: var(--black400);
 }
