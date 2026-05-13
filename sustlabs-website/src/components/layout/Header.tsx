@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/logo.png'
+import { trackGaEvent } from '../../utils/analytics'
 import { ADD_ON_PRODUCTS, MONITORING_PRODUCTS, NAV_LINKS } from '../../utils/constants'
 
 type OpenMenu = 'monitoring' | 'add-ons' | null
@@ -25,6 +26,22 @@ function getNavTarget(link: string) {
   const hash = link.toLowerCase().replaceAll(' ', '-')
 
   return `/#${hash}`
+}
+
+function trackNavClick(label: string, destination: string, placement = 'header') {
+  trackGaEvent('nav_click', {
+    nav_destination: destination,
+    nav_label: label,
+    nav_placement: placement,
+  })
+}
+
+function trackNavMenuToggle(label: string, willOpen: boolean) {
+  trackGaEvent('nav_menu_toggle', {
+    menu_label: label,
+    menu_state: willOpen ? 'open' : 'closed',
+    nav_placement: 'header',
+  })
 }
 
 function HeaderComponent() {
@@ -66,7 +83,14 @@ function HeaderComponent() {
         SUSTLABS
       </Link> */}
       <section className="logo-outer" aria-label="sustlab logo">
-        <Link to="/" aria-label="Sustlabs home" onClick={() => setOpenMenu(null)}>
+        <Link
+          to="/"
+          aria-label="Sustlabs home"
+          onClick={() => {
+            trackNavClick('Sustlabs home', '/')
+            setOpenMenu(null)
+          }}
+        >
           <div className="logo-outer-div">
             <img src={logo} alt="sustlabs" />
           </div>
@@ -83,7 +107,15 @@ function HeaderComponent() {
                 type="button"
                 aria-expanded={openMenu === 'monitoring'}
                 aria-haspopup="true"
-                onClick={() => setOpenMenu((currentMenu) => (currentMenu === 'monitoring' ? null : 'monitoring'))}
+                onClick={() =>
+                  setOpenMenu((currentMenu) => {
+                    const willOpen = currentMenu !== 'monitoring'
+
+                    trackNavMenuToggle(link, willOpen)
+
+                    return willOpen ? 'monitoring' : null
+                  })
+                }
               >
                 {link}
               </button>
@@ -93,7 +125,14 @@ function HeaderComponent() {
                 data-open={openMenu === 'monitoring'}
               >
                 {MONITORING_PRODUCTS.filter((product) => !product?.navLabel.includes('o5')).map((product) => (
-                  <NavLink to={product.path} key={product.path} onClick={() => setOpenMenu(null)}>
+                  <NavLink
+                    to={product.path}
+                    key={product.path}
+                    onClick={() => {
+                      trackNavClick(product.navLabel, product.path)
+                      setOpenMenu(null)
+                    }}
+                  >
                     {product.navLabel}
                   </NavLink>
                 ))}
@@ -106,20 +145,42 @@ function HeaderComponent() {
                 type="button"
                 aria-expanded={openMenu === 'add-ons'}
                 aria-haspopup="true"
-                onClick={() => setOpenMenu((currentMenu) => (currentMenu === 'add-ons' ? null : 'add-ons'))}
+                onClick={() =>
+                  setOpenMenu((currentMenu) => {
+                    const willOpen = currentMenu !== 'add-ons'
+
+                    trackNavMenuToggle(link, willOpen)
+
+                    return willOpen ? 'add-ons' : null
+                  })
+                }
               >
                 {link}
               </button>
               <div className="site-header__dropdown" aria-label="Add-on products" data-open={openMenu === 'add-ons'}>
                 {ADD_ON_PRODUCTS.map((product) => (
-                  <NavLink to={product.path} key={product.path} onClick={() => setOpenMenu(null)}>
+                  <NavLink
+                    to={product.path}
+                    key={product.path}
+                    onClick={() => {
+                      trackNavClick(product.navLabel, product.path)
+                      setOpenMenu(null)
+                    }}
+                  >
                     {product.navLabel}
                   </NavLink>
                 ))}
               </div>
             </div>
           ) : (
-            <NavLink to={getNavTarget(link)} key={link} onClick={() => setOpenMenu(null)}>
+            <NavLink
+              to={getNavTarget(link)}
+              key={link}
+              onClick={() => {
+                trackNavClick(link, getNavTarget(link))
+                setOpenMenu(null)
+              }}
+            >
               {link}
             </NavLink>
           ),

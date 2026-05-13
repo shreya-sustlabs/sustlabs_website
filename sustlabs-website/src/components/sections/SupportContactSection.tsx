@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import type { FormEvent } from 'react'
 import type { SupportContactSectionProps } from '../../types'
+import { trackGaEvent } from '../../utils/analytics'
 
 function handleSupportSubmit(event: FormEvent<HTMLFormElement>) {
   event.preventDefault()
@@ -24,7 +25,17 @@ function SupportContactSectionComponent({ section }: SupportContactSectionProps)
             </label>
           ))}
 
-          <button className="support-contact__submit" type="submit">
+          <button
+            className="support-contact__submit"
+            type="submit"
+            onClick={() =>
+              trackGaEvent('button_click', {
+                button_label: 'Submit',
+                button_location: 'support_contact',
+                button_type: 'submit',
+              })
+            }
+          >
             Submit
           </button>
         </form>
