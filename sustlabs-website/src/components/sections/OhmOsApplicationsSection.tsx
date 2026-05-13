@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { OhmOsApplicationsSectionProps } from '../../types'
-import ohmOS from '../../assets/Ohm OS.webp'
+import ohmOS from '../../assets/Ohm OS.svg'
 
 function OhmOsApplicationsSectionComponent({ section }: OhmOsApplicationsSectionProps) {
   return (

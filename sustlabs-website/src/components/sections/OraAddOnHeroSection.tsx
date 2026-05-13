@@ -1,9 +1,9 @@
 import { memo } from 'react'
 import oraHeroImage from '../../assets/ora1.webp'
 import type { OraHeroSectionProps } from '../../types'
-import { Button } from '../ui/Button'
+// import { Button } from '../ui/Button'
 
-function OraAddOnHeroSectionComponent({ section }: OraHeroSectionProps) {
+function OraAddOnHeroSectionComponent({ }: OraHeroSectionProps) {
   return (
     <section className="ora-add-on-hero" aria-labelledby="ora-add-on-page-title">
       <div className="ora-add-on-hero__media" aria-hidden="true">
@@ -13,7 +13,7 @@ function OraAddOnHeroSectionComponent({ section }: OraHeroSectionProps) {
           <p>A familiar object that earns wall space without explanation.</p>
         </div>
       </div>
-      <div className="ora-add-on-hero__content">
+      {/* <div className="ora-add-on-hero__content">
         <h1 id="ora-add-on-page-title">
           <span>{section.titleLead}</span>
           <span className="ora-add-on-hero__accent">{section.titleAccent}</span>
@@ -22,7 +22,7 @@ function OraAddOnHeroSectionComponent({ section }: OraHeroSectionProps) {
         <Button href={section.action.href} variant={section.action.variant}>
           {section.action.label}
         </Button>
-      </div>
+      </div> */}
     </section>
   )
 }
