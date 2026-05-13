@@ -44,6 +44,7 @@ export const FOOTER_CONTENT = {
       links: [
         { label: 'Sales', path: '/support' },
         { label: 'Book a Demo', path: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo' },
+        { label: 'Gen3 Setup Guide', path: 'https://drive.google.com/file/d/1FR4I9CKqep2agWU8V33sGO5tf72UaxY_/view?ts=6a041b55' },
       ],
     },
   ],
