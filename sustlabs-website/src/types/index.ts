@@ -108,6 +108,7 @@ export type OhmOsLicenseeSectionData = {
   logos: readonly {
     id: string
     label: string
+    image: string
   }[]
   title: string
 }
@@ -165,7 +166,7 @@ export type SolutionPanelData = {
 
 export type SolutionPanelProps = {
   index: number
-  panel: SolutionPanelData 
+  panel: SolutionPanelData
 }
 
 export type SolutionsPartnerItem = BasicCardProps

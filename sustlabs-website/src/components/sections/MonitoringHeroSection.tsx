@@ -33,7 +33,7 @@ function MonitoringHeroSectionComponent({
             </Button>
           ))}
         </div>
-        {hasCommerceAction ? <p className="monitoring-hero__commerce-note">*Continues to Ultron Commerce.</p> : null}
+        {/* {hasCommerceAction ? <p className="monitoring-hero__commerce-note">*Continues to Ultron Commerce.</p> : null} */}
       </div>
       {imageSrc ? (
         <div className={`monitoring-hero__media monitoring-hero__media--${imageVariant ?? 'default'}`}>

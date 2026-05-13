@@ -1,5 +1,9 @@
 import type { MonitoringPageData, SmartDbPageData } from '../types'
 
+import panasonicLogo from '../assets/Frame 80.png'
+import schneiderLogo from '../assets/Frame 81.png'
+import ineproLogo from '../assets/Frame 82.png'
+
 export const NAV_LINKS = [
   'Ohm OS',
   'Products',
@@ -110,10 +114,9 @@ export const OHM_OS_LICENSEE_CONTENT = {
   description:
     'For electrical and infrastructure brands, Ohm OS can extend intelligence into products, systems, and connected experiences beyond a single deployment.',
   logos: [
-    { id: 'legrand', label: 'legrand' },
-    { id: 'panasonic', label: 'Panasonic' },
-    { id: 'inepro', label: 'inepro' },
-    { id: 'schneider', label: 'Schneider Electric' },
+    { id: 'panasonic', label: 'Panasonic', image: panasonicLogo },
+    { id: 'inepro', label: 'inepro', image: ineproLogo },
+    { id: 'schneider', label: 'Schneider Electric', image: schneiderLogo },
   ],
 } as const
 
@@ -438,7 +441,7 @@ export const MONITORING_PRODUCTS = [
     heroLead: 'See what your home is using',
     heroActions: [
       {
-        label: 'Get o3*',
+        label: 'Buy from Panasonic\'s Ultron ',
         href: 'https://ultron.lifestylecommerce.in/ohm-assistant-3rd-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },
@@ -574,7 +577,7 @@ export const MONITORING_PRODUCTS = [
     heroRest: 'before they turn serious.',
     heroActions: [
       {
-        label: 'Get o4*',
+        label: 'Buy from Panasonic\'s Ultron',
         href: 'https://ultron.lifestylecommerce.in/ohm-assistant-4th-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },

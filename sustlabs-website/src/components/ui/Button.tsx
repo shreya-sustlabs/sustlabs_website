@@ -13,7 +13,7 @@ export function Button({ children, className = '', href, variant = 'primary', ..
   }
 
   return (
-    <a className={classNames} href={href} {...props}>
+    <a className={classNames} href={href} {...props} target="_blank">
       {children}
     </a>
   )
