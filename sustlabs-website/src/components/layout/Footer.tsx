@@ -51,8 +51,7 @@ function FooterComponent() {
             ))}
           </nav>
           <p className="site-footer__address">
-            SustLabs - 9th floor, IIT Bombay,
-            <span>Aspire Research Park, Mumbai, Maharashtra (India)</span>
+            Aspire Research Park, IIT Bombay, Mumbai (India)
           </p>
         </div>
       </div>
