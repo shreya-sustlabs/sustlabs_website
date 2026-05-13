@@ -123,7 +123,7 @@ export const ORA_ADD_ON_PAGE_CONTENT = {
   description:
     'A built-in amenity for modern developments. A new category of built-in intelligence designed to integrate at the building level and add long-term value to residential projects.',
   action: {
-    label: 'Talk to sales',
+    label: 'Talk to us',
     href: '/support#contact-sales',
     variant: 'primary',
   },
@@ -443,7 +443,7 @@ export const MONITORING_PRODUCTS = [
         variant: 'primary',
       },
       {
-        label: 'Talk to sales',
+        label: 'Talk to us',
         href: '/support',
         variant: 'secondary',
       },
@@ -579,7 +579,7 @@ export const MONITORING_PRODUCTS = [
         variant: 'primary',
       },
       {
-        label: 'Talk to sales',
+        label: 'Talk to us',
         href: '/support',
         variant: 'secondary',
       },
@@ -830,7 +830,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
       //   variant: 'primary',
       // },
       {
-        label: 'Talk to sales',
+        label: 'Talk to us',
         href: '/support',
         variant: 'secondary',
       },
