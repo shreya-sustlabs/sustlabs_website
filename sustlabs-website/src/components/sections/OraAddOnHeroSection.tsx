@@ -4,7 +4,7 @@ import type { OraHeroSectionProps } from '../../types'
 import { Button } from '../ui/Button'
 
 function OraAddOnHeroSectionComponent({ section }: OraHeroSectionProps) {
-  void section
+  console.log("oraaa::", section.action.variant)
 
   return (
     <section className="ora-add-on-hero" aria-labelledby="ora-add-on-page-title">

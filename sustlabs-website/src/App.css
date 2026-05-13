@@ -1866,11 +1866,11 @@
 
 .ohm-os-hero .button,
 .ora-add-on-hero .button {
-  min-width: auto;
-  min-height: 42px;
+  /* min-width: auto; */
+  min-height: 50px;
   border-radius: 8px;
   padding: 0 22px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .ohm-os-hero .button--primary,
@@ -1971,9 +1971,8 @@
 
 .ora-add-on-hero .button {
   margin-top: 34px;
-  border-color: #aeb0b6;
-  background: transparent;
-  color: #4f5156;
+  background: var(--black500);
+  color: var(--black200);
 }
 
 .ora-add-on-developers {
@@ -5378,4 +5377,39 @@
   max-height: 62px;
 
   object-fit: contain;
+}
+
+.support-hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  justify-content: center;
+}
+
+.support-hero__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 54px;
+  padding: 0 24px;
+
+  border-radius: 999px;
+  background: #25d366;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.support-hero__whatsapp:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
 }

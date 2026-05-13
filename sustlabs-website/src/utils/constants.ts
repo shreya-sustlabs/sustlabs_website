@@ -128,7 +128,7 @@ export const ORA_ADD_ON_PAGE_CONTENT = {
   action: {
     label: 'Talk to us',
     href: '/support#contact-sales',
-    variant: 'primary',
+    variant: 'secondary',
   },
 } as const
 
