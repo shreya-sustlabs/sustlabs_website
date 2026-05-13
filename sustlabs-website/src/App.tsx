@@ -4,13 +4,14 @@ import './App.css'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
 import { HomePage } from './components/page/HomePage'
-import { LegalPlaceholderPage } from './components/page/LegalPlaceholderPage'
 import { MonitoringPage } from './components/page/MonitoringPage'
 import { OhmOsPage } from './components/page/OhmOsPage'
 import { OraAddOnPage } from './components/page/OraAddOnPage'
+import { PrivacyPolicyPage } from './components/page/PrivacyPolicyPage'
 import { SmartDbPage } from './components/page/SmartDbPage'
 import { SolutionsPage } from './components/page/SolutionsPage'
 import { SupportPage } from './components/page/SupportPage'
+import { TermsConditionsPage } from './components/page/TermsConditionsPage'
 import { MONITORING_PRODUCTS } from './utils/constants'
 
 const DEFAULT_MONITORING_PATH = MONITORING_PRODUCTS[0].path
@@ -55,8 +56,8 @@ function App() {
         <Route element={<OraAddOnPage />} path="/add-ons/ora" />
         <Route element={<SolutionsPage />} path="/solutions" />
         <Route element={<SupportPage />} path="/support" />
-        <Route element={<LegalPlaceholderPage />} path="/privacy-policy" />
-        <Route element={<LegalPlaceholderPage />} path="/terms-and-conditions" />
+        <Route element={<PrivacyPolicyPage />} path="/privacy-policy" />
+        <Route element={<TermsConditionsPage />} path="/terms-and-conditions" />
         <Route element={<MonitoringRoute />} path="/monitoring/:slug" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Routes>
