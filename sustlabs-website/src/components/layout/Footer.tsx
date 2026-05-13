@@ -28,7 +28,7 @@ function FooterComponent() {
         </nav>
 
         <div className="site-footer__bottom">
-          <p>Copyright &copy; 2026 Sustlabs Inc. All rights reserved.</p>
+          <p>Copyright &copy; 2026 Sustlabs. All rights reserved.</p>
           <nav aria-label="Legal links">
             {FOOTER_CONTENT.legalLinks.map((link) => (
               <Link key={link.path} to={link.path}>
