@@ -13,7 +13,7 @@ function OhmOsApplicationsSectionComponent({ section }: OhmOsApplicationsSection
             titleAccent={section.titleAccent}
             titleLead={section.titleLead}
           /> */}
-          <p style={{ fontSize: '70px', marginBottom: '10px' }}>{section.titleLead}</p>
+          <p className="ohm-os-applications__title">{section.titleLead}</p>
           <p className="ohm-os-applications__eyebrow">{section.eyebrow}</p>
           <p className="ohm-os-applications__desc">{section.description}</p>
         </div>

@@ -31,7 +31,7 @@ function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
 
         <p>{section.description}</p>
         <p style={{ color: 'var(--black400)' }}>Write to us at: bd@sustlabs.com / support@sustlabs.com</p>
-
+        <p style={{ color: 'var(--black400)' }}>Call us at: 7738257811</p>
         <div className="support-hero__actions">
           <Button
             className="support-hero__button"
