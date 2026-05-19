@@ -35,8 +35,8 @@ export const FOOTER_CONTENT = {
     {
       title: 'Store',
       links: [
-        { label: 'o3', path: '/monitoring/o3-energy-visibility' },
-        { label: 'o4', path: '/monitoring/o4-electrical-safety' },
+        { label: 'o3', path: '/products/o3-energy-visibility' },
+        { label: 'o4', path: '/products/o4-electrical-safety' },
       ],
     },
     {
@@ -452,8 +452,10 @@ export const MONITORING_PRODUCTS = [
       },
     ],
     navLabel: 'o3 - Energy Visibility',
-    path: '/monitoring/o3-energy-visibility',
+    path: '/products/o3-energy-visibility',
     title: 'o3 makes electricity visible',
+    searchTitle:'o3 Energy Monitor',
+    searchSubTitle:'See live electricity usage, appliance activity, bill trends, and key electrical conditions from one connection at the panel.',
     useCaseSection: {
       accent: 'var(--black400)',
       eyebrow: 'IDEAL USE',
@@ -596,7 +598,7 @@ export const MONITORING_PRODUCTS = [
       ],
     },
     navLabel: 'o4 - Electrical Safety Intelligence',
-    path: '/monitoring/o4-electrical-safety',
+    path: '/products/o4-electrical-safety',
     postDetailUseCaseSection: {
       accent: 'var(--black400)',
       eyebrow: '',
@@ -627,6 +629,8 @@ export const MONITORING_PRODUCTS = [
       ],
     },
     title: 'o4 adds electrical safety intelligence',
+    searchTitle:'o4 Energy Analyzer',
+    searchSubTitle:'Detect electrical risks early with alerts for arcing, leakage, neutral loss, phase loss, overloads and unsafe power conditions.',
     useCaseSection: {
       accent: 'var(--black400)',
       eyebrow: 'ALERTS, NOTIFICATIONS, PROTECTION',
@@ -807,6 +811,8 @@ export const MONITORING_PRODUCTS = [
 export const SMART_DB_PRODUCT: MonitoringPageData = {
   ...MONITORING_PRODUCTS[2],
   path: '/smart-db',
+  searchTitle: '',
+  searchSubTitle: ''
 }
 
 export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {

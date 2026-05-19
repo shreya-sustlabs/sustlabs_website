@@ -58,7 +58,7 @@ function App() {
         <Route element={<SupportPage />} path="/support" />
         <Route element={<PrivacyPolicyPage />} path="/privacy-policy" />
         <Route element={<TermsConditionsPage />} path="/terms-and-conditions" />
-        <Route element={<MonitoringRoute />} path="/monitoring/:slug" />
+        <Route element={<MonitoringRoute />} path="/products/:slug" />
         <Route element={<Navigate replace to="/" />} path="*" />
       </Routes>
       <Footer />

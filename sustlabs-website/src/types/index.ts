@@ -226,6 +226,8 @@ export type MonitoringPageData = {
   path: string
   postDetailUseCaseSection?: ProductUseCaseSection
   title: string
+  searchTitle?: string
+  searchSubTitle?: string
   useCaseSection: ProductUseCaseSection
   itemsAccent?: string
 }

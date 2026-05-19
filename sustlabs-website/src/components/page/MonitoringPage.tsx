@@ -7,18 +7,19 @@ import { MonitoringIntroSection } from '../sections/MonitoringIntroSection'
 import { ProductCtaSection } from '../sections/ProductCtaSection'
 import { ProductFeatureSection } from '../sections/ProductFeatureSection'
 import { ProductUseCaseSection } from '../sections/ProductUseCaseSection'
+import { Helmet } from 'react-helmet-async'
 
 type MonitoringPageProps = {
   data: MonitoringPageData
 }
 
 const MONITORING_HERO_IMAGES = {
-  '/monitoring/o3-energy-visibility': {
+  '/products/o3-energy-visibility': {
     alt: 'o3 energy monitoring device',
     src: o3HeroImage,
     variant: 'o3',
   },
-  '/monitoring/o4-electrical-safety': {
+  '/products/o4-electrical-safety': {
     alt: 'o4 electrical safety device',
     src: o4HeroImage,
     variant: 'o4',
@@ -30,6 +31,21 @@ function MonitoringPageComponent({ data }: MonitoringPageProps) {
 
   return (
     <main className="monitoring-page">
+      <Helmet>
+        <title>{data.searchTitle}</title>
+
+        <meta
+          name="description"
+          content={data.searchSubTitle}
+        />
+
+        <meta name="robots" content="index, follow" />
+
+        <link
+          rel="canonical"
+          href={`https://www.sustlabs.com/${data.path}`}
+        />
+      </Helmet>
       <MonitoringIntroSection section={data.introSection} />
       <MonitoringHeroSection
         accent={data.heroAccentColor ?? data.accent}

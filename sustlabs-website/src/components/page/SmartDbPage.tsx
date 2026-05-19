@@ -9,10 +9,26 @@ import { SmartDbComparisonSection } from '../sections/SmartDbComparisonSection'
 import { SmartDbEnergySection } from '../sections/SmartDbEnergySection'
 import { SmartDbSafetySection } from '../sections/SmartDbSafetySection'
 import { SmartDbTextStackSection } from '../sections/SmartDbTextStackSection'
+import { Helmet } from 'react-helmet-async'
 
 function SmartDbPageComponent() {
   return (
     <main className="smart-db-page">
+      <Helmet>
+        <title>Smart DB</title>
+
+        <meta
+          name="description"
+          content="An intelligent distribution board that brings circuit-level visibility, safety intelligence and backup orchestration to buildings."
+        />
+
+        <meta name="robots" content="index, follow" />
+
+        <link
+          rel="canonical"
+          href="https://www.sustlabs.com/smart-db"
+        />
+      </Helmet>
       <MonitoringIntroSection section={SMART_DB_PAGE_CONTENT.introSection} />
       <MonitoringHeroSection
         {...SMART_DB_PAGE_CONTENT.heroSection}

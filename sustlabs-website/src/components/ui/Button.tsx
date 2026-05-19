@@ -10,10 +10,15 @@ function getButtonLabel(children: ButtonProps['children'], ariaLabel?: string) {
   return ariaLabel ?? 'Button'
 }
 
+function getEventName(type?: string) {
+  return type ?? 'button_click'
+}
+
+
 export function Button({ children, className = '', href, onClick, variant = 'primary', ...props }: ButtonProps) {
   const classNames = ['button', `button--${variant}`, className].filter(Boolean).join(' ')
   const handleClick: ButtonProps['onClick'] = (event) => {
-    trackGaEvent('button_click', {
+    trackGaEvent(getEventName(props['type']), {
       button_href: href,
       button_label: getButtonLabel(children, props['aria-label']),
       button_variant: variant,

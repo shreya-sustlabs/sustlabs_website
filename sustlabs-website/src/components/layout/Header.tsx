@@ -50,7 +50,7 @@ function HeaderComponent() {
   const { pathname } = useLocation()
   const [openMenu, setOpenMenu] = useState<OpenMenu>(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const isMonitoringActive = pathname.startsWith('/monitoring')
+  const isMonitoringActive = pathname.startsWith('/products')
   const isAddOnsActive = pathname.startsWith('/add-ons')
 
   useEffect(() => {

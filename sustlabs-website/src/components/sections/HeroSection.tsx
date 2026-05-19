@@ -20,7 +20,7 @@ function HeroSectionComponent() {
 
         <div className="hero__actions" aria-label="Ohm OS actions">
           {HERO_CONTENT.actions.map((action) => (
-            <Button href={action.href} key={action.label} variant={action.variant}>
+            <Button href={action.href} key={action.label} variant={action.variant} type = {action.label}>
               {action.label}
             </Button>
           ))}
