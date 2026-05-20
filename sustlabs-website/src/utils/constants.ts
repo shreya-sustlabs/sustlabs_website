@@ -296,7 +296,7 @@ export const SUPPORT_PAGE_CONTENT = {
     description:
       "Have questions, planning a deployment, or exploring where Sustlabs fits? We're here to help you understand the system, the right setup, and what it could look like for your site or business.",
     action: {
-      label: 'Book a demo',
+      label: 'Book a Demo',
       href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
       variant: 'primary',
     },

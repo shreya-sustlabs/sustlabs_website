@@ -49,7 +49,7 @@ function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
             target="_blank"
             rel="noopener noreferrer"
             variant={section.action.variant}
-            type = {section.action.label}
+            type = "WhatsApp Us"
           >
             WhatsApp Us
           </Button>

@@ -43,7 +43,7 @@ function MonitoringPageComponent({ data }: MonitoringPageProps) {
 
         <link
           rel="canonical"
-          href={`https://www.sustlabs.com/${data.path}`}
+          href={`https://www.sustlabs.com${data.path}`}
         />
       </Helmet>
       <MonitoringIntroSection section={data.introSection} />
