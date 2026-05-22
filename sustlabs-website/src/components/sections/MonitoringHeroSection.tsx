@@ -11,6 +11,7 @@ function MonitoringHeroSectionComponent({
   imageSrc,
   imageVariant,
   kicker,
+  onActionClick,
   titleAccent,
   titleLead,
   titleRest,
@@ -28,7 +29,13 @@ function MonitoringHeroSectionComponent({
         <p>{description}</p>
         <div className="monitoring-hero__actions" aria-label={`${eyebrow} actions`}>
           {actions.map((action) => (
-            <Button href={action.href} key={action.label} variant={action.variant}>
+            <Button
+              href={action.href}
+              key={action.label}
+              onClick={(event) => onActionClick?.(action, event)}
+              variant={action.variant}
+              type={`${action.label}-smartdb`}
+            >
               {action.label}
             </Button>
           ))}

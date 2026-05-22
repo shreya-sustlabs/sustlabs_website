@@ -1,10 +1,11 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import smartDbImage from '../../assets/smartdb1.webp'
 import smartDbPanelImage from '../../assets/smartdb2.webp'
 import { SMART_DB_PAGE_CONTENT } from '../../utils/constants'
 import { MonitoringHeroSection } from '../sections/MonitoringHeroSection'
 import { MonitoringIntroSection } from '../sections/MonitoringIntroSection'
 import { ProductFeatureSection } from '../sections/ProductFeatureSection'
+import { SmartDbLeadModal } from '../sections/SmartDbLeadModal'
 import { SmartDbComparisonSection } from '../sections/SmartDbComparisonSection'
 import { SmartDbEnergySection } from '../sections/SmartDbEnergySection'
 import { SmartDbSafetySection } from '../sections/SmartDbSafetySection'
@@ -12,6 +13,8 @@ import { SmartDbTextStackSection } from '../sections/SmartDbTextStackSection'
 import { Helmet } from 'react-helmet-async'
 
 function SmartDbPageComponent() {
+  const [isLeadFormOpen, setIsLeadFormOpen] = useState(false)
+
   return (
     <main className="smart-db-page">
       <Helmet>
@@ -35,7 +38,14 @@ function SmartDbPageComponent() {
         imageAlt="Smart DB electrical panel"
         imageSrc={smartDbImage}
         imageVariant="smart-db"
+        onActionClick={(action, event) => {
+          if (action.label === 'Talk to us') {
+            event.preventDefault()
+            setIsLeadFormOpen(true)
+          }
+        }}
       />
+      {isLeadFormOpen ? <SmartDbLeadModal onClose={() => setIsLeadFormOpen(false)} /> : null}
       <ProductFeatureSection section={SMART_DB_PAGE_CONTENT.promiseSection} variant="smart-db" />
       <section className="smart-db-page__visual-band" aria-label="Smart DB installed panel visual">
         <div className="smart-db-page__visual-scene">

@@ -833,14 +833,14 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     titleAccent: 'reimagined',
     description: 'Circuit awareness, safety intelligence, and control readiness, all into one place where power is divided, protected, and managed.',
     actions: [
-      // {
-      //   label: 'Explore Smart DB',
-      //   href: '#features',
-      //   variant: 'primary',
-      // },
       {
         label: 'Talk to us',
-        href: '/support',
+        href: '#features',
+        variant: 'primary',
+      },
+      {
+        label: 'Book a Demo',
+        href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
         variant: 'secondary',
       },
     ],

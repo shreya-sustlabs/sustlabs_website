@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes, ReactNode } from 'react'
+import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from 'react'
 
 export type ButtonVariant = 'primary' | 'secondary'
 
@@ -260,6 +260,7 @@ export type MonitoringHeroSectionProps = {
   imageSrc?: string
   imageVariant?: 'o3' | 'o4' | 'smart-db'
   kicker: string
+  onActionClick?: (action: ProductHeroAction, event: MouseEvent<HTMLAnchorElement>) => void
   titleAccent: string
   titleLead: string
   titleRest?: string
