@@ -5,7 +5,7 @@ export type SmartDbLeadPayload = {
   phone: string
 }
 
-const GOOGLE_SHEETS_LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxlFxeaGji7vooFBKopyszOt6MczATTMCugDKY3AjuWexRvOyS2WAM7krCE-N_4ZjeX/exec'
+const GOOGLE_SHEETS_LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxvsCqXMP1DoR8v187-9GbAGvXAnsE-K1YKxag3Wa8oy9uX07Rbp1MDMZpNurCEMmwt/exec'
 
 export async function submitSmartDbLead(payload: SmartDbLeadPayload) {
   await fetch(GOOGLE_SHEETS_LEAD_ENDPOINT, {

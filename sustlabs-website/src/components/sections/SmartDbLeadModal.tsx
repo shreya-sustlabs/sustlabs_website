@@ -114,13 +114,14 @@ function SmartDbLeadModalComponent({ onClose }: SmartDbLeadModalProps) {
             </label>
 
             <label className="smart-db-lead-form__wide">
-              <span>Phone number</span>
+              <span>Phone number *</span>
               <input
                 autoComplete="tel"
                 id="phone"
                 inputMode="tel"
                 name="phone"
-                placeholder="Phone number"
+                placeholder="Phone number *"
+                required
                 value={formState.phone}
                 onChange={(event) => setFormState((current) => ({ ...current, phone: event.target.value }))}
               />
