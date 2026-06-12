@@ -11,22 +11,14 @@ const supportQrCards = [
     icon: whatsappIcon,
     qrImage: whatsappQR,
     label: 'Scan to Chat',
-    qrAlt: 'WhatsApp support QR code',
-    value: 'https://wa.me/917208436800',
   },
   {
     description: 'Scan to call support agent directly from your phone.',
     icon: callIcon,
     qrImage: callQR,
     label: 'Scan to Call',
-    qrAlt: 'Call support QR code',
-    value: 'tel:+917208430600',
   },
 ] as const
-
-function getQrImageUrl(value: string) {
-  return `https://api.qrserver.com/v1/create-qr-code/?size=360x360&margin=0&data=${encodeURIComponent(value)}`
-}
 
 function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
   return (
@@ -39,8 +31,6 @@ function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
         <div className="support-hero__qr-grid" aria-label="Support QR codes">
           {supportQrCards.map((card) => (
             <article className="support-qr-card" key={card.label}>
-              {/* <img className="support-qr-card__code" src={getQrImageUrl(card.value)} alt={card.qrAlt} />
-               */}
               <img className="support-qr-card__code" src={card.qrImage} />
               <span className="support-qr-card__icon" aria-hidden="true">
                 <img src={card.icon} alt="" />
