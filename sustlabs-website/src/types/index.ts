@@ -169,6 +169,20 @@ export type SolutionPanelProps = {
   panel: SolutionPanelData
 }
 
+export type SolutionsHeroSectionData = {
+  actions: readonly PageAction[]
+  description: string
+  note: string
+  titleAccent: string
+  titleLead: string
+  titleRest: string
+}
+
+export type SolutionsHeroSectionProps = {
+  onActionClick?: (action: PageAction, event: MouseEvent<HTMLAnchorElement>) => void
+  section: SolutionsHeroSectionData
+}
+
 export type SolutionsPartnerItem = BasicCardProps
 
 export type SolutionsPartnerSectionData = ProductSectionHeadingProps & {

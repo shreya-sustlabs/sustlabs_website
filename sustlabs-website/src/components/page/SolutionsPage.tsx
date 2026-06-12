@@ -1,10 +1,14 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { SOLUTIONS_PAGE_CONTENT } from '../../utils/constants'
+import { SmartDbLeadModal } from '../sections/SmartDbLeadModal'
+import { SolutionsHeroSection } from '../sections/SolutionsHeroSection'
 import { SolutionPanel } from '../sections/SolutionPanel'
 import { SolutionsPartnerSection } from '../sections/SolutionsPartnerSection'
 import { Helmet } from 'react-helmet-async'
 
 function SolutionsPageComponent() {
+  const [isLeadFormOpen, setIsLeadFormOpen] = useState(false)
+
   return (
     <main className="solutions-page">
       <Helmet>
@@ -22,6 +26,16 @@ function SolutionsPageComponent() {
           href="https://www.sustlabs.com/solutions"
         />
       </Helmet>
+      <SolutionsHeroSection
+        section={SOLUTIONS_PAGE_CONTENT.heroSection}
+        onActionClick={(action, event) => {
+          if (action.label === 'Talk to us') {
+            event.preventDefault()
+            setIsLeadFormOpen(true)
+          }
+        }}
+      />
+      {isLeadFormOpen ? <SmartDbLeadModal source = "solution" onClose={() => setIsLeadFormOpen(false)} /> : null}
       {SOLUTIONS_PAGE_CONTENT.panels.map((panel, index) => (
         <SolutionPanel index={index} key={`${panel.titleLead}`} panel={panel} />
       ))}

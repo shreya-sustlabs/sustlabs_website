@@ -1,7 +1,9 @@
 import { type FormEvent, memo, useEffect, useRef, useState } from 'react'
 import { submitSmartDbLead } from '../../api'
+import { trackGaEvent } from '../../utils/analytics'
 
 type SmartDbLeadModalProps = {
+  source: string
   onClose: () => void
 }
 
@@ -10,9 +12,10 @@ const initialFormState = {
   email: '',
   name: '',
   phone: '',
+  source: '',
 }
 
-function SmartDbLeadModalComponent({ onClose }: SmartDbLeadModalProps) {
+function SmartDbLeadModalComponent({ source, onClose }: SmartDbLeadModalProps) {
   const [formState, setFormState] = useState(initialFormState)
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const closeTimerRef = useRef<number | null>(null)
@@ -55,6 +58,7 @@ function SmartDbLeadModalComponent({ onClose }: SmartDbLeadModalProps) {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setStatus('submitting')
+    trackGaEvent('send-' + source)
 
     try {
       await submitSmartDbLead(formState)
@@ -109,7 +113,7 @@ function SmartDbLeadModalComponent({ onClose }: SmartDbLeadModalProps) {
                 required
                 type="email"
                 value={formState.email}
-                onChange={(event) => setFormState((current) => ({ ...current, email: event.target.value }))}
+                onChange={(event) => setFormState((current) => ({ ...current, email: event.target.value, source: source }))}
               />
             </label>
 

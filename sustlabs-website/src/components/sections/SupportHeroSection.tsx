@@ -1,27 +1,32 @@
-// import { memo } from 'react'
-// import type { SupportHeroSectionProps } from '../../types'
-// import { Button } from '../ui/Button'
-
-// function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
-//   return (
-//     <section className="support-hero">
-//       <div className="support-hero__inner">
-//         <h1>{section.title}</h1>
-//         <p>{section.description}</p>
-//         <Button className="support-hero__button" href={'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo'} variant={section.action.variant}>
-//           {section.action.label}
-//         </Button>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export const SupportHeroSection = memo(SupportHeroSectionComponent)
-
-
 import { memo } from 'react'
 import type { SupportHeroSectionProps } from '../../types'
-import { Button } from '../ui/Button'
+import callIcon from '../../assets/callIcon.svg'
+import whatsappIcon from '../../assets/waIcon.svg'
+import callQR from '../../assets/call.svg'
+import whatsappQR from '../../assets/whatsapp.svg'
+
+const supportQrCards = [
+  {
+    description: 'Scan the QR code to start chatting with Ohm Support on WhatsApp.',
+    icon: whatsappIcon,
+    qrImage: whatsappQR,
+    label: 'Scan to Chat',
+    qrAlt: 'WhatsApp support QR code',
+    value: 'https://wa.me/917208436800',
+  },
+  {
+    description: 'Scan to call support agent directly from your phone.',
+    icon: callIcon,
+    qrImage: callQR,
+    label: 'Scan to Call',
+    qrAlt: 'Call support QR code',
+    value: 'tel:+917208430600',
+  },
+] as const
+
+function getQrImageUrl(value: string) {
+  return `https://api.qrserver.com/v1/create-qr-code/?size=360x360&margin=0&data=${encodeURIComponent(value)}`
+}
 
 function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
   return (
@@ -30,32 +35,23 @@ function SupportHeroSectionComponent({ section }: SupportHeroSectionProps) {
         <h1>{section.title}</h1>
 
         <p>{section.description}</p>
-        <p style={{ color: 'var(--black400)' }}>Write to us at: bd@sustlabs.com / support@sustlabs.com</p>
-        <p style={{ color: 'var(--black400)' }}>Call us at: 7738257811</p>
 
-        <div className="support-hero__actions">
-          <Button
-            className="support-hero__button"
-            href={'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo'}
-            variant={section.action.variant}
-            type = {section.action.label}
-          >
-            {section.action.label}
-          </Button>
-
-          <Button
-            className="support-hero__button"
-            href="https://wa.me/917738880011?text=Hi%20SustLabs%2C%20I%20need%20support"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant={section.action.variant}
-            type = "WhatsApp Us"
-          >
-            WhatsApp Us
-          </Button>
+        <div className="support-hero__qr-grid" aria-label="Support QR codes">
+          {supportQrCards.map((card) => (
+            <article className="support-qr-card" key={card.label}>
+              {/* <img className="support-qr-card__code" src={getQrImageUrl(card.value)} alt={card.qrAlt} />
+               */}
+              <img className="support-qr-card__code" src={card.qrImage} />
+              <span className="support-qr-card__icon" aria-hidden="true">
+                <img src={card.icon} alt="" />
+              </span>
+              <h2>{card.label}</h2>
+              <p>{card.description}</p>
+            </article>
+          ))}
         </div>
       </div>
-    </section >
+    </section>
   )
 }
 

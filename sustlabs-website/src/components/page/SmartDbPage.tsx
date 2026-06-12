@@ -45,7 +45,7 @@ function SmartDbPageComponent() {
           }
         }}
       />
-      {isLeadFormOpen ? <SmartDbLeadModal onClose={() => setIsLeadFormOpen(false)} /> : null}
+      {isLeadFormOpen ? <SmartDbLeadModal source="smartdb" onClose={() => setIsLeadFormOpen(false)} /> : null}
       <ProductFeatureSection section={SMART_DB_PAGE_CONTENT.promiseSection} variant="smart-db" />
       <section className="smart-db-page__visual-band" aria-label="Smart DB installed panel visual">
         <div className="smart-db-page__visual-scene">

@@ -185,6 +185,26 @@ export const ORA_ENABLES_SECTION = {
 } as const
 
 export const SOLUTIONS_PAGE_CONTENT = {
+  heroSection: {
+    titleLead: 'Intelligent',
+    titleAccent: 'Electrical Solutions',
+    titleRest: 'for Every Environment',
+    description:
+      'From retail stores and commercial spaces to warehouses and critical facilities, SustLabs helps organizations enhance safety, gain real-time visibility, and improve operational efficiency through connected electrical intelligence.',
+    note: "Let's identify the right solution for your unique operational needs.",
+    actions: [
+      {
+        label: 'Talk to us',
+        href: '/solutions',
+        variant: 'primary',
+      },
+      {
+        label: 'Book a Demo',
+        href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
+        variant: 'secondary',
+      },
+    ],
+  },
   panels: [
     {
       eyebrow: 'Fire Pump Rooms',
@@ -454,8 +474,8 @@ export const MONITORING_PRODUCTS = [
     navLabel: 'o3 - Energy Visibility',
     path: '/products/o3-energy-visibility',
     title: 'o3 makes electricity visible',
-    searchTitle:'o3 Energy Monitor',
-    searchSubTitle:'See live electricity usage, appliance activity, bill trends, and key electrical conditions from one connection at the panel.',
+    searchTitle: 'o3 Energy Monitor',
+    searchSubTitle: 'See live electricity usage, appliance activity, bill trends, and key electrical conditions from one connection at the panel.',
     useCaseSection: {
       accent: 'var(--black400)',
       eyebrow: 'IDEAL USE',
@@ -629,8 +649,8 @@ export const MONITORING_PRODUCTS = [
       ],
     },
     title: 'o4 adds electrical safety intelligence',
-    searchTitle:'o4 Energy Analyzer',
-    searchSubTitle:'Detect electrical risks early with alerts for arcing, leakage, neutral loss, phase loss, overloads and unsafe power conditions.',
+    searchTitle: 'o4 Energy Analyzer',
+    searchSubTitle: 'Detect electrical risks early with alerts for arcing, leakage, neutral loss, phase loss, overloads and unsafe power conditions.',
     useCaseSection: {
       accent: 'var(--black400)',
       eyebrow: 'ALERTS, NOTIFICATIONS, PROTECTION',
