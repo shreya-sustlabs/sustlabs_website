@@ -1,5 +1,6 @@
-import type { MonitoringPageData, SmartDbPageData } from '../types'
+import type { FmsPageData, MonitoringPageData, SmartDbPageData } from '../types'
 
+import fmsBrochure from '../assets/Automated Control Monitoring System Brochure_SustLabs_2026.pdf'
 import panasonicLogo from '../assets/Frame 80.png'
 import schneiderLogo from '../assets/Frame 81.png'
 import ineproLogo from '../assets/Frame 82.png'
@@ -9,6 +10,7 @@ export const NAV_LINKS = [
   'Products',
   'Smart DB',
   'Add-ons',
+  'FMS',
   'Solutions',
   'Support',
 ] as const
@@ -41,7 +43,10 @@ export const FOOTER_CONTENT = {
     },
     {
       title: 'Solutions',
-      links: [{ label: 'Solutions', path: '/solutions' }],
+      links: [
+        { label: 'Solutions', path: '/solutions' },
+        { label: 'FMS', path: '/fms' },
+      ],
     },
     {
       title: 'Connect',
@@ -461,8 +466,8 @@ export const MONITORING_PRODUCTS = [
     heroLead: 'See what your home is using',
     heroActions: [
       {
-        label: 'Buy from Panasonic\'s Ultron ',
-        href: 'https://ultron.lifestylecommerce.in/ohm-assistant-3rd-gen-for-1-3-phase-power-electricity-activity-tracker.html',
+        label: 'Buy from MirAIe Lifestyle',
+        href: 'https://www.miraielifestyle.com/ohm-assistant-3rd-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },
       {
@@ -599,8 +604,8 @@ export const MONITORING_PRODUCTS = [
     heroRest: 'before they turn serious.',
     heroActions: [
       {
-        label: 'Buy from Panasonic\'s Ultron',
-        href: 'https://ultron.lifestylecommerce.in/ohm-assistant-4th-gen-for-1-3-phase-power-electricity-activity-tracker.html',
+        label: 'Buy from MirAIe Lifestyle',
+        href: 'https://www.miraielifestyle.com/ohm-assistant-4th-gen-for-1-3-phase-power-electricity-activity-tracker.html',
         variant: 'primary',
       },
       {
@@ -1167,7 +1172,7 @@ export const HERO_CONTENT = {
   actions: [
     {
       label: 'Get Ohm',
-      href: 'https://ultron.lifestylecommerce.in/our-products.html?cat=4',
+      href: 'https://www.miraielifestyle.com/',
       variant: 'primary',
     },
     {
@@ -1596,3 +1601,298 @@ export const SAFETY_CARDS = [
     description: 'Catch persistent overload patterns before failure.',
   },
 ] as const
+
+export const FMS_PAGE_CONTENT: FmsPageData = {
+  heroSection: {
+    eyebrow: 'Fire Monitoring System',
+    titleLead: 'Fire systems.',
+    titleAccent: 'Always visible.',
+    actions: [
+      {
+        label: 'Talk to us',
+        href: '/support',
+        variant: 'primary',
+      },
+      {
+        label: 'Book a Demo',
+        href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
+        variant: 'secondary',
+      },
+    ],
+    stats: [
+      { value: '20+', label: 'Parameters monitored live' },
+      { value: '24/7', label: 'Continuous readiness watch' },
+      { value: '<60', label: 'Seconds to critical alert' },
+    ],
+  },
+  problemSection: {
+    eyebrow: 'Fire pump room monitoring',
+    titleLead: 'Your fire systems pass inspection.',
+    titleAccent: 'Do they stay ready every day\nin between?',
+    description:
+      'FMS watches 23+ fire and life-safety parameters around the clock - pump health, power, water, controllers - so you know the moment something needs attention, not months later at the next audit.',
+    downloadAction: {
+      label: 'Download Brochure',
+      href: fmsBrochure,
+      fileName: 'SustLabs-ACMS-Brochure-2026.pdf',
+    },
+    mediaCaption: 'Overview dashboard',
+    mediaAlt: 'FMS overview dashboard showing readiness scores and buildings that require attention',
+  },
+  audienceSection: {
+    eyebrow: 'BUILT FOR',
+    titleLead: 'Wherever fire infrastructure',
+    titleAccent: 'protects people',
+    mediaAlt: 'FMS deployed across apartment societies, townships, commercial buildings, business parks, plants and mixed-use developments',
+  },
+  gapSection: {
+    eyebrow: 'THE GAP INSPECTION LEAVES',
+    titleLead: 'A',
+    titleHighlight: 'clean inspection report',
+    titleAccent: "doesn't mean a ready system tomorrow.",
+    description:
+      'Fire infrastructure is checked periodically - often quarterly. But pumps, batteries, and controllers don\'t fail on a schedule. Most faults happen quietly, in the weeks between visits, when no one is watching.',
+    columns: [
+      {
+        tone: 'inspection',
+        eyebrow: 'Periodic inspection',
+        title: 'A snapshot, taken occasionally',
+        items: [
+          'Only reflects the moment it was performed',
+          'Faults between visits go unnoticed',
+          'Relies on someone remembering to check',
+          'Paper logs, hard to audit later',
+          'Committee finds out after the fact',
+        ],
+      },
+      {
+        tone: 'readiness',
+        eyebrow: 'Continuous monitoring',
+        title: 'Operational readiness, every minute',
+        items: [
+          'Live status of every monitored system',
+          'Faults flagged the moment they occur',
+          'Runs automatically, nothing to remember',
+          'Digital event history, always available',
+          'Committee knows before it becomes critical',
+        ],
+      },
+    ],
+  },
+  chainSection: {
+    eyebrow: 'INSIDE THE PUMP ROOM',
+    titleLead: 'Every part of the',
+    titleAccent: 'system depends on \n the others.',
+    description:
+      'A fire pump room is a chain of dependent parts. One unnoticed fault — a stuck relay, a low battery, a tank drifting below level — can quietly break the chain long before anyone opens the panel.',
+    mediaAlt: 'FMS building view listing pump activity, severity, running status and operation mode for every asset',
+    items: [
+      {
+        title: 'Water Tank',
+        description:
+          'Level and flow monitored continuously — no more discovering a low tank during an actual emergency.',
+      },
+      {
+        title: 'Fire Pump',
+        description:
+          'Mode, run status and health tracked so the pump is ready to respond the instant it is needed.',
+      },
+      {
+        title: 'Controllers & Sensors',
+        description: 'Every signal from the panel is logged, so faults are caught at the source, not downstream.',
+      },
+      {
+        title: 'Power & DG Backup',
+        description: 'Phase failure, reversal and voltage anomalies flagged before they become an outage.',
+      },
+    ],
+  },
+  coverageSection: {
+    eyebrow: 'FULL COVERAGE',
+    titleLead: '20+ parameters,',
+    titleAccent: 'watched continuously',
+    description:
+      'FMS doesn\'t sample occasionally - it keeps a constant eye on every system that determines whether your fire infrastructure is truly ready to respond.',
+    groups: [
+      {
+        title: 'Pumps',
+        parameters: ['Fire pump health', 'Auto / Manual mode', 'Pump running status', 'Jockey pump status'],
+      },
+      {
+        title: 'Water',
+        parameters: ['Water Tank levels', 'Flow status','Low-level warnings'],
+      },
+      {
+        title: 'Power',
+        parameters: ['Power availability', 'Phase failure', 'Phase reversal', 'Voltage anomalies', 'DG availability'],
+      },
+      {
+        title: 'Fire alarm panel',
+        parameters: ['Battery health', 'Fault conditions', 'Critical alarms', 'Relay status'],
+      },
+      {
+        title: 'Pressure',
+        parameters: ['Hydrant line pressure', 'Sprinkler line pressure'],
+      },
+      {
+        title: 'Communication',
+        parameters: ['Communication status','Panel connectivity','Signal loss alerts','Internet availability', 'PLC and Edge computer status'],
+      },
+      {
+        title: 'System health',
+        parameters: ['Device uptime', 'Event logging', 'Historical trends'],
+      },
+    ],
+  },
+  visibilitySection: {
+    eyebrow: 'ONE SCREEN, FULL VISIBILITY',
+    titleLead: 'See your own fire system,',
+    titleAccent: 'monitored live',
+    description:
+      'A single dashboard shows every parameter across every building - active alarms, healthy devices, water levels, and a complete event timeline.',
+    mediaAlt: 'FMS console showing asset score, communication, fire readiness and water availability for a live site',
+  },
+  alertsSection: {
+    eyebrow: 'INSTANT ALERTS',
+    titleLead: 'The moment something\nneeds attention,',
+    titleAccent: "you'll know",
+    description:
+      'Alerts reach the right person on the channel they actually check - no dashboard-checking required.',
+    cards: [
+      {
+        tone: 'critical',
+        meta: 'SMS',
+        body:
+          'Tower B - Main Hydrant line pressure below 5 bar. Hydrant Jockey Pump on Manual mode. Please switch the pump to maintain pressure.',
+      },
+      {
+        tone: 'critical',
+        meta: 'WHATSAPP',
+        body: 'Tower C - Underground Main Fire tank level low at 24%. Refill immediately.',
+      },
+      {
+        tone: 'summary',
+        meta: 'EMAIL',
+        body:
+          'Weekly Readiness Summary: Tower A, C, D - fully operational. Tower B - 1 open advisory, see attached report.',
+      },
+      {
+        tone: 'advisory',
+        meta: 'MOBILE PUSH',
+        body: 'Tower A - Fire Alarm Panel Battery Health at 20%. Tap to view diagnostics.',
+      },
+    ],
+  },
+  assuranceSection: {
+    eyebrow: 'WHAT COMMITTEES ACTUALLY GET',
+    titleLead: 'Operational assurance,',
+    titleAccent: 'not just compliance',
+    items: [
+      {
+        title: 'Continuous Visibility',
+        description: 'Know the real-time status of every fire fighting asset, not just its state during the last inspection.',
+      },
+      {
+        title: 'Faster Maintenance',
+        description: 'Faults are flagged early and precisely, so technicians arrive knowing exactly what to fix.',
+      },
+      {
+        title: 'Centralized Monitoring',
+        description: 'One dashboard for every building, every pump room, every parameter - no separate systems to check.',
+      },
+      {
+        title: 'Historical Logs',
+        description: 'A complete digital record of every event, ready whenever an audit or insurer asks for it.',
+      },
+      {
+        title: 'Better Accountability',
+        description: 'Clear records of who was notified, when, and what action followed - for the whole committee.',
+      },
+      {
+        title: 'Peace of Mind',
+        description: 'Residents\' safety depends on systems working when needed. ACMS gives your committee that confidence, daily.',
+      },
+    ],
+  },
+  stepsSection: {
+    eyebrow: 'GETTING STARTED',
+    titleLead: 'Up and running in three steps',
+    titleAccent: '',
+    description:
+      'FMS doesn\'t sample occasionally - it keeps a constant eye on every system that determines whether your fire infrastructure is truly ready to respond.',
+    cards: [
+      {
+        number: '01',
+        title: 'Install',
+        description:
+          'Our technicians fit sensors to your existing pump room hardware - no rewiring, minimal disruption.',
+      },
+      {
+        number: '02',
+        title: 'Monitor',
+        description:
+          'FMS begins tracking all 23+ parameters immediately, visible on your dashboard from day one.',
+      },
+      {
+        number: '03',
+        title: 'Respond',
+        description:
+          'Alerts reach your committee and maintenance team the moment something needs action.',
+      },
+    ],
+  },
+  faqSection: {
+    eyebrow: 'QUESTIONS',
+    titleLead: 'Everything committees',
+    titleAccent: 'usually ask',
+    items: [
+      {
+        question: 'Can I get the FMS data into my facility management system?',
+        answer:
+          'Yes. FMS exposes REST APIs and MQTT streams, so readiness scores, live parameters and events can flow into an existing FM or BMS platform alongside the FMS console.',
+      },
+      {
+        question: 'Is FMS compatible with our control panels and controller brands?',
+        answer:
+          'FMS reads from the panels and controllers you already have over standard interfaces such as Modbus RTU / TCP and dry contacts. It does not ask you to replace any part of your fire system.',
+      },
+      {
+        question: 'What ongoing maintenance does FMS require?',
+        answer:
+          'Very little. The gateway and sensors are industrial-grade, firmware updates arrive over the air, and the console itself flags any device that stops reporting.',
+      },
+      {
+        question: 'Who receives alerts, and can we customize that?ors alerts, and how are contractors involved?',
+        answer:
+          'You decide. Alerts can route to the facility team, the committee, your AMC vendor, or all three — each with its own channel and escalation window.',
+      },
+      {
+        question: 'How is this different from the fire alarm system we already have?',
+        answer:
+          'A fire alarm system tells you when there is a fire. FMS tells you whether the system that fights the fire is actually ready — pump mode, water level, line pressure, battery health and power.',
+      },
+      {
+        question: 'How is FMS priced?',
+        answer:
+          'Pricing depends on the number of towers, pump rooms and monitored assets. Talk to us and we will size it against your site.',
+      },
+      {
+        question: 'How long does implementation take, start to finish? implementation take, and is it disruptive?',
+        answer:
+          'Most single pump-room installations are commissioned within a day. Work stays inside the pump room and panel enclosure, so residents are unaffected.',
+      },
+      {
+        question: 'What support is available after installation?',
+        answer:
+          'EveryFMS deployment includes a dedicated support line for your committee and facility team, along with proactive outreach from us if we notice a persistent or unresolved alert.',
+      },
+    ],
+    note:
+      "Still have a question we haven't answered here? Our team can walk you through the parameters, the install and what monitoring would look like for your site.",
+    action: {
+      label: 'Talk to us',
+      href: '/support',
+      variant: 'primary',
+    },
+  },
+}

@@ -3,10 +3,11 @@ export type SmartDbLeadPayload = {
   email: string
   name: string
   phone: string
-  source: String
+  propertyType?: string
+  source: string
 }
 
-const GOOGLE_SHEETS_LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwBXPM1WCUvHqN3OCfgvCZRMcXFCtW9LObhuUixiYkqebr01ykmNGtUX7xWu-95Eh6E/exec'
+const GOOGLE_SHEETS_LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzSShEWexeN-WbHf3zNR3jj0dL9VSlAZy1ab5zuwzIeHJMOoGJEYhLBGJqtXZNBDg8J/exec'
 
 export async function submitSmartDbLead(payload: SmartDbLeadPayload) {
   await fetch(GOOGLE_SHEETS_LEAD_ENDPOINT, {
@@ -16,7 +17,7 @@ export async function submitSmartDbLead(payload: SmartDbLeadPayload) {
       name: payload.name,
       email: payload.email,
       phone: payload.phone,
-      comment: payload.comment,
+      property_type: payload.propertyType ?? '',
       source: payload.source
     }),
   })

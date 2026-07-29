@@ -12,11 +12,18 @@ const initialFormState = {
   email: '',
   name: '',
   phone: '',
+  propertyType: '',
   source: '',
+}
+
+const PROPERTY_TYPE_OPTIONS: Record<string, readonly string[]> = {
+  fms: ['Residential', 'Commercial', 'Industrial', 'Others'],
+  smartdb: ['Apartment', 'Villa / Bungalow', 'Independent House', 'Office / Commercial', 'Other'],
 }
 
 function SmartDbLeadModalComponent({ source, onClose }: SmartDbLeadModalProps) {
   const [formState, setFormState] = useState(initialFormState)
+  const propertyTypes = PROPERTY_TYPE_OPTIONS[source]
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const closeTimerRef = useRef<number | null>(null)
   const onCloseRef = useRef(onClose)
@@ -118,29 +125,52 @@ function SmartDbLeadModalComponent({ source, onClose }: SmartDbLeadModalProps) {
             </label>
 
             <label className="smart-db-lead-form__wide">
-              <span>Phone number *</span>
+              <span>Phone number</span>
               <input
                 autoComplete="tel"
                 id="phone"
                 inputMode="tel"
                 name="phone"
-                placeholder="Phone number *"
-                required
+                placeholder="Phone number"
                 value={formState.phone}
+                maxLength={10}
                 onChange={(event) => setFormState((current) => ({ ...current, phone: event.target.value }))}
               />
             </label>
 
-            <label className="smart-db-lead-form__wide">
-              <span>Comment</span>
-              <textarea
-                id="comment"
-                name="comment"
-                placeholder="Comment"
-                value={formState.comment}
-                onChange={(event) => setFormState((current) => ({ ...current, comment: event.target.value }))}
-              />
-            </label>
+            {propertyTypes ? (
+              <label className="smart-db-lead-form__wide">
+                <span>Property Type *</span>
+                <select
+                  data-empty={!formState.propertyType}
+                  id="propertyType"
+                  name="propertyType"
+                  required
+                  value={formState.propertyType}
+                  onChange={(event) =>
+                    setFormState((current) => ({ ...current, propertyType: event.target.value }))
+                  }
+                >
+                  <option value="">Select property type *</option>
+                  {propertyTypes.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : (
+              <label className="smart-db-lead-form__wide">
+                <span>Comment</span>
+                <textarea
+                  id="comment"
+                  name="comment"
+                  placeholder="Comment"
+                  value={formState.comment}
+                  onChange={(event) => setFormState((current) => ({ ...current, comment: event.target.value }))}
+                />
+              </label>
+            )}
           </div>
 
           <button className="smart-db-lead-form__submit" disabled={isSubmitting} type="submit">

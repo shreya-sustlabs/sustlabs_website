@@ -402,3 +402,149 @@ export type SmartDbPageData = {
   stackSection: SmartDbTextStackSectionData
   variantsSection: SmartDbVariantsSectionData
 }
+
+export type FmsHeroStat = {
+  label: string
+  value: string
+}
+
+export type FmsHeroSectionData = {
+  actions: readonly ProductHeroAction[]
+  badge?: string
+  eyebrow: string
+  stats: readonly FmsHeroStat[]
+  titleAccent: string
+  titleLead: string
+}
+
+export type FmsHeroSectionProps = {
+  onActionClick?: (action: ProductHeroAction, event: MouseEvent<HTMLAnchorElement>) => void
+  section: FmsHeroSectionData
+}
+
+export type FmsHeadingSectionData = {
+  description?: string
+  eyebrow: string
+  titleAccent: string
+  titleLead: string
+}
+
+export type FmsDownloadAction = {
+  fileName?: string
+  href: string
+  label: string
+}
+
+export type FmsMediaSectionData = FmsHeadingSectionData & {
+  downloadAction?: FmsDownloadAction
+  mediaAlt: string
+  mediaCaption?: string
+}
+
+export type FmsMediaSectionProps = {
+  headingId: string
+  imageSrc: string
+  section: FmsMediaSectionData
+  variant?: 'dashboard' | 'audience' | 'console'
+}
+
+export type FmsGapColumn = {
+  eyebrow: string
+  items: readonly string[]
+  title: string
+  tone: 'inspection' | 'readiness'
+}
+
+export type FmsGapSectionData = FmsHeadingSectionData & {
+  columns: readonly FmsGapColumn[]
+  titleHighlight?: string
+}
+
+export type FmsGapSectionProps = {
+  section: FmsGapSectionData
+}
+
+export type FmsChainSectionData = FmsHeadingSectionData & {
+  items: readonly BasicCardProps[]
+  mediaAlt: string
+}
+
+export type FmsChainSectionProps = {
+  section: FmsChainSectionData
+  videoSrc: string
+}
+
+export type FmsCoverageGroup = {
+  parameters: readonly string[]
+  title: string
+}
+
+export type FmsCoverageSectionData = FmsHeadingSectionData & {
+  groups: readonly FmsCoverageGroup[]
+}
+
+export type FmsCoverageSectionProps = {
+  section: FmsCoverageSectionData
+}
+
+export type FmsAlertCard = {
+  body: string
+  meta: string
+  tone: 'critical' | 'advisory' | 'summary'
+}
+
+export type FmsAlertsSectionData = FmsHeadingSectionData & {
+  cards: readonly FmsAlertCard[]
+}
+
+export type FmsAlertsSectionProps = {
+  section: FmsAlertsSectionData
+}
+
+export type FmsAssuranceSectionData = FmsHeadingSectionData & {
+  items: readonly BasicCardProps[]
+}
+
+export type FmsAssuranceSectionProps = {
+  section: FmsAssuranceSectionData
+}
+
+export type FmsStepCard = NumberedCardProps
+
+export type FmsStepsSectionData = FmsHeadingSectionData & {
+  cards: readonly FmsStepCard[]
+}
+
+export type FmsStepsSectionProps = {
+  section: FmsStepsSectionData
+}
+
+export type FmsFaqItem = {
+  answer: string
+  question: string
+}
+
+export type FmsFaqSectionData = FmsHeadingSectionData & {
+  action: ProductHeroAction
+  items: readonly FmsFaqItem[]
+  note: string
+}
+
+export type FmsFaqSectionProps = {
+  onActionClick?: (action: ProductHeroAction, event: MouseEvent<HTMLAnchorElement>) => void
+  section: FmsFaqSectionData
+}
+
+export type FmsPageData = {
+  alertsSection: FmsAlertsSectionData
+  assuranceSection: FmsAssuranceSectionData
+  audienceSection: FmsMediaSectionData
+  chainSection: FmsChainSectionData
+  coverageSection: FmsCoverageSectionData
+  faqSection: FmsFaqSectionData
+  gapSection: FmsGapSectionData
+  heroSection: FmsHeroSectionData
+  problemSection: FmsMediaSectionData
+  stepsSection: FmsStepsSectionData
+  visibilitySection: FmsMediaSectionData
+}

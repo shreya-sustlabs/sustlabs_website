@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-do
 import './App.css'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
+import { FmsPage } from './components/page/FmsPage'
 import { HomePage } from './components/page/HomePage'
 import { MonitoringPage } from './components/page/MonitoringPage'
 import { OhmOsPage } from './components/page/OhmOsPage'
@@ -54,6 +55,7 @@ function App() {
         <Route element={<OhmOsPage />} path="/ohm-os" />
         <Route element={<SmartDbPage />} path="/smart-db" />
         <Route element={<OraAddOnPage />} path="/add-ons/ora" />
+        <Route element={<FmsPage />} path="/fms" />
         <Route element={<SolutionsPage />} path="/solutions" />
         <Route element={<SupportPage />} path="/support" />
         <Route element={<PrivacyPolicyPage />} path="/privacy-policy" />

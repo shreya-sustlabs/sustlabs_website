@@ -16,7 +16,7 @@ function MonitoringHeroSectionComponent({
   titleLead,
   titleRest,
 }: MonitoringHeroSectionProps) {
-  // const hasCommerceAction = actions.some((action) => action.href.includes('ultron.lifestylecommerce.in'))
+  // const hasCommerceAction = actions.some((action) => action.href.includes('https://www.miraielifestyle.com/'))
 
   return (
     <section className="monitoring-hero" aria-labelledby="monitoring-hero-title">
@@ -40,7 +40,7 @@ function MonitoringHeroSectionComponent({
             </Button>
           ))}
         </div>
-        {/* {hasCommerceAction ? <p className="monitoring-hero__commerce-note">*Continues to Ultron Commerce.</p> : null} */}
+        {/* {hasCommerceAction ? <p className="monitoring-hero__commerce-note">*Continues to MirAIe Lifestyle.</p> : null} */}
       </div>
       {imageSrc ? (
         <div className={`monitoring-hero__media monitoring-hero__media--${imageVariant ?? 'default'}`}>

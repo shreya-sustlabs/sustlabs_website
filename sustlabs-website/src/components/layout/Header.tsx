@@ -16,6 +16,10 @@ function getNavTarget(link: string) {
     return '/smart-db'
   }
 
+  if (link === 'FMS') {
+    return '/fms'
+  }
+
   if (link === 'Solutions') {
     return '/solutions'
   }
