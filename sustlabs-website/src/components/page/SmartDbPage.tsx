@@ -57,14 +57,14 @@ function SmartDbPageComponent() {
       <SmartDbLoopSection section={SMART_DB_PAGE_CONTENT.loopSection} />
       <SmartDbCapabilitiesSection section={SMART_DB_PAGE_CONTENT.capabilitiesSection} />
       <SmartDbPocketSection section={SMART_DB_PAGE_CONTENT.pocketSection} />
-      <SmartDbPlatformSection
-        section={SMART_DB_PAGE_CONTENT.platformSection}
-        onLeadFormOpen={openLeadForm}
-      />
+      <SmartDbPlatformSection section={SMART_DB_PAGE_CONTENT.platformSection} />
       {SMART_DB_PAGE_CONTENT.specsSection ? (
         <SmartDbSpecsSection section={SMART_DB_PAGE_CONTENT.specsSection} />
       ) : null}
-      <SmartDbComparisonSection section={SMART_DB_PAGE_CONTENT.comparisonSection} />
+      <SmartDbComparisonSection
+        section={SMART_DB_PAGE_CONTENT.comparisonSection}
+        onLeadFormOpen={openLeadForm}
+      />
       <SmartDbSegmentsSection section={SMART_DB_PAGE_CONTENT.segmentsSection} />
       <SmartDbFireSection section={SMART_DB_PAGE_CONTENT.fireSection} />
     </main>

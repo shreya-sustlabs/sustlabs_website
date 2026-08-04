@@ -1,13 +1,10 @@
 import { memo } from 'react'
-import type { MouseEvent } from 'react'
 import appImage from '../../assets/smartdb-app.webp'
 import clockImage from '../../assets/smartdb-ora.webp'
 import dashboardImage from '../../assets/smartdb-dashboard.webp'
 import type { SmartDbPlatformSectionData, SmartDbPlatformTile } from '../../types'
-import { SmartDbTextLink } from '../ui/SmartDbTextLink'
 
 type SmartDbPlatformSectionProps = {
-  onLeadFormOpen?: (event: MouseEvent<HTMLAnchorElement>) => void
   section: SmartDbPlatformSectionData
 }
 
@@ -17,7 +14,7 @@ const TILE_IMAGES: Record<SmartDbPlatformTile['image'], string> = {
   dashboard: dashboardImage,
 }
 
-function SmartDbPlatformSectionComponent({ onLeadFormOpen, section }: SmartDbPlatformSectionProps) {
+function SmartDbPlatformSectionComponent({ section }: SmartDbPlatformSectionProps) {
   return (
     <section className="sdb-platform" aria-labelledby="sdb-platform-title">
       <div className="sdb-platform__inner">
@@ -41,12 +38,6 @@ function SmartDbPlatformSectionComponent({ onLeadFormOpen, section }: SmartDbPla
             </article>
           ))}
         </div>
-
-        <SmartDbTextLink
-          action={section.action}
-          eventSection="smart_db_configurations"
-          onLeadFormOpen={onLeadFormOpen}
-        />
       </div>
     </section>
   )

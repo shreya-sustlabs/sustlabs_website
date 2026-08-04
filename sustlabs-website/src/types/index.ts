@@ -429,7 +429,6 @@ export type SmartDbPlatformTile = {
 }
 
 export type SmartDbPlatformSectionData = SmartDbHeading & {
-  action: SmartDbTextLinkAction
   tiles: readonly SmartDbPlatformTile[]
 }
 

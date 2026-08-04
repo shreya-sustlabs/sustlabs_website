@@ -1031,11 +1031,6 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
         description: 'See live consumption and key home insights at a glance.',
       },
     ],
-    action: {
-      label: 'Contact Sales to Find Your Configuration',
-      href: '/support',
-      opensLeadForm: true,
-    },
   },
   // specsSection: {
   //   title: 'Specifications',

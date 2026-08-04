@@ -28,7 +28,10 @@ export function SmartDbTextLink({
 
   const className = ['sdb-textlink', onDark ? 'sdb-textlink--on-dark' : null].filter(Boolean).join(' ')
   const download = action.fileName ?? action.download
-  const opensLeadForm = Boolean(action.opensLeadForm && onLeadFormOpen)
+  // Driven by the content, NOT by whether a handler was passed: keying off the
+  // handler meant a section that forgot to wire one silently navigated to the
+  // href instead of opening the form, and dropped data-lead-modal with it.
+  const opensLeadForm = Boolean(action.opensLeadForm)
   const isInternal = action.href.startsWith('/') && !download && !opensLeadForm
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {

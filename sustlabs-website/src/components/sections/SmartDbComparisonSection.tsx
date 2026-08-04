@@ -4,7 +4,7 @@ import type { SmartDbComparisonSectionData } from '../../types'
 import { SmartDbTextLink } from '../ui/SmartDbTextLink'
 
 type SmartDbComparisonSectionProps = {
-    onLeadFormOpen?: (event: MouseEvent<HTMLAnchorElement>) => void
+  onLeadFormOpen?: (event: MouseEvent<HTMLAnchorElement>) => void
   section: SmartDbComparisonSectionData
 }
 
@@ -51,10 +51,9 @@ function SmartDbComparisonSectionComponent({ section, onLeadFormOpen }: SmartDbC
           </div>
         </div>
 
-        {/* <SmartDbTextLink action={section.action} eventSection="smart_db_comparison" /> */}
-         <SmartDbTextLink
+        <SmartDbTextLink
           action={section.action}
-          eventSection="smart_db_configurations"
+          eventSection="smart_db_comparison"
           onLeadFormOpen={onLeadFormOpen}
         />
       </div>
