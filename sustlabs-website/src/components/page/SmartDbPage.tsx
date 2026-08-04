@@ -1,19 +1,27 @@
 import { memo, useState } from 'react'
-import smartDbImage from '../../assets/smartdb1.webp'
-import smartDbPanelImage from '../../assets/smartdb2.webp'
-import { SMART_DB_PAGE_CONTENT } from '../../utils/constants'
-import { MonitoringHeroSection } from '../sections/MonitoringHeroSection'
-import { MonitoringIntroSection } from '../sections/MonitoringIntroSection'
-import { ProductFeatureSection } from '../sections/ProductFeatureSection'
-import { SmartDbLeadModal } from '../sections/SmartDbLeadModal'
-import { SmartDbComparisonSection } from '../sections/SmartDbComparisonSection'
-import { SmartDbEnergySection } from '../sections/SmartDbEnergySection'
-import { SmartDbSafetySection } from '../sections/SmartDbSafetySection'
-import { SmartDbTextStackSection } from '../sections/SmartDbTextStackSection'
 import { Helmet } from 'react-helmet-async'
+import { SMART_DB_PAGE_CONTENT } from '../../utils/constants'
+import { SmartDbCapabilitiesSection } from '../sections/SmartDbCapabilitiesSection'
+import { SmartDbComparisonSection } from '../sections/SmartDbComparisonSection'
+import { SmartDbFireSection } from '../sections/SmartDbFireSection'
+import { SmartDbHeroSection } from '../sections/SmartDbHeroSection'
+import { SmartDbKnowsSection } from '../sections/SmartDbKnowsSection'
+import { SmartDbLayersSection } from '../sections/SmartDbLayersSection'
+import { SmartDbLeadModal } from '../sections/SmartDbLeadModal'
+import { SmartDbLoopSection } from '../sections/SmartDbLoopSection'
+import { SmartDbPlatformSection } from '../sections/SmartDbPlatformSection'
+import { SmartDbPocketSection } from '../sections/SmartDbPocketSection'
+import { SmartDbSegmentsSection } from '../sections/SmartDbSegmentsSection'
+import { SmartDbSpecsSection } from '../sections/SmartDbSpecsSection'
+import { SmartDbUnchangedSection } from '../sections/SmartDbUnchangedSection'
 
 function SmartDbPageComponent() {
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false)
+
+  const openLeadForm = (event: { preventDefault: () => void }) => {
+    event.preventDefault()
+    setIsLeadFormOpen(true)
+  }
 
   return (
     <main className="smart-db-page">
@@ -27,47 +35,38 @@ function SmartDbPageComponent() {
 
         <meta name="robots" content="index, follow" />
 
-        <link
-          rel="canonical"
-          href="https://www.sustlabs.com/smart-db"
-        />
+        <link rel="canonical" href="https://www.sustlabs.com/smart-db" />
       </Helmet>
-      <MonitoringIntroSection section={SMART_DB_PAGE_CONTENT.introSection} />
-      <MonitoringHeroSection
-        {...SMART_DB_PAGE_CONTENT.heroSection}
-        imageAlt="Smart DB electrical panel"
-        imageSrc={smartDbImage}
-        imageVariant="smart-db"
+
+      <SmartDbHeroSection
+        section={SMART_DB_PAGE_CONTENT.heroSection}
         onActionClick={(action, event) => {
-          if (action.label === 'Talk to us') {
-            event.preventDefault()
-            setIsLeadFormOpen(true)
+          // Same rule as FMS: internal links open the lead form, external ones
+          // (the Calendly demo) follow through.
+          if (!action.href.startsWith('http')) {
+            openLeadForm(event)
           }
         }}
       />
+
       {isLeadFormOpen ? <SmartDbLeadModal source="smartdb" onClose={() => setIsLeadFormOpen(false)} /> : null}
-      <ProductFeatureSection section={SMART_DB_PAGE_CONTENT.promiseSection} variant="smart-db" />
-      <section className="smart-db-page__visual-band" aria-label="Smart DB installed panel visual">
-        <div className="smart-db-page__visual-scene">
-          <img src={smartDbPanelImage} alt="Smart DB installed inside an electrical distribution panel" />
-        </div>
-      </section>
-      {/* <SmartDbTextStackSection
-        headingId="smart-db-stack-title"
-        section={SMART_DB_PAGE_CONTENT.stackSection}
-        variant="stack"
-      /> */}
-      <SmartDbSafetySection section={SMART_DB_PAGE_CONTENT.safetySection} />
-      <SmartDbEnergySection section={SMART_DB_PAGE_CONTENT.energySection} />
-      {/* <SmartDbVariantsSection section={SMART_DB_PAGE_CONTENT.variantsSection} /> */}
-      <SmartDbTextStackSection
-        headingId="smart-db-project-title"
-        section={SMART_DB_PAGE_CONTENT.projectSection}
-        variant="project"
+
+      <SmartDbLayersSection section={SMART_DB_PAGE_CONTENT.layersSection} />
+      <SmartDbKnowsSection section={SMART_DB_PAGE_CONTENT.knowsSection} />
+      <SmartDbUnchangedSection section={SMART_DB_PAGE_CONTENT.unchangedSection} />
+      <SmartDbLoopSection section={SMART_DB_PAGE_CONTENT.loopSection} />
+      <SmartDbCapabilitiesSection section={SMART_DB_PAGE_CONTENT.capabilitiesSection} />
+      <SmartDbPocketSection section={SMART_DB_PAGE_CONTENT.pocketSection} />
+      <SmartDbPlatformSection
+        section={SMART_DB_PAGE_CONTENT.platformSection}
+        onLeadFormOpen={openLeadForm}
       />
+      {SMART_DB_PAGE_CONTENT.specsSection ? (
+        <SmartDbSpecsSection section={SMART_DB_PAGE_CONTENT.specsSection} />
+      ) : null}
       <SmartDbComparisonSection section={SMART_DB_PAGE_CONTENT.comparisonSection} />
-      {/* <SmartDbProductsSection section={SMART_DB_PAGE_CONTENT.productsSection} />
-      <ProductUseCaseSection section={SMART_DB_PAGE_CONTENT.derSection} /> */}
+      <SmartDbSegmentsSection section={SMART_DB_PAGE_CONTENT.segmentsSection} />
+      <SmartDbFireSection section={SMART_DB_PAGE_CONTENT.fireSection} />
     </main>
   )
 }

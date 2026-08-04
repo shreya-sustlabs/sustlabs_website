@@ -18,7 +18,7 @@ const initialFormState = {
 
 const PROPERTY_TYPE_OPTIONS: Record<string, readonly string[]> = {
   fms: ['Residential', 'Commercial', 'Industrial', 'Others'],
-  smartdb: ['Apartment', 'Villa / Bungalow', 'Independent House', 'Office / Commercial', 'Other'],
+  smartdb: ['Residential', 'Commercial', 'Industrial'],
 }
 
 function SmartDbLeadModalComponent({ source, onClose }: SmartDbLeadModalProps) {

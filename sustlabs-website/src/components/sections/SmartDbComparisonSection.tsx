@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { SmartDbComparisonSectionData } from '../../types'
-import { SmartDbPill } from '../ui/SmartDbPill'
+import { SmartDbTextLink } from '../ui/SmartDbTextLink'
 
 type SmartDbComparisonSectionProps = {
   section: SmartDbComparisonSectionData
@@ -8,40 +8,48 @@ type SmartDbComparisonSectionProps = {
 
 function SmartDbComparisonSectionComponent({ section }: SmartDbComparisonSectionProps) {
   return (
-    <section className="smart-db-page__comparison" aria-labelledby="smart-db-comparison-title">
-      <div className="smart-db-page__comparison-heading">
-        <SmartDbPill>{section.eyebrow}</SmartDbPill>
-        <h2 id="smart-db-comparison-title" style={{ color: 'var(--black300)' }}>
-          {section.titleLead} <span style={{ color: section.accent }}>{section.titleAccent}</span>
+    <section className="sdb-comparison" aria-labelledby="sdb-comparison-title">
+      <div className="sdb-comparison__inner">
+        <p className="sdb-eyebrow">{section.eyebrow}</p>
+
+        <h2 className="sdb-title" id="sdb-comparison-title">
+          <span>{section.titleLead}</span>
+          <span className="sdb-title__accent">{section.titleAccent}</span>
         </h2>
-      </div>
-      <div className="smart-db-page__table-wrap">
-        <table className="smart-db-page__table">
-          <thead>
-            <tr>
-              {section.columns.map((column, index) => (
-                <th scope="col" key={`${column}-${index}`}>
-                  {column}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {section.rows.map((row) => (
-              <tr key={row[0]}>
-                {row.map((cell, index) =>
-                  index === 0 ? (
-                    <th scope="row" key={`${row[0]}-${index}`}>
-                      {cell}
+
+        {/* The wrapper carries the right-edge fade; the inner div is the scroller. */}
+        <div className="sdb-comparison__table-wrap">
+          <div className="sdb-comparison__scroll">
+            <table className="sdb-comparison__table">
+              <thead>
+                <tr>
+                  {section.columns.map((column, index) => (
+                    <th key={`${column}-${index}`} scope="col">
+                      {column}
                     </th>
-                  ) : (
-                    <td key={`${row[0]}-${index}`}>{cell}</td>
-                  ),
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {section.rows.map((row) => (
+                  <tr key={row[0]}>
+                    {row.map((cell, index) =>
+                      index === 0 ? (
+                        <th key={`${row[0]}-${index}`} scope="row">
+                          {cell}
+                        </th>
+                      ) : (
+                        <td key={`${row[0]}-${index}`}>{cell}</td>
+                      ),
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <SmartDbTextLink action={section.action} eventSection="smart_db_comparison" />
       </div>
     </section>
   )

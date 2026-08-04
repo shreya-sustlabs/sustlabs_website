@@ -1,6 +1,7 @@
 import type { FmsPageData, MonitoringPageData, SmartDbPageData } from '../types'
 
 import fmsBrochure from '../assets/Automated Control Monitoring System Brochure_SustLabs_2026.pdf'
+import smartDbBrochure from '../assets/smart-db-brochure.pdf'
 import panasonicLogo from '../assets/Frame 80.png'
 import schneiderLogo from '../assets/Frame 81.png'
 import ineproLogo from '../assets/Frame 82.png'
@@ -774,7 +775,7 @@ export const MONITORING_PRODUCTS = [
           eyebrow: 'Native Arc Detection',
           title: 'Detect dangerous arc signatures',
           description:
-            'o5 is designed to detect series and parallel arcing on monitored branches using high-frequency sensing and edge classification.',
+            'o5 is designed to detect series and Data handled with care on monitored branches using high-frequency sensing and edge classification.',
         },
       ],
     },
@@ -841,26 +842,16 @@ export const SMART_DB_PRODUCT: MonitoringPageData = {
 }
 
 export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
-  introSection: {
-    eyebrow: 'Smart DB',
-    titleLead: 'Bring intelligence',
-    titleAccent: 'into the DB',
-    accent: 'var(--black400)',
-    descriptions: [
-      'Turn your electrical panel from a passive black box into a readable, responsive layer for monitoring, safety, control, and energy decisions.',
-    ],
-  },
   heroSection: {
-    accent: 'var(--terra500)',
     eyebrow: 'Smart DB',
-    kicker: 'Smart DB',
-    titleLead: 'The electrical panel,',
-    titleAccent: 'reimagined',
-    description: 'Circuit awareness, safety intelligence, and control readiness, all into one place where power is divided, protected, and managed.',
+    titleLead: 'A home that',
+    titleAccent: 'understands its electricity',
+    description:
+      'Smart DB reads every circuit, catches faults a conventional board never sees, and puts full control in your hands — from wherever you are.',
     actions: [
       {
         label: 'Talk to us',
-        href: '#features',
+        href: '/support',
         variant: 'primary',
       },
       {
@@ -870,241 +861,262 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
       },
     ],
   },
-  promiseSection: {
-    accent: 'var(--black400)',
-    eyebrow: 'CORE PROMISE',
-    titleLead: 'From passive protection to',
-    titleAccent: 'active intelligence',
+  layersSection: {
+    title: 'Bringing intelligence into the DB',
+    imageAlt:
+      'Exploded view of the Smart DB enclosure showing the intelligence layer stacked behind the conventional MCB layer',
+  },
+  knowsSection: {
+    eyebrow: 'The Product',
+    titleLead: 'Meet the',
+    titleAccent: 'panel that knows',
+    descriptions: [
+      'Smart DB looks like a distribution board because, at its core, it still is one — built on the same fundamentals every electrical installation depends on.',
+      'Behind the enclosure is a platform: continuous circuit-level sensing, on-device intelligence, and a living connection to Ohm OS that keeps learning about your home long after installation day.',
+    ],
+    stats: [
+      { label: 'Circuit-level sensing', value: 'Live' },
+      { label: 'Ohm OS intelligence layer', value: 'Continuous' },
+      { label: 'Software updates', value: 'Over the air' },
+    ],
+    action: {
+      label: 'Download the Product Brochure',
+      href: smartDbBrochure,
+      fileName: 'SustLabs-Smart-DB-Brochure.pdf',
+    },
+  },
+  unchangedSection: {
+    eyebrow: 'The gap',
+    titleLead: 'Your distribution board',
+    titleAccent: "hasn't changed in decades",
+    description:
+      'A traditional board still does exactly what it did fifty years ago — split power into circuits, and trip when something goes badly wrong. By the time it reacts, the fault has already happened.',
     cards: [
       {
-        eyebrow: 'Visibility',
-        title: 'See the electrical system clearly',
-        description: 'Track how power flows through circuits, loads, and devices.',
-      },
-      {
-        eyebrow: 'Safety',
-        title: 'Detect abnormal electrical behaviour',
-        description: 'Identify Anomalies, overloads and unsafe patterns.',
-      },
-      {
-        eyebrow: 'Control',
-        title: 'Act at the circuit level',
+        title: 'It only reacts, never anticipates.',
         description:
-          'Enable switching, isolation, schedules, and load priority where enabled.',
+          'A breaker trips after a fault occurs - it can\'t flag one building up.',
       },
       {
-        eyebrow: 'Intelligence',
-        title: 'Learn from every event',
+        title: "It's invisible until something goes wrong.",
         description:
-          'Use edge ML and cloud analytics to improve safety, detection, and recommendations over time.',
+          'No one can see circuit-level activity inside a traditional panel.',
+      },
+      {
+        title: "It can't be reached remotely.",
+        description:
+          'If a circuit needs to be switched off and no one\'s home, it stays on.',
       },
     ],
   },
-  stackSection: {
-    accent: '#145599',
-    eyebrow: 'Product architecture',
-    titleLead: 'A complete intelligence',
-    titleAccent: 'stack inside the DB',
-    accentTarget: 'lead',
-    cards: [
+  loopSection: {
+    eyebrow: 'The mechanism',
+    titleLead: 'Every circuit, understood',
+    titleAccent: '- all the time',
+    description:
+      'Smart DB works in four continuous steps, running in the background for as long as the panel is powered.',
+    steps: [
       {
-        title: 'Measurement',
-        description: 'Captures voltage, current, power, energy, temperature, and event data.',
-      },
-      {
-        title: 'Safety Sensing',
-        description: 'Uses high-frequency sensing to identify arc and safety signatures.',
-      },
-      {
-        title: 'Edge Intelligence',
+        number: '01',
+        title: 'Sense',
         description:
-          'Processes safety events locally with deterministic firmware, watchdogs, and fail-safe behaviour.',
+          'Circuit-level sensors read current, voltage, and load patterns across the panel - not just at the mains.',
       },
       {
-        title: 'Ohm OS Cloud',
-        description: 'Syncs summaries, events, reports, model updates, fleet diagnostics, and user insights.',
+        number: '02',
+        title: 'Understand',
+        description:
+          'Ohm OS processes that activity continuously, learning what normal looks like for each circuit in this specific home.',
       },
       {
-        title: 'Apps & APIs',
-        description: 'Connects homeowners, installers, support teams, utilities, and partner systems.',
+        number: '03',
+        title: 'Alert',
+        description:
+          'When something departs from normal, you\'re told immediately, in plain language — not a technical fault code.',
+      },
+      {
+        number: '04',
+        title: 'Act',
+        description:
+          'Switch a circuit off, reroute backup power, or let Smart DB act on rules you\'ve already set, from anywhere.',
+      },
+    ],
+    action: {
+      label: 'Watch how it works — 60 second overview',
+      href: 'https://youtu.be/Ofdv8quyXf4?si=8RBGLIi3MMBDYV7A',
+    },
+  },
+  capabilitiesSection: {
+    eyebrow: 'Six kinds of intelligence',
+    titleLead: 'One panel. Every capability your electrical system',
+    titleAccent: 'needs to understand itself.',
+    items: [
+      {
+        title: 'Safety Intelligence',
+        description: "Catches what a breaker can't",
+      },
+      {
+        title: 'Circuit Intelligence',
+        description: 'See every circuit, not just the total',
+      },
+      {
+        title: 'Appliance Intelligence',
+        description: "Know what's plugged in, and how it's behaving",
+      },
+      {
+        title: 'Automation & Remote Control',
+        description: 'Rules that run on their own',
+      },
+      {
+        title: 'Backup & Energy Management',
+        description: 'Priority power when it matters most',
+      },
+      {
+        title: 'Predictive Intelligence',
+        description: "Patterns a one-time check can't see",
       },
     ],
   },
-  safetySection: {
-    eyebrow: 'Safety',
-    titleLead: 'Built for safety',
-    titleAccent: 'intelligence',
-    description: 'Smart DB is designed to detect, classify, log, and act on critical events with clear separation between detection, notification, and actuation.',
-    cards: [
+  pocketSection: {
+    eyebrow: 'FULL COVERAGE',
+    titleLead: 'Your electrical system,',
+    titleAccent: 'in your pocket',
+    description:
+      "The Ohm Assistant app is where Smart DB's intelligence becomes something you actually use - daily insight, instant alerts, one-tap circuit control, and a running history you can look back on anytime.",
+    highlight: {
+      eyebrow: 'Live visibility',
+      title: 'See every electrical event as it happens',
+      description:
+        'The Smart DB dashboard shows your electrical system the way it actually behaves - live circuit status, active alerts, and a clear history of everything that\'s happened.',
+    },
+    screens: [
       {
-        number: '01.',
-        title: 'Fault Detection',
-        description: 'Series and parallel arc detection using high-frequency signatures.',
+        image: 'live',
+        alt: 'Smart DB app home screen showing live household load in watts',
+        caption: 'Home overview',
       },
       {
-        number: '02.',
-        title: 'Thermal Awareness',
-        description: 'Temperature monitoring for hotspots and unsafe conditions.',
+        image: 'alerts',
+        alt: 'Smart DB app notifications screen listing arcing, surge and high-load alerts',
+        caption: 'Alert details',
       },
       {
-        number: '03.',
-        title: 'Event Confidence',
-        description: 'Events carry severity, confidence, circuit identity, and timestamp.',
-      },
-      {
-        number: '04.',
-        title: 'Safe Actuation',
-        description: 'Isolation commands are configurable and auditable.',
-      },
-    ],
-  },
-  energySection: {
-    accent: 'var(--black400)',
-    eyebrow: 'Energy control',
-    titleLead: 'Designed for the future',
-    titleAccent: 'of home energy',
-    accentTarget: 'lead',
-    cards: [
-      {
-        eyebrow: 'Demand Caps',
-        title: 'Manages sanctioned load, peak demand, and time-of-use limits.',
-        tone: 'teal',
-      },
-      {
-        eyebrow: 'Critical Load Groups',
-        title: 'Prioritises essential circuits when supply is limited.',
-        tone: 'violet',
-      },
-      {
-        eyebrow: 'EV Smart Charging',
-        title: 'Coordinate EV load with home demand and available supply',
-        tone: 'coral',
-      },
-      {
-        eyebrow: 'Solar Self-Consumption',
-        title: 'Support policies that use solar energy more intelligently',
-        tone: 'amber',
+        image: 'energy',
+        alt: 'Smart DB app energy screen showing consumption split by appliance',
+        caption: 'Energy Mapping',
       },
     ],
   },
-  variantsSection: {
-    accent: 'var(--black400)',
-    eyebrow: 'Product architecture',
-    titleLead: 'Built for different',
-    titleAccent: 'electrical realities',
-    cards: [
+  platformSection: {
+    eyebrow: 'Configurations',
+    titleLead: 'One platform,',
+    titleAccent: 'sized to your home',
+    tiles: [
       {
-        eyebrow: 'India Variant',
-        title: 'Optimised for retrofit and apartment DBs',
-        description:
-          'Designed around 230 V single-phase homes, slimmer sub-DB formats, inverter / UPS integration, brownout tolerance, and mixed socket / fan / lighting circuits.',
+        image: 'app',
+        name: 'App',
+        kicker: 'Mobile · On the go',
+        description: 'Check your home\'s energy use and alerts wherever you are.',
       },
       {
-        eyebrow: 'US Variant',
-        title: 'Optimised for electrified homes',
-        description:
-          'Designed around 120/240 V split-phase service, panel / sub panel formats, ESS backup, EV charging, solar integration, and compliance-led deployment.',
-        note:
-          'The 5th Gen PRD explicitly defines separate India and US variants, including service type, branch ratings, panel format, switching approach, thermal requirements, communication, labelling, backup orchestration, commissioning, and tariff logic.',
-      },
-    ],
-  },
-  projectSection: {
-    accent: 'var(--black400)',
-    eyebrow: 'Installer & developer value',
-    titleLead: 'Made for projects,',
-    titleAccent: 'not just products',
-    accentTarget: 'lead',
-    cards: [
-      {
-        title: 'Faster Installation',
-        description: 'Smart DB is designed with guided commissioning and automated verification.',
+        image: 'dashboard',
+        name: 'Web App / Dashboard',
+        kicker: 'Desktop · Detailed view',
+        description: 'Explore energy trends, historical data and manage bots and access.',
       },
       {
-        title: 'Cleaner Handover',
-        description:
-          'Generate reports with circuit labels, wiring photos, firmware versions, and safety checks.',
-      },
-      {
-        title: 'Developer Differentiation',
-        description:
-          'Give residents a visible, useful smart-infrastructure layer - not just hidden hardware.',
-      },
-      {
-        title: 'Support Visibility',
-        description: 'Support teams can access fleet health, diagnostics, and event history.',
-      },
-      {
-        title: 'Channel Friendly',
-        description: 'Designed for builders, solar / EPC partners, backup installers, and electrical contractors.'
+        image: 'clock',
+        name: 'Clock',
+        kicker: 'Wall-mounted · Always on',
+        description: 'See live consumption and key home insights at a glance.',
       },
     ],
+    action: {
+      label: 'Contact Sales to Find Your Configuration',
+      // The href is the no-JS fallback; the click opens the lead form in place.
+      href: '/support',
+      opensLeadForm: true,
+    },
   },
+  // specsSection: {
+  //   title: 'Specifications',
+  //   specs: [
+  //     { label: 'Supply', value: '230 V single-phase, 50 Hz (India variant)' },
+  //     { label: 'Outgoing circuits', value: 'Up to 12 monitored and switchable branches' },
+  //     { label: 'Metering', value: 'Voltage, current, active power, energy, power factor per circuit' },
+  //     { label: 'Safety sensing', value: 'Series and parallel arc detection, earth leakage, thermal hotspots' },
+  //     { label: 'Fault coverage', value: '14 fault types with severity and confidence scoring' },
+  //     { label: 'Switching', value: 'Per-circuit isolation with configurable, auditable rules' },
+  //     { label: 'Edge intelligence', value: 'Local ML inference, watchdogs and fail-safe behaviour' },
+  //     { label: 'Connectivity', value: 'Wi-Fi 2.4 GHz, with local operation when offline' },
+  //     { label: 'Mounting', value: 'Standard DIN rail, retrofits into existing DB enclosures' },
+  //     { label: 'Cloud', value: 'Ohm OS - summaries, events, reports, fleet diagnostics, OTA updates' },
+  //   ],
+  //   note:
+  //     'Specifications are indicative and vary by variant and configuration. India and US variants differ in service type, branch ratings, panel format, switching approach, thermal design, labelling and tariff logic. Final ratings are confirmed at the time of order.',
+  // },
   comparisonSection: {
-    accent: 'var(--black400)',
-    eyebrow: 'Product comparison',
-    titleLead: 'Three products.',
-    titleAccent: 'One intelligence system',
-    columns: ['', 'o3', 'o4', 'Smart DB'],
+    eyebrow: 'The Difference',
+    titleLead: "It isn't the box.",
+    titleAccent: "It's what's behind it",
+    columns: ['Capability', 'Traditional Board', 'Smart DB'],
     rows: [
-      ['Primary role', 'Energy visibility', 'Safety intelligence', 'Circuit-level intelligence'],
-      ['Best for', 'Homes', 'Premium homes / developers', 'Future-ready homes / buildings'],
-      ['Real-time visibility ', '✓', '✓', '✓'],
-      ['Appliance insights', '✓', '✓', '✓'],
-      ['Bill clarity', '✓', '✓', '✓'],
-      ['Fault alerts', '10 faults covered', '14 faults covered', '14 faults covered'],
-      ['Tripping / control', '-', 'Mains-level', 'Circuit-level'],
-      ['Backup orchestration', '-', '-', '✓'],
-      ['Smart DB integration', '-', 'Partial', 'Native'],
+      ['Faults detected', 'Overcurrent only', '7 fault types, including arcing & earth leakage'],
+      ['Remote control', 'Not possible', 'Any circuit, from anywhere'],
+      ['Backup power', 'All-or-nothing', 'Prioritized automatically'],
+      ['Appliance insights', 'None', 'Yes'],
+      ['Software', 'Fixed at installation', 'Improved over the air'],
+      ['History', 'None', 'Full circuit history in-app'],
+    ],
+    // action: {
+    //   label: 'Download the comparison sheet',
+    //   // TODO: point at the Smart DB comparison PDF once it exists.
+    //   href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
+    // },
+  },
+  segmentsSection: {
+    eyebrow: 'Applications',
+    titleLead: 'Wherever electrical infrastructure',
+    titleAccent: 'needs to be trusted',
+    description:
+      'Smart DB works in four continuous steps, running in the background for as long as the panel is powered.',
+    segments: [
+      {
+        image: 'residential',
+        name: 'New Residential Developments',
+        alt: 'Modern apartment development with landscaped walkways',
+        description: 'A difference buyers can see during a sales walkthrough.',
+      },
+      {
+        image: 'villa',
+        name: 'Luxury Villas',
+        alt: 'Contemporary villa with a swimming pool and open terrace',
+        description: 'Full backup orchestration across a complex electrical footprint.',
+      },
+      {
+        image: 'retrofit',
+        name: 'Retrofits',
+        alt: 'Interior of a home stripped back to studs during renovation',
+        description: 'Circuit-level visibility without rewiring the building.',
+      },
+      {
+        image: 'facility',
+        name: 'Facility Managed Buildings',
+        alt: 'Light industrial building with a clear parking forecourt',
+        description: 'One dashboard across multiple panels and units.',
+      },
     ],
   },
-  productsSection: {
-    accent: 'var(--black400)',
-    eyebrow: 'Monitoring products',
-    titleLead: 'Monitoring that grows',
-    titleAccent: 'with your electrical system',
-    accentTarget: 'lead',
-    description: 'Start with visibility. Add safety intelligence. Scale into circuit-level control.',
-    cards: [
-      {
-        eyebrow: 'o3',
-        title: 'Energy visibility for modern homes',
-        description:
-          'Track real-time power, understand appliance patterns, and predict your monthly electricity cost.',
-        features: ['Live Usage', 'Bill Forecast', 'Appliance Insights', 'Energy Timeline'],
-        action: {
-          label: 'Explore o3',
-          href: '/monitoring/o3-energy-visibility',
-          variant: 'secondary',
-        },
-        tone: 'teal',
-      },
-      {
-        eyebrow: 'o4',
-        title: 'Safety intelligence for homes and buildings',
-        description:
-          'Detect abnormal electrical events, configure alerts, notify the right people, and support protection workflows.',
-        features: ['Fault Detection', 'Voltage Anomalies', 'Earth Leakage', 'Arcing Alerts', 'Audit Logs'],
-        action: {
-          label: 'Explore o4',
-          href: '/monitoring/o4-electrical-safety',
-          variant: 'secondary',
-        },
-        tone: 'violet',
-      },
-      {
-        eyebrow: 'o5',
-        title: 'Smart DB intelligence and autonomous control',
-        description:
-          'Bring intelligence into the distribution board with circuit-level visibility, native safety sensing, backup orchestration, and edge control.',
-        features: ['Circuit Control', 'Arc Detection', 'Backup Priority', 'Solar / EV Ready', 'Local Autonomy'],
-        action: {
-          label: 'Explore o5',
-          href: '/smart-db',
-          variant: 'secondary',
-        },
-        tone: 'coral',
-      },
+  fireSection: {
+    eyebrow: 'TRUST',
+    titleLead: 'By the way,',
+    titleAccent: 'we also prevent fire',
+    description:
+      'Smart DB is engineered and tested against the electrical safety expectations applicable to the markets it serves, and every installation is carried out by certified electricians as part of a standard, code-compliant process.',
+    tags: [
+      'Certified electrical installation',
+      'Data handled with care',
+      'Compliance documentation on request'
     ],
   },
   layerSection: {
@@ -1130,36 +1142,6 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
           description: 'Circuit-level intelligence, backup orchestration, and native arc detection.',
         },
       ],
-  },
-  derSection: {
-    accent: 'var(--black400)',
-    eyebrow: 'Backup & DER',
-    titleLead: 'A distribution board that',
-    titleAccent: 'sees, learns, and acts',
-    description:
-      'As homes add inverters, solar, batteries, and EV charging, the distribution board needs to do more than distribute power. It needs to make decisions.',
-    cards: [
-      {
-        number: "o'DB",
-        title: 'Distribution Intelligence',
-        description: 'Circuit-level visibility, monitoring, and event intelligence.',
-      },
-      {
-        number: "o'Wall",
-        title: 'Visible Control Layer',
-        description: 'A wall-mounted interface for energy status, safety alerts, and system awareness.',
-      },
-      {
-        number: 'Smart Branch Modules',
-        title: 'Retrofit Intelligence',
-        description: 'Add monitoring and control to selected circuits.',
-      },
-      {
-        number: 'Installer Experience',
-        title: 'Commissioning Made Simple',
-        description: 'Guided setup, circuit labelling, self-tests, and handover reports.',
-      },
-    ],
   },
 }
 

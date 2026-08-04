@@ -329,78 +329,157 @@ export type SmartDbEyebrowCard = BasicCardProps & {
   eyebrow: string
 }
 
-export type SmartDbTextStackItem = BasicCardProps
-
-export type SmartDbTextStackSectionData = ProductSectionHeadingProps & {
-  cards: readonly SmartDbTextStackItem[]
-}
-
-export type SmartDbSafetyItem = NumberedCardProps
-
-export type SmartDbSafetySectionData = {
-  cards: readonly SmartDbSafetyItem[]
-  description: string
-  eyebrow: string
-  titleAccent: string
-  titleLead: string
-}
-
-export type SmartDbEnergyCard = {
-  eyebrow: string
-  title: string
-  tone: SmartDbTone
-}
-
-export type SmartDbEnergySectionData = ProductSectionHeadingProps & {
-  cards: readonly SmartDbEnergyCard[]
-}
-
-export type SmartDbVariantCard = BasicCardProps & {
-  eyebrow: string
-  note?: string
-}
-
-export type SmartDbVariantsSectionData = ProductSectionHeadingProps & {
-  cards: readonly SmartDbVariantCard[]
-}
-
-export type SmartDbComparisonSectionData = ProductSectionHeadingProps & {
-  columns: readonly string[]
-  rows: readonly (readonly string[])[]
-}
-
-export type SmartDbProductCard = {
-  action: ProductHeroAction
-  description: string
-  eyebrow: string
-  features: readonly string[]
-  title: string
-  tone: 'teal' | 'violet' | 'coral'
-}
-
-export type SmartDbProductsSectionData = ProductSectionHeadingProps & {
-  cards: readonly SmartDbProductCard[]
-  description: string
-}
-
 export type SmartDbLayerSectionData = ProductSectionHeadingProps & {
   cards: readonly SmartDbEyebrowCard[]
   description: string
 }
 
+/**
+ * Every heading on the Smart DB page is "lead + accent", where the accent half is
+ * the emphasised (darker) line. Sections that also carry body copy extend this.
+ */
+export type SmartDbHeading = {
+  eyebrow: string
+  titleAccent: string
+  titleLead: string
+}
+
+export type SmartDbHeadingWithCopy = SmartDbHeading & {
+  description: string
+}
+
+export type SmartDbHeroSectionData = SmartDbHeading & {
+  actions: readonly ProductHeroAction[]
+  description: string
+}
+
+export type SmartDbHeroSectionProps = {
+  onActionClick?: (action: ProductHeroAction, event: MouseEvent<HTMLAnchorElement>) => void
+  section: SmartDbHeroSectionData
+}
+
+/**
+ * The exploded-panel render. Its "Intelligence Layer" / "Conventional Layer"
+ * callouts are drawn into the image, so the section carries no legend data.
+ */
+export type SmartDbLayersSectionData = {
+  imageAlt: string
+  title: string
+}
+
+export type SmartDbStat = {
+  label: string
+  value: string
+}
+
+/** An underlined text link with a trailing arrow, not a button. */
+export type SmartDbTextLinkAction = {
+  /** Set when href points at a file the browser should save rather than open. */
+  download?: boolean
+  /** Filename the download is saved as; implies `download`. */
+  fileName?: string
+  href: string
+  label: string
+  /** Opens the shared lead form instead of following the href. */
+  opensLeadForm?: boolean
+}
+
+export type SmartDbKnowsSectionData = SmartDbHeading & {
+  action: SmartDbTextLinkAction
+  /** Rendered as separate paragraphs. */
+  descriptions: readonly string[]
+  stats: readonly SmartDbStat[]
+}
+
+export type SmartDbUnchangedSectionData = SmartDbHeadingWithCopy & {
+  cards: readonly BasicCardProps[]
+}
+
+/** Sense -> Understand -> Alert -> Act. `step` renders as the card ordinal. */
+export type SmartDbLoopStep = NumberedCardProps
+
+export type SmartDbLoopSectionData = SmartDbHeadingWithCopy & {
+  action: SmartDbTextLinkAction
+  steps: readonly SmartDbLoopStep[]
+}
+
+export type SmartDbCapabilitiesSectionData = SmartDbHeading & {
+  items: readonly BasicCardProps[]
+}
+
+export type SmartDbAppScreen = {
+  alt: string
+  caption: string
+  /** Key into the section's image map, resolved by the component. */
+  image: 'live' | 'alerts' | 'energy'
+}
+
+export type SmartDbPocketSectionData = SmartDbHeadingWithCopy & {
+  highlight: SmartDbEyebrowCard
+  screens: readonly SmartDbAppScreen[]
+}
+
+export type SmartDbPlatformTile = {
+  description: string
+  /** Key into the section's image map, resolved by the component. */
+  image: 'app' | 'dashboard' | 'clock'
+  /** Short form-factor line under the name, e.g. "Mobile · On the go". */
+  kicker: string
+  name: string
+}
+
+export type SmartDbPlatformSectionData = SmartDbHeading & {
+  action: SmartDbTextLinkAction
+  tiles: readonly SmartDbPlatformTile[]
+}
+
+export type SmartDbSpecGroup = {
+  label: string
+  value: string
+}
+
+export type SmartDbSpecsSectionData = {
+  note: string
+  specs: readonly SmartDbSpecGroup[]
+  title: string
+}
+
+export type SmartDbComparisonSectionData = SmartDbHeading & {
+  action?: SmartDbTextLinkAction
+  columns: readonly string[]
+  rows: readonly (readonly string[])[]
+}
+
+export type SmartDbSegment = {
+  alt: string
+  description: string
+  /** Key into the section's image map, resolved by the component. */
+  image: 'residential' | 'villa' | 'retrofit' | 'facility'
+  name: string
+}
+
+export type SmartDbSegmentsSectionData = SmartDbHeadingWithCopy & {
+  segments: readonly SmartDbSegment[]
+}
+
+export type SmartDbFireSectionData = SmartDbHeadingWithCopy & {
+  tags: readonly string[]
+}
+
 export type SmartDbPageData = {
+  capabilitiesSection: SmartDbCapabilitiesSectionData
   comparisonSection: SmartDbComparisonSectionData
-  derSection: ProductUseCaseSection
-  energySection: SmartDbEnergySectionData
-  heroSection: MonitoringHeroSectionProps
-  introSection: MonitoringIntroSectionData
+  fireSection: SmartDbFireSectionData
+  heroSection: SmartDbHeroSectionData
+  knowsSection: SmartDbKnowsSectionData
   layerSection: SmartDbLayerSectionData
-  productsSection: SmartDbProductsSectionData
-  projectSection: SmartDbTextStackSectionData
-  promiseSection: ProductFeatureSection
-  safetySection: SmartDbSafetySectionData
-  stackSection: SmartDbTextStackSectionData
-  variantsSection: SmartDbVariantsSectionData
+  layersSection: SmartDbLayersSectionData
+  loopSection: SmartDbLoopSectionData
+  platformSection: SmartDbPlatformSectionData
+  pocketSection: SmartDbPocketSectionData
+  segmentsSection: SmartDbSegmentsSectionData
+  specsSection?: SmartDbSpecsSectionData
+  unchangedSection: SmartDbUnchangedSectionData
 }
 
 export type FmsHeroStat = {
