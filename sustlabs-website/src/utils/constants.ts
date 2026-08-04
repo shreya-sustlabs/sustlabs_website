@@ -1033,7 +1033,6 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
     ],
     action: {
       label: 'Contact Sales to Find Your Configuration',
-      // The href is the no-JS fallback; the click opens the lead form in place.
       href: '/support',
       opensLeadForm: true,
     },
@@ -1068,11 +1067,11 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
       ['Software', 'Fixed at installation', 'Improved over the air'],
       ['History', 'None', 'Full circuit history in-app'],
     ],
-    // action: {
-    //   label: 'Download the comparison sheet',
-    //   // TODO: point at the Smart DB comparison PDF once it exists.
-    //   href: 'https://calendly.com/kedarnath-cc4/ohm-assistant_product-demo',
-    // },
+    action: {
+      label: 'Contact Sales to Find Your Configuration',
+      href: '/support',
+      opensLeadForm: true,
+    }
   },
   segmentsSection: {
     eyebrow: 'Applications',
@@ -1110,7 +1109,7 @@ export const SMART_DB_PAGE_CONTENT: SmartDbPageData = {
   fireSection: {
     eyebrow: 'TRUST',
     titleLead: 'By the way,',
-    titleAccent: 'we also prevent fire',
+    titleAccent: 'we also prevent fire.',
     description:
       'Smart DB is engineered and tested against the electrical safety expectations applicable to the markets it serves, and every installation is carried out by certified electricians as part of a standard, code-compliant process.',
     tags: [

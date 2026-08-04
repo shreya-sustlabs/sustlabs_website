@@ -1,12 +1,14 @@
 import { memo } from 'react'
+import type { MouseEvent } from 'react'
 import type { SmartDbComparisonSectionData } from '../../types'
 import { SmartDbTextLink } from '../ui/SmartDbTextLink'
 
 type SmartDbComparisonSectionProps = {
+    onLeadFormOpen?: (event: MouseEvent<HTMLAnchorElement>) => void
   section: SmartDbComparisonSectionData
 }
 
-function SmartDbComparisonSectionComponent({ section }: SmartDbComparisonSectionProps) {
+function SmartDbComparisonSectionComponent({ section, onLeadFormOpen }: SmartDbComparisonSectionProps) {
   return (
     <section className="sdb-comparison" aria-labelledby="sdb-comparison-title">
       <div className="sdb-comparison__inner">
@@ -49,7 +51,12 @@ function SmartDbComparisonSectionComponent({ section }: SmartDbComparisonSection
           </div>
         </div>
 
-        <SmartDbTextLink action={section.action} eventSection="smart_db_comparison" />
+        {/* <SmartDbTextLink action={section.action} eventSection="smart_db_comparison" /> */}
+         <SmartDbTextLink
+          action={section.action}
+          eventSection="smart_db_configurations"
+          onLeadFormOpen={onLeadFormOpen}
+        />
       </div>
     </section>
   )

@@ -17,13 +17,13 @@ function SmartDbFireSectionComponent({ section }: SmartDbFireSectionProps) {
           <span className="sdb-title__accent">{section.titleAccent}</span>
         </h2>
 
-        <p className="sdb-description sdb-description--dark">{section.description}</p>
+        {/* <p className="sdb-description sdb-description--dark">{section.description}</p>
 
         <ul className="sdb-fire__tags">
           {section.tags.map((tag) => (
             <li key={tag}>{tag}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </section>
   )
