@@ -1,0 +1,47 @@
+:root {
+  --sans: system-ui, 'Inter Tight';
+  --terra500: #CC4E37;
+  --teal500: #165964;
+  --black200: #E4E5E6;
+  --black300: #A9ABB0;
+  --black400: #373839;
+  --black500: #050608;
+  --success500: #4CAF50;
+  --error500: #D8392B;
+  --white: #FFF;
+  --grey: #888888;
+
+
+  font: 16px/1.5 var(--sans);
+  color: var(--white);
+  background: #020304;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #020304;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100svh;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}

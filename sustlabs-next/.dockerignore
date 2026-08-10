@@ -1,0 +1,34 @@
+# Keep the build context small and the image reproducible.
+#
+# node_modules is deliberately excluded: the host's copy contains macOS-native
+# sharp binaries, which would break inside the Linux image. Dependencies are
+# installed fresh in the deps stage instead.
+
+node_modules
+.next
+.git
+.gitignore
+.DS_Store
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets never enter a layer. .env reaches the builder as a BuildKit secret
+# mount and the runtime reads it through env_file.
+.env
+.env.*
+!.env.example
+
+# Runtime upload directories. These are Docker volumes, not build inputs —
+# copying them in would bake stale uploads into the image and add ~51MB.
+# The seed's source files live in public/assets, which IS included.
+media
+documents
+
+# Editor and tooling noise
+.vscode
+.idea
+coverage
+test-results
+playwright-report

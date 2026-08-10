@@ -1,0 +1,162 @@
+# Production stack for sustlabs.com.
+#
+# USE THE MAKEFILE. It sets BUILDX_BUILDER and picks the right env file, which
+# are the two things this file cannot do for itself:
+#
+#   make setup     # once per server: network + buildx builder
+#   make deploy    # build and start everything
+#   make seed      # ONCE, ever — see the warning on the tools service
+#   make up        # day to day
+#
+# `up` covers postgres -> migrate -> app on its own, via the `migrate` service
+# below and `service_completed_successfully`. The remaining steps are not
+# Compose's to own: `make setup` bootstraps the builder that Compose is built
+# by, and seeding is deliberately manual because it overwrites content.
+#
+# Deploy order still matters on a first deploy — see README §8. The build
+# statically generates every page, so it has to read a database that already
+# has content in it: migrate, seed, then build.
+#
+# Environment comes from .env. Locally the Makefile switches to .env.docker so
+# the .env that `pnpm dev` uses is left alone; that sets ENV_FILE, which
+# redirects both the services' env_file and the build-time secret.
+#
+# ONE-TIME SETUP (what `make setup` runs). BuildKit will not join a Compose
+# network on its own (`network:` under `build:` is rejected outright), and the
+# build has to reach Postgres. A dedicated builder attached to this network is
+# what makes a single DATABASE_URI work for both the build and the runtime:
+#
+#   docker network create sustlabs
+#   docker buildx create --name sustlabs-builder --driver docker-container \
+#     --driver-opt network=sustlabs \
+#     --buildkitd-flags '--allow-insecure-entitlement network.host' --use
+#
+# `--use` alone is not enough: compose does not follow the selected buildx
+# builder, so it silently builds on the default one, where `postgres` does not
+# resolve and the build dies in generateStaticParams. BUILDX_BUILDER is what
+# actually selects it — the Makefile exports it so you never type it.
+#
+# nginx and TLS terminate on the host and proxy to 127.0.0.1:3000.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: sustlabs
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: sustlabs_cms
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # The app and the migration step both start the moment this passes.
+      test: ['CMD-SHELL', 'pg_isready -U sustlabs -d sustlabs_cms']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks: [sustlabs]
+    restart: always
+
+  app:
+    build:
+      context: .
+      target: runner
+      # `host` here means the buildkit builder's own network namespace, not the
+      # VM's — and that builder is attached to the `sustlabs` network by the
+      # one-time setup above. That is what lets `pnpm build` resolve `postgres`,
+      # so a single DATABASE_URI serves both the build and the runtime.
+      network: host
+      secrets:
+        - dotenv
+    env_file: ${ENV_FILE:-.env}
+    ports:
+      # Bound to loopback: nginx is the only thing that should reach it.
+      - '127.0.0.1:3000:3000'
+    volumes:
+      # Uploads. Not in git, not in the image — losing these means re-uploading
+      # every image and PDF by hand.
+      - media:/app/media
+      - documents:/app/documents
+      # The ISR cache. revalidatePath writes regenerated pages here when an
+      # editor publishes. Without this volume a container restart silently
+      # reverts the site to its build-time HTML until someone republishes.
+      - nextcache:/app/.next/cache
+    depends_on:
+      postgres:
+        condition: service_healthy
+      # Schema is brought up to date before the app is allowed to serve.
+      migrate:
+        condition: service_completed_successfully
+    networks: [sustlabs]
+    restart: always
+
+  # One-off container for migrations and seeding. Has the Payload CLI and the
+  # TypeScript sources, which the runner image does not.
+  #
+  #   docker compose run --rm tools pnpm migrate
+  #   docker compose run --rm tools pnpm migrate:create <name>
+  #
+  # WARNING: `pnpm seed` overwrites documents matched by filename. Run it once,
+  # during first deploy. Re-running it after the content team starts editing
+  # reverts their work to the legacy snapshot.
+  tools:
+    build:
+      context: .
+      target: tools
+    # Shared with `migrate` below so the same target is built once, not twice.
+    image: sustlabs-tools
+    env_file: ${ENV_FILE:-.env}
+    volumes:
+      # The seed uploads through Payload, which writes to these directories —
+      # they must be the same volumes the app serves from.
+      - media:/app/media
+      - documents:/app/documents
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [sustlabs]
+    profiles: [tools] # never starts with `docker compose up`
+    entrypoint: []
+
+  # Applies pending migrations, then exits. `app` will not start until this
+  # succeeds, which is what lets a single `docker compose up -d` cover
+  # postgres -> migrate -> app.
+  #
+  # Safe to repeat: migrations are recorded in a batch table and already-applied
+  # ones are skipped, so this is a fast no-op once the schema is current.
+  #
+  # The trade: a migration that fails now blocks the app from starting, rather
+  # than leaving the previous container serving. That is the intended behaviour
+  # — a schema the code does not expect is worse than a brief outage.
+  migrate:
+    build:
+      context: .
+      target: tools
+    image: sustlabs-tools
+    env_file: ${ENV_FILE:-.env}
+    entrypoint: [] # the tools stage inherits node's docker-entrypoint.sh
+    command: pnpm migrate
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [sustlabs]
+    restart: 'no'
+
+secrets:
+  # Mounted into the build for the duration of `pnpm build` only. Never lands
+  # in an image layer, so PAYLOAD_SECRET stays out of `docker history`.
+  dotenv:
+    file: ./${ENV_FILE:-.env}
+
+networks:
+  # Created by hand in the one-time setup above, not by compose — the buildx
+  # builder has to attach to it before this file is ever used, so compose must
+  # treat it as pre-existing rather than try to own it.
+  sustlabs:
+    name: sustlabs
+    external: true
+
+volumes:
+  pgdata:
+  media:
+  documents:
+  nextcache:
