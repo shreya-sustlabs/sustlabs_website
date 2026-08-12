@@ -715,6 +715,18 @@ export interface Lead {
    */
   pagePath?: string | null;
   userAgent?: string | null;
+  /**
+   * The utm_source tag on the link the visitor arrived through (google, linkedin, a newsletter name). Empty means they came without a tagged link.
+   */
+  utmSource?: string | null;
+  /**
+   * The utm_medium tag — cpc, email, social.
+   */
+  utmMedium?: string | null;
+  /**
+   * The utm_campaign tag.
+   */
+  utmCampaign?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1045,6 +1057,9 @@ export interface LeadsSelect<T extends boolean = true> {
   forwardError?: T;
   pagePath?: T;
   userAgent?: T;
+  utmSource?: T;
+  utmMedium?: T;
+  utmCampaign?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -26,6 +26,10 @@ export type LeadInput = {
   phone?: string
   propertyType?: string
   source: string
+  /** Campaign tags from the URL the visitor landed on. See `lib/utm`. */
+  utmCampaign?: string
+  utmMedium?: string
+  utmSource?: string
 }
 
 export type LeadResult = { ok: boolean }
@@ -75,6 +79,9 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
       propertyType: asPropertyType(input.propertyType),
       source: asSource(input.source),
       userAgent: requestHeaders.get('user-agent') ?? undefined,
+      utmCampaign: input.utmCampaign?.trim() || undefined,
+      utmMedium: input.utmMedium?.trim() || undefined,
+      utmSource: input.utmSource?.trim() || undefined,
     },
   })
 
@@ -95,6 +102,9 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
         phone: input.phone ?? '',
         property_type: input.propertyType ?? '',
         source: input.source,
+        utm_campaign: input.utmCampaign ?? '',
+        utm_medium: input.utmMedium ?? '',
+        utm_source: input.utmSource ?? '',
       }),
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',

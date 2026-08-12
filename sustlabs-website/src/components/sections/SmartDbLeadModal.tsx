@@ -1,6 +1,7 @@
 import { type FormEvent, memo, useEffect, useRef, useState } from 'react'
 import { submitSmartDbLead } from '../../api'
 import { trackGaEvent } from '../../utils/analytics'
+import { getUtmParams } from '../../utils/utm'
 
 type SmartDbLeadModalProps = {
   source: string
@@ -68,7 +69,7 @@ function SmartDbLeadModalComponent({ source, onClose }: SmartDbLeadModalProps) {
     trackGaEvent('send-' + source)
 
     try {
-      await submitSmartDbLead(formState)
+      await submitSmartDbLead({ ...formState, ...getUtmParams(), source })
       setFormState(initialFormState)
       setStatus('success')
     } catch {

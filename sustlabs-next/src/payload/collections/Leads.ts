@@ -108,6 +108,30 @@ export const Leads: CollectionConfig = {
           admin: { readOnly: true, description: 'The page the visitor was on when they submitted.' },
         },
         { name: 'userAgent', type: 'text', admin: { readOnly: true } },
+        {
+          name: 'utmSource',
+          type: 'text',
+          label: 'Campaign source',
+          index: true,
+          admin: {
+            readOnly: true,
+            description:
+              'The utm_source tag on the link the visitor arrived through (google, linkedin, ' +
+              'a newsletter name). Empty means they came without a tagged link.',
+          },
+        },
+        {
+          name: 'utmMedium',
+          type: 'text',
+          label: 'Campaign medium',
+          admin: { readOnly: true, description: 'The utm_medium tag — cpc, email, social.' },
+        },
+        {
+          name: 'utmCampaign',
+          type: 'text',
+          label: 'Campaign name',
+          admin: { readOnly: true, description: 'The utm_campaign tag.' },
+        },
       ],
     },
   ],

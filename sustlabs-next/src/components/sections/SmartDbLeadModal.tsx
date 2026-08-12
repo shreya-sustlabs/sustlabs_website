@@ -3,6 +3,7 @@
 import { type FormEvent, memo, useEffect, useRef, useState } from 'react'
 import { submitLead } from '@/app/(frontend)/actions/submitLead'
 import { trackGaEvent } from '@/lib/analytics'
+import { getUtmParams } from '@/lib/utm'
 
 type SmartDbLeadModalProps = {
   source: string
@@ -70,7 +71,7 @@ function SmartDbLeadModalComponent({ source, onClose }: SmartDbLeadModalProps) {
     trackGaEvent('send-' + source)
 
     try {
-      const result = await submitLead({ ...formState, source })
+      const result = await submitLead({ ...formState, ...getUtmParams(), source })
 
       if (!result.ok) {
         setStatus('error')
