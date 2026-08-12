@@ -19,7 +19,7 @@ export function getUtmParams(): UtmParams {
   if (typeof window === 'undefined') {
     return EMPTY
   }
-
+  console.log('utm params', window.location.search)
   const params = new URLSearchParams(window.location.search)
   const fromUrl: UtmParams = {
     utmCampaign: params.get('utm_campaign')?.trim() ?? '',

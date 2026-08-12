@@ -17,6 +17,9 @@ const initialFormState = {
   phone: '',
   propertyType: '',
   source: '',
+  utm_source: '',
+  utm_medium: '',
+  utm_campaign: '',
 }
 
 const PROPERTY_TYPE_OPTIONS: Record<string, readonly string[]> = {
