@@ -36,7 +36,8 @@
 # resolve and the build dies in generateStaticParams. BUILDX_BUILDER is what
 # actually selects it — the Makefile exports it so you never type it.
 #
-# nginx and TLS terminate on the host and proxy to 127.0.0.1:3000.
+# nginx and TLS terminate on the host and proxy to 127.0.0.1:3000, or to
+# whatever HOST_PORT is set to in the env file.
 
 services:
   postgres:
@@ -70,7 +71,12 @@ services:
     env_file: ${ENV_FILE:-.env}
     ports:
       # Bound to loopback: nginx is the only thing that should reach it.
-      - '127.0.0.1:3000:3000'
+      #
+      # Only the host side moves. The container always listens on 3000, so the
+      # name is HOST_PORT rather than PORT — `env_file` hands the whole file to
+      # the container, and a var called PORT would be read by Next and move the
+      # listener too, leaving this mapping pointing at a closed port.
+      - '127.0.0.1:${HOST_PORT:-3000}:3000'
     volumes:
       # Uploads. Not in git, not in the image — losing these means re-uploading
       # every image and PDF by hand.

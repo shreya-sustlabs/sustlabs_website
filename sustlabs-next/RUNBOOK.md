@@ -11,8 +11,8 @@ For *why* the stack is shaped this way, see README §8. This file is the *how*.
 pnpm docker:start
 ```
 
-One command, first run or hundredth. It checks Docker is running and port 3000
-is free, creates `.env.docker` with generated secrets if there isn't one,
+One command, first run or hundredth. It checks Docker is running and the
+published port is free, creates `.env.docker` with generated secrets if there isn't one,
 creates the network and builder, starts Postgres, applies migrations, **seeds
 only if the database is empty**, builds, starts, and waits for HTTP 200 before
 telling you it is ready. Every failure stops with the cause and the fix.
@@ -206,7 +206,8 @@ Write migrations locally (`pnpm migrate:create <name>`, needs a TTY) and commit
 ### Prerequisites
 
 Docker Engine with the Compose plugin, git, and a domain pointed at the box.
-nginx and TLS terminate on the host and proxy to `127.0.0.1:3000`.
+nginx and TLS terminate on the host and proxy to `127.0.0.1:3000` — or to
+whatever `HOST_PORT` is set to in the env file, if 3000 is already taken.
 
 ### Step 1 — Get the code
 
@@ -302,6 +303,22 @@ URL count (expect **11**). Then sign in at `/admin`, confirm images render, and
 
 Proxy `443` to `127.0.0.1:3000`, get a certificate, then switch DNS. Keep the
 old deployment running until the new one is confirmed — it is your rollback.
+
+If that old deployment is itself serving on 3000 — a PM2 process, say — the two
+cannot both publish the port. Set `HOST_PORT` in the env file so the container
+publishes elsewhere and both run side by side:
+
+```bash
+echo 'HOST_PORT=3001' >> .env
+sudo ./scripts/docker-start.sh
+curl -I http://127.0.0.1:3001/          # confirm the new stack on its own port
+```
+
+Then flip `proxy_pass` to the new port, `nginx -s reload`, and only once the
+site is confirmed retire the old process (`pm2 delete <name> && pm2 save` — the
+`save` is what stops `pm2 resurrect` restoring it on the next reboot). Leaving
+`HOST_PORT` set afterwards is fine; the port it publishes on does not matter as
+long as nginx agrees.
 
 ---
 

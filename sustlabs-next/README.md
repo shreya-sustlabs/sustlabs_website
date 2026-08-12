@@ -354,7 +354,8 @@ already redirect permanently.
 
 `Dockerfile` and `docker-compose.yml` deploy the whole stack — Postgres, the app,
 and a one-off `tools` container for migrations and seeding. nginx and TLS
-terminate on the host and proxy to `127.0.0.1:3000`.
+terminate on the host and proxy to `127.0.0.1:3000`, or to `HOST_PORT` if the
+env file overrides it.
 
 **S3 is not needed here.** A VM's disk persists, so uploads live in the `media`
 and `documents` volumes and the S3 adapter stays off. This only holds for a

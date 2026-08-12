@@ -15,6 +15,10 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
+# Compose builds container and volume names from the project name, which it
+# takes from the directory. Both the port check and the pgdata guard need it.
+PROJECT=$(basename "$PWD" | tr '[:upper:]' '[:lower:]' | tr -cd 'a-z0-9_-')
+
 # Colour only when attached to a terminal, so CI logs stay clean.
 if [ -t 1 ]; then
   R=$'\033[31m'; G=$'\033[32m'; Y=$'\033[33m'; B=$'\033[1m'; X=$'\033[0m'
@@ -44,15 +48,8 @@ docker compose version >/dev/null 2>&1 \
 
 ok "docker $(docker version --format '{{.Server.Version}}' 2>/dev/null || echo '?')"
 
-# Port 3000 has to be free, or the app container will fail to publish it. Only
-# complain if something *other* than our own container is holding it.
-if lsof -nP -iTCP:3000 -sTCP:LISTEN >/dev/null 2>&1; then
-  if ! docker ps --format '{{.Names}}' | grep -q '^sustlabs-next-app-1$'; then
-    die "Port 3000 is already in use by another process.
-  Find it with:  lsof -nP -iTCP:3000 -sTCP:LISTEN
-  Then stop it, or change the port mapping in docker-compose.yml."
-  fi
-fi
+# The published-port check lives further down, in "Checking ports" — it needs
+# HOST_PORT, which is not known until the env file has been resolved.
 
 # ---------------------------------------------------------- environment file --
 
@@ -92,7 +89,6 @@ if [ "$needs_docker_env" = "1" ]; then
   # never re-reads POSTGRES_PASSWORD. Generating a fresh password while that
   # volume still exists produces an authentication failure several steps later
   # that looks nothing like its cause, so stop here instead.
-  PROJECT=$(basename "$PWD" | tr '[:upper:]' '[:lower:]' | tr -cd 'a-z0-9_-')
   if docker volume inspect "${PROJECT}_pgdata" >/dev/null 2>&1; then
     die "A database volume (${PROJECT}_pgdata) already exists, but there is no env
   file to go with it. Generating a new password now would not match the one
@@ -115,6 +111,10 @@ if [ "$needs_docker_env" = "1" ]; then
     echo "PAYLOAD_SECRET=$(openssl rand -hex 32)"
     echo "PREVIEW_SECRET=$(openssl rand -hex 16)"
     echo "NEXT_PUBLIC_SERVER_URL=http://localhost:3000"
+    echo
+    echo "# Host side of the published port. The container always listens on"
+    echo "# 3000; change this only when something else already holds the port."
+    echo "HOST_PORT=3000"
     echo
     echo "# Blank -> the seed falls back to the defaults in src/seed/users.ts."
     echo "SEED_PASSWORD_ASHISH="
@@ -174,6 +174,48 @@ URI_PW=$(echo "$DB_URI" | sed -n 's|^postgres://[^:]*:\([^@]*\)@.*|\1|p')
   They must be identical — Postgres bakes the password in on first boot."
 
 ok "Environment looks consistent"
+
+# ------------------------------------------------------------------- ports ---
+
+step "Checking ports"
+
+# Only the host side of the mapping is configurable. The container always
+# listens on 3000, so the image, NEXT_PUBLIC_SERVER_URL and the internal
+# hostname are all unaffected by this — the variable is deliberately not called
+# PORT, because that name would be picked up by Next inside the container and
+# move the listener too, leaving the mapping pointing at nothing.
+#
+# Set it when 3000 is already taken on the host: during a cutover from a legacy
+# PM2 deployment, say, where the old process keeps serving until nginx is
+# flipped. Whatever it is set to, nginx's proxy_pass must match.
+#
+# An exported HOST_PORT wins over the env file, which lets a one-off run
+# override it:  HOST_PORT=3001 ./scripts/docker-start.sh
+if [ -z "${HOST_PORT:-}" ]; then
+  HOST_PORT=$(read_var "$ENV_FILE" HOST_PORT)
+fi
+HOST_PORT="${HOST_PORT:-3000}"
+
+case "$HOST_PORT" in
+  ''|*[!0-9]*) die "HOST_PORT must be a number, but is '$HOST_PORT'." ;;
+esac
+
+# Compose reads it from --env-file for the mapping, but exporting covers the
+# case where it came from the environment rather than the file.
+export HOST_PORT
+
+# The port has to be free, or the app container will fail to publish it. Only
+# complain if something *other* than our own container is holding it.
+if lsof -nP -iTCP:"$HOST_PORT" -sTCP:LISTEN >/dev/null 2>&1; then
+  if ! docker ps --format '{{.Names}}' | grep -q "^${PROJECT}-app-1$"; then
+    die "Port $HOST_PORT is already in use by another process.
+  Find it with:  sudo lsof -nP -iTCP:$HOST_PORT -sTCP:LISTEN
+  Then stop it, or publish on a different port by setting HOST_PORT in
+  $ENV_FILE — and point nginx's proxy_pass at the same port."
+  fi
+fi
+
+ok "Publishing on 127.0.0.1:$HOST_PORT"
 
 COMPOSE="docker compose --env-file $ENV_FILE"
 export BUILDX_BUILDER=sustlabs-builder
@@ -278,7 +320,7 @@ step "Verifying"
 CODE=""
 i=0
 while [ $i -lt 30 ]; do
-  CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 http://127.0.0.1:3000/ 2>/dev/null || true)
+  CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 "http://127.0.0.1:$HOST_PORT/" 2>/dev/null || true)
   [ "$CODE" = "200" ] && break
   i=$((i + 1))
   sleep 2
@@ -286,15 +328,15 @@ done
 
 if [ "$CODE" != "200" ]; then
   $COMPOSE logs --tail 30 app || true
-  die "The app did not start responding on port 3000. Logs are above."
+  die "The app did not start responding on port $HOST_PORT. Logs are above."
 fi
 
 ok "Site responding (HTTP 200)"
-ok "Admin: $(curl -s -o /dev/null -w '%{http_code}' --max-time 10 http://127.0.0.1:3000/admin || echo '?')"
+ok "Admin: $(curl -s -o /dev/null -w '%{http_code}' --max-time 10 "http://127.0.0.1:$HOST_PORT/admin" || echo '?')"
 
 printf '\n%sReady.%s\n' "$G$B" "$X"
-printf '  Site   http://localhost:3000\n'
-printf '  Admin  http://localhost:3000/admin\n\n'
+printf '  Site   http://localhost:%s\n' "$HOST_PORT"
+printf '  Admin  http://localhost:%s/admin\n\n' "$HOST_PORT"
 printf '  Logs   make logs\n'
 printf '  Stop   make stop\n'
 printf '  More   make help\n\n'

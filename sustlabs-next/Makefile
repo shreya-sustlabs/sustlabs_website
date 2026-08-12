@@ -11,6 +11,12 @@
 ENV_FILE := $(if $(wildcard .env.docker),.env.docker,.env)
 COMPOSE  := docker compose --env-file $(ENV_FILE)
 
+# Host side of the published port; the container always listens on 3000.
+# Compose picks this up from $(ENV_FILE) on its own — it is read here only so
+# `make verify` curls the right place. Override for one command with:
+#   make verify HOST_PORT=3001
+HOST_PORT ?= $(or $(shell sed -n 's/^HOST_PORT=//p' $(ENV_FILE) 2>/dev/null | head -1),3000)
+
 # Compose does not follow `docker buildx --use`; without this it silently
 # builds on the default builder, which cannot resolve `postgres`, and the build
 # dies in generateStaticParams. `make setup` creates the builder this names.
@@ -79,9 +85,9 @@ logs: ## Follow the app log
 verify: ## Health check: containers, homepage, sitemap
 	@$(COMPOSE) ps
 	@echo
-	@printf 'homepage  '; curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:3000/
-	@printf 'admin     '; curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:3000/admin
-	@printf 'sitemap   '; curl -s http://127.0.0.1:3000/sitemap.xml | grep -c '<loc>' | xargs echo 'URLs:'
+	@printf 'homepage  '; curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:$(HOST_PORT)/
+	@printf 'admin     '; curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:$(HOST_PORT)/admin
+	@printf 'sitemap   '; curl -s http://127.0.0.1:$(HOST_PORT)/sitemap.xml | grep -c '<loc>' | xargs echo 'URLs:'
 
 psql: ## Open a psql shell on the database
 	$(COMPOSE) exec postgres psql -U sustlabs -d sustlabs_cms
