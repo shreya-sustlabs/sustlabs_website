@@ -26,6 +26,7 @@ export function getUtmParams(): UtmParams {
     utmMedium: params.get('utm_medium')?.trim() ?? '',
     utmSource: params.get('utm_source')?.trim() ?? '',
   }
+  console.log('utm params', fromUrl)
 
   if (fromUrl.utmSource || fromUrl.utmMedium || fromUrl.utmCampaign) {
     try {
