@@ -19,7 +19,18 @@ var SHEET_NAME = 'Leads'
  * how `utm_source` lands at the end of a sheet that predates campaign tracking,
  * without disturbing the columns the sales team already filters on.
  */
-var COLUMNS = ['timestamp', 'name', 'email', 'phone', 'property_type', 'source', 'utm_source']
+var COLUMNS = [
+  'timestamp',
+  'name',
+  'email',
+  'phone',
+  'property_type',
+  'comment',
+  'source',
+  'utm_campaign',
+  'utm_medium',
+  'utm_source'
+]
 
 /**
  * Header text the sheet may already use for a payload field. Matching is done on
