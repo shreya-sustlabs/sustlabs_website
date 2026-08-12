@@ -1,10 +1,42 @@
 export type UtmParams = {
+  utmAdgroup: string
   utmCampaign: string
+  utmCreative: string
+  utmDevice: string
+  utmKeyword: string
   utmMedium: string
+  utmPlacement: string
   utmSource: string
 }
 
-const EMPTY: UtmParams = { utmCampaign: '', utmMedium: '', utmSource: '' }
+/**
+ * The URL parameter each field is read from. Driving the read off this table
+ * rather than eight hand-written lines means adding a tag is a one-line change
+ * here instead of three edits that have to stay in sync.
+ */
+const PARAMS: Record<keyof UtmParams, string> = {
+  utmAdgroup: 'utm_adgroup',
+  utmCampaign: 'utm_campaign',
+  utmCreative: 'utm_creative',
+  utmDevice: 'utm_device',
+  utmKeyword: 'utm_keyword',
+  utmMedium: 'utm_medium',
+  utmPlacement: 'utm_placement',
+  utmSource: 'utm_source',
+}
+
+const KEYS = Object.keys(PARAMS) as (keyof UtmParams)[]
+
+const EMPTY: UtmParams = {
+  utmAdgroup: '',
+  utmCampaign: '',
+  utmCreative: '',
+  utmDevice: '',
+  utmKeyword: '',
+  utmMedium: '',
+  utmPlacement: '',
+  utmSource: '',
+}
 
 const STORAGE_KEY = 'sustlabs:utm'
 
@@ -20,14 +52,18 @@ export function getUtmParams(): UtmParams {
     return EMPTY
   }
 
-  const params = new URLSearchParams(window.location.search)
-  const fromUrl: UtmParams = {
-    utmCampaign: params.get('utm_campaign')?.trim() ?? '',
-    utmMedium: params.get('utm_medium')?.trim() ?? '',
-    utmSource: params.get('utm_source')?.trim() ?? '',
+  const search = new URLSearchParams(window.location.search)
+  const fromUrl = { ...EMPTY }
+  let tagged = false
+
+  for (const key of KEYS) {
+    const value = search.get(PARAMS[key])?.trim() ?? ''
+
+    fromUrl[key] = value
+    tagged = tagged || value !== ''
   }
 
-  if (fromUrl.utmSource || fromUrl.utmMedium || fromUrl.utmCampaign) {
+  if (tagged) {
     try {
       window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(fromUrl))
     } catch {
@@ -40,6 +76,8 @@ export function getUtmParams(): UtmParams {
   try {
     const stored = window.sessionStorage.getItem(STORAGE_KEY)
 
+    // Spread over EMPTY so a session stashed before a new tag existed still
+    // returns a complete object rather than undefined for the new field.
     return stored ? { ...EMPTY, ...(JSON.parse(stored) as Partial<UtmParams>) } : EMPTY
   } catch {
     return EMPTY

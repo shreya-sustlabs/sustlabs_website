@@ -27,8 +27,13 @@ export type LeadInput = {
   propertyType?: string
   source: string
   /** Campaign tags from the URL the visitor landed on. See `lib/utm`. */
+  utmAdgroup?: string
   utmCampaign?: string
+  utmCreative?: string
+  utmDevice?: string
+  utmKeyword?: string
   utmMedium?: string
+  utmPlacement?: string
   utmSource?: string
 }
 
@@ -79,8 +84,13 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
       propertyType: asPropertyType(input.propertyType),
       source: asSource(input.source),
       userAgent: requestHeaders.get('user-agent') ?? undefined,
+      utmAdgroup: input.utmAdgroup?.trim() || undefined,
       utmCampaign: input.utmCampaign?.trim() || undefined,
+      utmCreative: input.utmCreative?.trim() || undefined,
+      utmDevice: input.utmDevice?.trim() || undefined,
+      utmKeyword: input.utmKeyword?.trim() || undefined,
       utmMedium: input.utmMedium?.trim() || undefined,
+      utmPlacement: input.utmPlacement?.trim() || undefined,
       utmSource: input.utmSource?.trim() || undefined,
     },
   })
@@ -102,8 +112,13 @@ export async function submitLead(input: LeadInput): Promise<LeadResult> {
         phone: input.phone ?? '',
         property_type: input.propertyType ?? '',
         source: input.source,
+        utm_adgroup: input.utmAdgroup ?? '',
         utm_campaign: input.utmCampaign ?? '',
+        utm_creative: input.utmCreative ?? '',
+        utm_device: input.utmDevice ?? '',
+        utm_keyword: input.utmKeyword ?? '',
         utm_medium: input.utmMedium ?? '',
+        utm_placement: input.utmPlacement ?? '',
         utm_source: input.utmSource ?? '',
       }),
       headers: { 'Content-Type': 'application/json' },

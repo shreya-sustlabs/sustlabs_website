@@ -17,10 +17,10 @@ const initialFormState = {
   phone: '',
   propertyType: '',
   source: '',
-  utm_source: '',
-  utm_medium: '',
-  utm_campaign: '',
 }
+// Campaign tags are not form fields — `getUtmParams()` supplies them at submit
+// time and its values are spread over this state, so listing them here only
+// created keys nothing ever read.
 
 const PROPERTY_TYPE_OPTIONS: Record<string, readonly string[]> = {
   fms: ['Residential', 'Commercial', 'Industrial', 'Others'],

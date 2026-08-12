@@ -727,6 +727,26 @@ export interface Lead {
    * The utm_campaign tag.
    */
   utmCampaign?: string | null;
+  /**
+   * The utm_adgroup tag.
+   */
+  utmAdgroup?: string | null;
+  /**
+   * The utm_creative tag — which ad was clicked.
+   */
+  utmCreative?: string | null;
+  /**
+   * The utm_keyword tag — the search term matched.
+   */
+  utmKeyword?: string | null;
+  /**
+   * The utm_device tag — m, t or c.
+   */
+  utmDevice?: string | null;
+  /**
+   * The utm_placement tag — where the ad was shown.
+   */
+  utmPlacement?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1060,6 +1080,11 @@ export interface LeadsSelect<T extends boolean = true> {
   utmSource?: T;
   utmMedium?: T;
   utmCampaign?: T;
+  utmAdgroup?: T;
+  utmCreative?: T;
+  utmKeyword?: T;
+  utmDevice?: T;
+  utmPlacement?: T;
   updatedAt?: T;
   createdAt?: T;
 }

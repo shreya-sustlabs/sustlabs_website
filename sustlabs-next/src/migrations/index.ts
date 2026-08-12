@@ -1,5 +1,6 @@
 import * as migration_20260807_053904_initial from './20260807_053904_initial';
 import * as migration_20260812_143154_lead_utm from './20260812_143154_lead_utm';
+import * as migration_20260812_160000_lead_utm_extra from './20260812_160000_lead_utm_extra';
 
 export const migrations = [
   {
@@ -11,5 +12,10 @@ export const migrations = [
     up: migration_20260812_143154_lead_utm.up,
     down: migration_20260812_143154_lead_utm.down,
     name: '20260812_143154_lead_utm'
+  },
+  {
+    up: migration_20260812_160000_lead_utm_extra.up,
+    down: migration_20260812_160000_lead_utm_extra.down,
+    name: '20260812_160000_lead_utm_extra'
   },
 ];

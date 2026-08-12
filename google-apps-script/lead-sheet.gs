@@ -29,7 +29,12 @@ var COLUMNS = [
   'source',
   'utm_campaign',
   'utm_medium',
-  'utm_source'
+  'utm_source',
+  'utm_adgroup',
+  'utm_creative',
+  'utm_keyword',
+  'utm_device',
+  'utm_placement'
 ]
 
 /**
@@ -47,7 +52,12 @@ var HEADER_ALIASES = {
   type_of_property: 'property_type',
   page: 'source',
   utm: 'utm_source',
-  campaign_source: 'utm_source'
+  campaign_source: 'utm_source',
+  // "UTM Ad Group" normalises to utm_ad_group, which would otherwise be read as
+  // a column the payload knows nothing about and a second one appended beside it.
+  utm_ad_group: 'utm_adgroup',
+  ad_group: 'utm_adgroup',
+  adgroup: 'utm_adgroup'
 }
 
 function doPost(e) {
