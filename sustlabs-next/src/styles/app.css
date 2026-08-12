@@ -1621,6 +1621,7 @@
 .ora-add-on-enables__visual {
   display: block;
   width: 100%;
+  height: auto;
   min-height: clamp(420px, 64vw, 720px);
   object-fit: cover;
   object-position: center top;
@@ -2408,6 +2409,7 @@
   display: block;
   width: min(76%, 304px);
   max-width: none;
+  height: auto;
   transform: translateY(20px);
 }
 
@@ -2695,6 +2697,7 @@
   justify-self: center;
   width: min(96%, 650px);
   max-width: none;
+  height: auto;
   margin-top: 44px;
 }
 
